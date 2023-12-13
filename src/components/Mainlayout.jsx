@@ -6,7 +6,7 @@ import AsideRight from './AsideRight'
 const Mainlayout = () => {
   return (
     <div>
-        <div className='grid-template-areas'>
+        <div className='grid-template-areas bonjour2'>
             <Aside className="grid-s1"></Aside>
             <Main className="grid-main"/>
             <AsideRight className="grid-s2" />
