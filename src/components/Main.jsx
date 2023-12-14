@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
 import sources from '../icons/sources.svg';
 import React, { useState, useMemo, useRef } from 'react'
 import TinderCard from 'react-tinder-card'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const db = [
   {
@@ -87,17 +90,38 @@ const Main = () => {
 
   const swipe = async (dir) => {
     if (canSwipe && currentIndex < db.length) {
-      await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
+      const currentQuestion = db[currentIndex];
+      const isCorrect = (dir === 'right' && currentQuestion.Réponse === 'Vrai') ||
+                        (dir === 'left' && currentQuestion.Réponse === 'Faux');
+  
+      if (isCorrect) {
+        toast('C\'est vrai');
+      } else {
+        toast('C\'est faux');
+      }
+  
+      await childRefs[currentIndex].current.swipe(dir);
     }
   }
 
   // increase current index and show card
   const goBack = async () => {
-    if (!canGoBack) return
-    const newIndex = currentIndex + 1
-    updateCurrentIndex(newIndex)
-    await childRefs[newIndex].current.restoreCard()
+    if (!canGoBack) return;
+    const newIndex = currentIndex + 1;
+    const currentQuestion = db[newIndex];
+    const isCorrect = currentQuestion.Réponse === 'Vrai';
+  
+    if (isCorrect) {
+      toast('C\'est vrai');
+    } else {
+      toast('C\'est faux');
+    }
+  
+    updateCurrentIndex(newIndex);
+    await childRefs[newIndex].current.restoreCard();
   }
+  
+  
   
 
   return (
@@ -141,6 +165,8 @@ const Main = () => {
           Swipe a card or press a button to get Restore Card button visible!
         </h2>
       )}
+      
+        <ToastContainer />
     </div>
   )
 }
