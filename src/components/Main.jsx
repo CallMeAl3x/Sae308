@@ -78,26 +78,40 @@ const Main = () => {
     setLastDirection(direction);
     updateCurrentIndex(index - 1);
   
-    // Trigger the same logic as button clicks based on swipe direction
-    if (direction === 'right') {
-      swipe('right');
-    } else if (direction === 'left') {
-      swipe('left');
+    const currentQuestion = db[index];
+    const isCorrect = (direction === 'right' && currentQuestion.Réponse === 'Vrai') ||
+                      (direction === 'left' && currentQuestion.Réponse === 'Faux');
+  
+    if (isCorrect) {
+      toast.success('Bonne réponse', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.error('Mauvaise réponse', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
-
+  
   const outOfFrame = (Question, index, swipeDirection) => {
     console.log(`${Question} (${index}) left the screen with swipe direction: ${swipeDirection}`);
-    // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= index && childRefs[index].current.restoreCard();
-  
-    // Trigger the same logic as button clicks based on swipe direction
-    if (swipeDirection === 'right') {
-      swipe('right');
-      toast("droite");
-    } else if (swipeDirection === 'left') {
-      swipe('left');
-      toast("gauche");
+    if (canSwipe && currentIndexRef.current >= index) {
+      childRefs[index].current.restoreCard();
+      
     }
   };
 
@@ -107,33 +121,12 @@ const Main = () => {
       const isCorrect = (dir === 'right' && currentQuestion.Réponse === 'Vrai') ||
                         (dir === 'left' && currentQuestion.Réponse === 'Faux');
   
-      if (isCorrect) {
-        toast.success('Bonne réponse', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          });
-      } else {
-        toast.error('Mauvaise réponse', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          });
-      }
+      
+      
   
       await childRefs[currentIndex].current.swipe(dir);
     }
-  }
+  };
 
   
   return (
@@ -149,7 +142,7 @@ const Main = () => {
         >
             <div
               style={{ backgroundImage: 'url(' + Question.url + ')' }}
-              className='card p-2 shadow-xl border-2 border-gray-200 rounded-lg'
+              className='card p-2 shadow-sm border-2 border-gray-200 rounded-lg'
               id={index}
             >
               <div className='flex justify-between items-center'>
@@ -177,8 +170,10 @@ const Main = () => {
         </h2>
       )}
       
-        <ToastContainer />
+      <ToastContainer/>
+
     </div>
+    
   )
 }
 

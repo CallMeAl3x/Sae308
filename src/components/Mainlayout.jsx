@@ -7,7 +7,7 @@ const Mainlayout = () => {
   return (
     <div>
         <div className='grid-template-areas bonjour2'>
-            <Aside className="grid-s1"></Aside>
+            <Aside className="grid-s1"/>
             <Main className="grid-main"/>
             <AsideRight className="grid-s2" />
         </div>
