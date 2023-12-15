@@ -75,18 +75,31 @@ const Main = () => {
 
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
-    setLastDirection(direction)
-    updateCurrentIndex(index - 1)
-  }
+    setLastDirection(direction);
+    updateCurrentIndex(index - 1);
+  
+    // Trigger the same logic as button clicks based on swipe direction
+    if (direction === 'right') {
+      swipe('right');
+    } else if (direction === 'left') {
+      swipe('left');
+    }
+  };
 
-  const outOfFrame = (Question, idx) => {
-    console.log(`${Question} (${idx}) left the screen!`, currentIndexRef.current)
+  const outOfFrame = (Question, index, swipeDirection) => {
+    console.log(`${Question} (${index}) left the screen with swipe direction: ${swipeDirection}`);
     // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
-    // TODO: when quickly swipe and restore multiple times the same card,
-    // it happens multiple outOfFrame events are queued and the card disappear
-    // during latest swipes. Only the last outOfFrame event should be considered valid
-  }
+    currentIndexRef.current >= index && childRefs[index].current.restoreCard();
+  
+    // Trigger the same logic as button clicks based on swipe direction
+    if (swipeDirection === 'right') {
+      swipe('right');
+      toast("droite");
+    } else if (swipeDirection === 'left') {
+      swipe('left');
+      toast("gauche");
+    }
+  };
 
   const swipe = async (dir) => {
     if (canSwipe && currentIndex < db.length) {
@@ -95,46 +108,45 @@ const Main = () => {
                         (dir === 'left' && currentQuestion.Réponse === 'Faux');
   
       if (isCorrect) {
-        toast('C\'est vrai');
+        toast.success('Bonne réponse', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       } else {
-        toast('C\'est faux');
+        toast.error('Mauvaise réponse', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
   
       await childRefs[currentIndex].current.swipe(dir);
     }
   }
 
-  // increase current index and show card
-  const goBack = async () => {
-    if (!canGoBack) return;
-    const newIndex = currentIndex + 1;
-    const currentQuestion = db[newIndex];
-    const isCorrect = currentQuestion.Réponse === 'Vrai';
   
-    if (isCorrect) {
-      toast('C\'est vrai');
-    } else {
-      toast('C\'est faux');
-    }
-  
-    updateCurrentIndex(newIndex);
-    await childRefs[newIndex].current.restoreCard();
-  }
-  
-  
-  
-
   return (
     <div className='flex justify-center align-middle flex-col items-center'>
       <div className='cardContainer'>
         {db.map((Question, index) => (
           <TinderCard
-            ref={childRefs[index]}
-            className='swipe'
-            key={Question.Intitulé}
-            onSwipe={(dir) => swiped(dir, Question.Intitulé, index)}
-            onCardLeftScreen={() => outOfFrame(Question.Intitulé, index)}
-          >
+          ref={childRefs[index]}
+          className='swipe'
+          key={Question.Intitulé}
+          onSwipe={(dir) => swiped(dir, Question.Intitulé, index)}
+          onCardLeftScreen={(dir) => outOfFrame(Question.Intitulé, index, dir)}
+        >
             <div
               style={{ backgroundImage: 'url(' + Question.url + ')' }}
               className='card p-2 shadow-xl border-2 border-gray-200 rounded-lg'
@@ -153,7 +165,6 @@ const Main = () => {
       </div>
       <div className='buttons'>
         <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Faux</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Retour</button>
         <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Vrai</button>
       </div>
       {lastDirection ? (
