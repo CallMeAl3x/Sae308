@@ -6,6 +6,7 @@ import Part1 from "./pages/Part1";
 export const AppContext = createContext();
 
 function App() {
+  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Nouvel état pour suivre l'index de la carte actuellement affichée
 
   const db = [
     {
@@ -46,7 +47,7 @@ function App() {
     {
       Intitulé: 'La moitié des personnes âgées de moins de 30 ans ont déjà utilisé une application de rencontre.',
       Réponse: 'Vrai',
-      RéponseDéveloppé: "",
+      RéponseDéveloppé: "Effectivement, environ la moitié des individus âgés de moins de 30 ans ont déjà eu recours à une application de rencontre. Ces plateformes attirent ce groupe démographique en offrant un moyen pratique et accessible de rencontrer de nouvelles personnes. Elles permettent des interactions sociales facilitées et une opportunité de découvrir des personnes partageant des intérêts similaires, que ce soit pour des relations amoureuses ou simplement élargir leur cercle social. Cette tendance souligne l'importance croissante de la technologie dans la manière dont les jeunes générations établissent des relations et interagissent socialement.Effectivement, environ la moitié des individus âgés de moins de 30 ans ont déjà eu recours à une application de rencontre. Ces plateformes attirent ce groupe démographique en offrant un moyen pratique et accessible de rencontrer de nouvelles personnes. Elles permettent des interactions sociales facilitées et une opportunité de découvrir des personnes partageant des intérêts similaires, que ce soit pour des relations amoureuses ou simplement élargir leur cercle social. Cette tendance souligne l'importance croissante de la technologie dans la manière dont les jeunes générations établissent des relations et interagissent socialement.",
       Image: '../img/representation.jpeg',
       Source: '',
     },
@@ -56,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      <AppContext.Provider value={{db}}>
+      <AppContext.Provider value={{ db, currentCardIndex, setCurrentCardIndex }}>
       <BrowserRouter>
       <Link to="/Part1"></Link>
         <Routes>
