@@ -7,6 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react'
 import { AppContext } from '../App'
 import AsideRight from './AsideRight';
+import { IoAddSharp } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
+
+
 
 const Main = () => {
   const { db, currentCardIndex, setCurrentCardIndex } = useContext(AppContext);
@@ -46,7 +50,7 @@ const Main = () => {
     if (isCorrect) {
       toast.success('Bonne réponse', {
         position: "top-center",
-        autoClose: 1000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -57,7 +61,7 @@ const Main = () => {
     } else {
       toast.error('Mauvaise réponse', {
         position: "top-center",
-        autoClose: 1000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -110,31 +114,51 @@ const Main = () => {
         >
             <div
               style={{ backgroundImage: 'url(' + Question.url + ')' }}
-              className='card p-2 shadow-sm border-2 border-gray-200 rounded-lg'
+              className='card border-2 rounded-lg'
               id={index}
             >
-              
-              <div className='flex justify-between items-center'>
-                <h2 className='text-center text-black mt-2 ml-4'>Question n<sup>o</sup> {db.length - index}</h2>
-                <img src={sources} alt='sources' className='w-6 h-6 mr-4 mt-2' />
+              <div className=' h-44 w-full overflow-hidden shadow-lg'>
+              {Question.Imagerep && (
+                <img src={Question.Image} className='imgquizz' draggable="false" 
+                alt="" />
+              )}
+              {!Question.Imagerep && (
+                <video src={Question.Image} controls autoPlay className='rounded-lg '></video>
+              )}
               </div>
-              <h3 className='mt-2 text-center text-black'>{Question.Intitulé}</h3>
-              <img src="/img/representation.jpeg" className='h-52 select-none' draggable="false" 
-              alt="" />
+                <div className='flex justify-center mt-12'>
+                <div className='w-[80%] h-[2px] bg-[#D04ED6] rounded-md'>
+
+                </div>
+              </div>
+              <div className='flex flex-col justify-between items-center mt-2 p-4'>
+                <h2 className='text-center text-black text-3xl mt-2 font-bold'>Anecdote n<sup>o</sup>{db.length - index}</h2>
+                <h3 className='mt-4 p-2 text-center text-black'>{Question.Intitulé}</h3>
+              </div>
+              
+              
+
             </div>
           </TinderCard>
         ))}
       </div>
-      <div className='buttons gap-16'>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} className='bg-red-500 w-24 h-24 rounded-full' onClick={() => swipe('left')}>Faux</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} className='bg-red-500 w-24 h-24 rounded-full' onClick={() => swipe('right')}>Vrai</button>
+      <div className='buttons gap-20 p-4  blur-[0px] shadow-lg px-12'>
+        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} className='bg-white w-20 h-20 rounded-[20px] boutline' onClick={() => swipe('left')}>
+          <span className='flex justify-center items-center h-full'>
+          <IoAddSharp className='text-orange-500 text-[80px] rotate-45'/>
+          </span>
+</button>
+        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} className='bg-white w-20 h-20 rounded-[20px] boutline ' onClick={() => swipe('right')}>
+        <span className='flex justify-center items-center h-full'> <FaCheck className='text-[#D04ED6] text-[55px] ' /></span>
+          </button>
       </div>
-      {lastDirection ? (
-        <h2 key={lastDirection} className='infoText'>
+      {lastDirection ?(
+        
+        <h2 key={lastDirection} className='infoText mt-2 ' >
           You swiped {lastDirection}
         </h2>
       ) : (
-        <h2 className='infoText'>
+        <h2 className='infoText mt-2'>
           Swipe a card or press a button to get Restore Card button visible!
         </h2>
       )}
