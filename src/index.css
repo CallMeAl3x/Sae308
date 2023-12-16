@@ -21,7 +21,7 @@
 
 .card {
   position: relative;
-  background-color: #ffffff;
+  background:#834D9B;
   width: 80vw;
   max-width: 320px;
   height: 550px;
@@ -31,6 +31,8 @@
   overflow: hidden;
   border: 2px solid #834D9B ;
 }
+
+
 
 .cardContent {
   width: 100%;
@@ -114,17 +116,6 @@ body {
 .grid-s2{
   grid-area: s2;
 }
-
-.ic1active{
-  @apply h-16 w-16 bg-white rounded-2xl flex justify-center items-center hover:cursor-pointer;
-}
-
-.ic1{
-  @apply h-16 w-16 bg-white rounded-2xl flex justify-center items-center hover:cursor-pointer;
-  outline:3px solid rgb(249, 115, 22);
-  outline-offset: 3px;
-}
-
 
 .imgquizz{
   width: 320px;

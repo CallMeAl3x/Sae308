@@ -127,13 +127,13 @@ const Main = () => {
               )}
               </div>
                 <div className='flex justify-center mt-12'>
-                <div className='w-[80%] h-[2px] bg-[#D04ED6] rounded-md'>
+                <div className='w-[80%] h-[2px] bg-[#ffffff] rounded-md'>
 
                 </div>
               </div>
               <div className='flex flex-col justify-between items-center mt-2 p-4'>
-                <h2 className='text-center text-black text-3xl mt-2 font-bold'>Anecdote n<sup>o</sup>{db.length - index}</h2>
-                <h3 className='mt-4 p-2 text-center text-black'>{Question.Intitulé}</h3>
+                <h2 className='text-center text-white text-3xl mt-2 font-bold'>Anecdote n<sup>o</sup>{db.length - index}</h2>
+                <h3 className='mt-4 p-2 text-center text-white'>{Question.Intitulé}</h3>
               </div>
               
               

@@ -34,7 +34,7 @@ const AsideRight = () => {
               }} layout>
                 <BsBodyText className='text-[40px] text-orange-500 '/>
               </motion.div>
-              <div className='mt-2'><p className='text-[#000000] text-center'>Réponses</p></div>
+              <div className='mt-2'><p className='text-[#ffffff] text-center'>Réponses</p></div>
             </div>
             
             <div className='flex flex-col'>
@@ -49,7 +49,7 @@ const AsideRight = () => {
               }} layout>
                 <BsInfoCircle className='text-[40px] text-orange-500' />
               </motion.div>
-              <div className='mt-2'><p className='text-[#000000] text-center'>Sources</p></div>
+              <div className='mt-2'><p className='text-[#ffffff] text-center'>Sources</p></div>
             </div>
             
           </div>
