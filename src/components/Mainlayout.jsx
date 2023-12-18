@@ -1,18 +1,18 @@
-import React from 'react'
-import Aside from './Aside'
-import Main from './Main'
-import AsideRight from './AsideRight'
+import React from "react";
+import NavBar from "./NavBar";
+import Main from "./Main";
+import AsideRight from "./AsideRight";
 
 const Mainlayout = () => {
   return (
     <div>
-        <div className='grid-template-areas bonjour2'>
-            <Aside className="grid-s1"/>
-            <Main className="grid-main"/>
-            <AsideRight className="grid-s2" />
-        </div>
+      <div className="gradient bg-cover flex items-center flex-row max-lg:flex-col">
+        <NavBar />
+        <Main />
+        <AsideRight />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Mainlayout
+export default Mainlayout;

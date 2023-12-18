@@ -2,122 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Jost;
+  src: url("../src/fonts/Jost/Jost-VariableFont_wght.ttf");
+  font-weight: Normal;
+  font-style: normal;
+}
+
 * {
   user-select: none;
-}
-
-.swipe {
-  position: absolute;
-}
-
-.cardContainer {
-  width: 90vw;
-  max-width: 320px;
-  height: 450px;
-  margin-right: auto;
-  margin-left: auto;
-  
-}
-
-.card {
-  position: relative;
-  background:#834D9B;
-  width: 80vw;
-  max-width: 320px;
-  height: 550px;
-  border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  border: 2px solid #834D9B ;
-}
-
-
-
-.cardContent {
-  width: 100%;
-  height: 100%;
-}
-
-.infoText {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  color: #000000;
-  animation-name: popup;
-  animation-duration: 800ms;
-}
-
-.buttons {
-  margin-top: 180px;
-  display: flex;
-  flex-wrap: wrap;
-  /* background-color: #242321; */
-  background-color: #b6b6b6;
-  border-radius: 30px;
-  
-  
-}
-
-.gicone2{
-  background-color: #b6b6b6;
-}
-
-.boutline{
-  outline: 2px solid rgb(255, 255, 255);
-  outline-offset: 2px;
-}
-
-@media (max-width: 625px) {
-  .buttons {
-    flex-direction: column;
-  }
-}
-
-
-
-@keyframes popup {
-  0%   { transform: scale(1,1) }
-  10%  { transform: scale(1.1,1.1) }
-  30%  { transform: scale(.9,.9) }
-  50%  { transform: scale(1,1) }
-  57%  { transform: scale(1,1) }
-  64%  { transform: scale(1,1) }
-  100% { transform: scale(1,1) }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: #F3F2F3;
+  color: #f3f2f3;
   overflow: hidden;
+  font-family: Jost;
+  font-weight: 600;
 }
 
-
-
-.grid-template-areas {
-  grid-template-areas: "s1 main s2";
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 0.5fr 2.5fr 0.75fr;
+@keyframes popup {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.1, 1.1);
+  }
+  30% {
+    transform: scale(0.9, 0.9);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  57% {
+    transform: scale(1, 1);
+  }
+  64% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 .gradient {
-  background: linear-gradient(315deg, #D04ED6 0%, #834D9B 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fa3f15",endColorstr="#cc2363",GradientType=1);
+  background-image: url("../src/img/background_intro.svg");
 }
 
-.grid-s1 {
-  grid-area: s1;
-}
-
-.grid-main{
-  grid-area: main;
-}
-
-.grid-s2{
-  grid-area: s2;
-}
-
-.imgquizz{
-  width: 320px;
-  object-fit: cover;
+.shadow-nav {
+  box-shadow: 9px 15px 13.9px 0px rgba(0, 0, 0, 0.25);
 }

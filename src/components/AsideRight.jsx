@@ -1,83 +1,73 @@
-import React from 'react';
-import './AsideRight.css';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { AppContext } from '../App';
-import { BsBodyText } from "react-icons/bs";
-import { BsInfoCircle } from "react-icons/bs";
-import { motion } from 'framer-motion'
+import React from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../App";
+import { motion } from "framer-motion";
+import Réponse from "../icons/Réponses.svg";
+import Sources from "../icons/Sources.svg";
 
 const AsideRight = () => {
   const { db, currentCardIndex } = useContext(AppContext);
-  const [toggle, setToggle] = useState(false);
+  const [toggleAnswer, setToggleAnswer] = useState(false);
+  const [toggleSources, setToggleSources] = useState(false);
 
-  const fToggle = () => {
-    setToggle(!toggle);
+  const AnswerToggle = () => {
+    setToggleAnswer(!toggleAnswer);
+  };
+
+  const SourcesToggle = () => {
+    setToggleSources(!toggleSources);
   };
 
   return (
-    <div className='grid-s2'>
-      <div className='z-10 relative asideright rounded-l-lg w-full h-full'>
-        <div className='flex justify-center flex-col'>
-          
-          <div className='p-8'>
-          <div className='gicone2 flex gap-6  rounded-2xl p-4 w-full justify-evenly bg-green-700 ' >
-            <div className='flex flex-col  '  onClick={fToggle}>
-              <motion.div className={`${toggle ? "ic1" : "ic1active"}`} whileHover={{
-                scale:1.05
+    <div className="mb-[60vh] mt-auto max-lg:mt-0 max-lg:ml-auto ml-24 mr-auto z-10 rounded-l-lg max-lg:mb-12">
+      <div className="flex justify-center flex-col">
+        <div className="flex flex-col justify-center gap-6 rounded-2xl max-lg:flex-row max-lg:mt-12">
+          <div className="flex items-center" onClick={AnswerToggle}>
+            <motion.div
+              className={`${
+                toggleAnswer ? "bg-black" : "bg-white"
+              } h-16 w-16 rounded-2xl flex justify-center hover:cursor-pointer shadow-2xl items-center`}
+              whileHover={{
+                scale: 1.05,
               }}
               transition={{
                 layout: {
-                  duration:0.3,
-                  type:"spring"
-                }
-              }} layout>
-                <BsBodyText className='text-[40px] text-orange-500 '/>
-              </motion.div>
-              <div className='mt-2'><p className='text-[#ffffff] text-center'>Réponses</p></div>
-            </div>
-            
-            <div className='flex flex-col'>
-              <motion.div className='h-16 w-16 bg-white rounded-2xl flex justify-center items-center hover:cursor-pointer' whileHover={{
-                scale:1.05
+                  duration: 0.3,
+                  type: "spring",
+                },
               }}
-              transition={{
-                layout: {
-                  duration:0.3,
-                  type:"spring"
-                }
-              }} layout>
-                <BsInfoCircle className='text-[40px] text-orange-500' />
-              </motion.div>
-              <div className='mt-2'><p className='text-[#ffffff] text-center'>Sources</p></div>
+              layout>
+              <img src={Réponse} alt="" height={40} width={44} />
+            </motion.div>
+            <div className="mt-2">
+              <p className="text-[#ffffff] text-center ml-4">Réponses</p>
             </div>
-            
           </div>
+
+          <div className="flex flex-col items-center justify-center gap-6  rounded-2xl mr-2">
+            <div className="flex items-center" onClick={SourcesToggle}>
+              <motion.div
+                className={`${
+                  toggleSources ? "bg-black" : "bg-white"
+                } h-16 w-16 rounded-2xl flex justify-center hover:cursor-pointer shadow-2xl items-center`}
+                whileHover={{
+                  scale: 1.05,
+                }}
+                transition={{
+                  layout: {
+                    duration: 0.3,
+                    type: "spring",
+                  },
+                }}
+                layout>
+                <img src={Sources} alt="" height={40} width={44} />
+              </motion.div>
+              <div className="mt-2">
+                <p className="text-[#ffffff] text-center ml-4">Sources</p>
+              </div>
+            </div>
           </div>
-           <motion.div className='flex justify-center p-4 rounded-lg transition-all transition-duration:500' layout>
-           <motion.div className={`bg-white border-[3px] ${toggle ? "border-[#D04ED6]" : "border-orange-500"} p-4 rounded-lg ease-in-out duration-500`} >
-          {toggle ? (
-           
-           
-              <h3 className='text-black'>
-              {db[currentCardIndex]?.RéponseDéveloppé || ''}
-              </h3>
-              
-            
-            
-          ) : (
-            
-            
-              <h3 className='text-orange-500 italic'>
-              Vous pouvez faire apparaitre les réponses a ces questions en appuyant sur  ces icones
-              </h3>
-              
-            
-            
-          )
-        }
-        </motion.div></motion.div>
-        
         </div>
       </div>
     </div>
