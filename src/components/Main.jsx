@@ -87,12 +87,12 @@ const Main = () => {
   };
 
   return (
-    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto">
-      <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] h-[520px]">
+    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto overflow-hidden">
+      <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative">
         {db.map((Question, index) => (
           <TinderCard
             ref={childRefs[index]}
-            className="absolute m-auto"
+            className="absolute m-auto overflow-hidden"
             key={Question.Intitulé}
             onSwipe={(dir) => swiped(dir, Question.Intitulé, index)}
             onCardLeftScreen={(dir) =>
@@ -100,11 +100,11 @@ const Main = () => {
             }>
             <div
               style={{ backgroundImage: "url(" + Question.url + ")" }}
-              className="w-[80vw] max-w-[475px] h-[520px] overflow-hidden rounded-2xl relative"
+              className="w-[80vw] max-w-[475px] h-[480px] rounded-2xl relative overflow-hidden"
               id={index}>
-              <div className="h-full w-full overflow-hidden shadow-lg">
-                <div className="flex flex-col justify-between mt-2 p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-t-[25px] w-9/12 max-lg:w-full mr-auto ml-auto">
-                  <h2 className="text-almost-black text-3xl mt-2 font-bold ml-2 font-title">
+              <div className="h-full w-full relative overflow-hidden shadow-lg">
+                <div className="flex flex-col justify-between p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-t-[25px] w-9/12 max-lg:w-full mr-auto ml-auto">
+                  <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
                     Anecdote n<sup>o</sup>
                     {db.length - index}
                   </h2>
@@ -113,7 +113,7 @@ const Main = () => {
                 {Question.Imagerep && (
                   <img
                     src={Question.Image}
-                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full"
+                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full hi"
                     draggable="false"
                     alt=""
                   />
@@ -130,7 +130,7 @@ const Main = () => {
           </TinderCard>
         ))}
       </div>
-      <div className="mt-8 flex flex-wrap gap-10">
+      <div className="mt-4 flex flex-wrap gap-10">
         <button
           style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
           className="bg-white w-20 h-20 rounded-full shadow-xl"

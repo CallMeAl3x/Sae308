@@ -18,9 +18,8 @@
 
 body {
   color: #f3f2f3;
-  overflow: hidden;
   font-family: Jost;
-  font-weight: 600;
+  font-weight: 600;  
 }
 
 @keyframes popup {
