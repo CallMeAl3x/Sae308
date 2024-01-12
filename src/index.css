@@ -19,7 +19,7 @@
 body {
   color: #f3f2f3;
   font-family: Jost;
-  font-weight: 600;  
+  font-weight: 600;
 }
 
 @keyframes popup {
@@ -54,7 +54,6 @@ body {
   box-shadow: 9px 15px 13.9px 0px rgba(0, 0, 0, 0.25);
 }
 
-
 .lii {
   position: relative;
 }
@@ -65,7 +64,7 @@ body {
   top: -5px;
   left: 100px;
   background-color: rgb(255, 255, 255);
-  color: #E0861B;
+  color: #e0861b;
   padding: 5px;
   border-radius: 5px;
   z-index: 999;
@@ -79,6 +78,10 @@ body {
 }
 
 .lii:hover::after {
-  transform: scale(1); /* Au survol, l'échelle est mise à 1, ce qui fait apparaître le contenu */
-  content: attr(data-text); /* Assurez-vous que le contenu est également défini ici pour la transition */
+  transform: scale(
+    1
+  ); /* Au survol, l'échelle est mise à 1, ce qui fait apparaître le contenu */
+  content: attr(
+    data-text
+  ); /* Assurez-vous que le contenu est également défini ici pour la transition */
 }
