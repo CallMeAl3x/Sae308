@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import { motion } from "framer-motion";
 import Réponse from "../icons/Réponses.svg";
-import Sources from "../icons/Sources.svg";
+import Sources from "../icons/sources.svg";
 
 const AsideRight = () => {
   const { db, currentCardIndex } = useContext(AppContext);

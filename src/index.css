@@ -53,3 +53,32 @@ body {
 .shadow-nav {
   box-shadow: 9px 15px 13.9px 0px rgba(0, 0, 0, 0.25);
 }
+
+
+.lii {
+  position: relative;
+}
+
+.lii::after {
+  content: attr(data-text);
+  position: absolute;
+  top: -5px;
+  left: 100px;
+  background-color: rgb(255, 255, 255);
+  color: #E0861B;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 999;
+  white-space: nowrap;
+  max-width: 150px; /* Ajustez la largeur maximale pour correspondre à votre mise en page */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute des points de suspension (...) si le texte est trop long */
+  transition: transform 0.3s ease; /* Ajout de la transition pour le changement d'échelle */
+  transform: scale(0); /* Définition initiale de l'échelle à 0 */
+  transform-origin: left;
+}
+
+.lii:hover::after {
+  transform: scale(1); /* Au survol, l'échelle est mise à 1, ce qui fait apparaître le contenu */
+  content: attr(data-text); /* Assurez-vous que le contenu est également défini ici pour la transition */
+}
