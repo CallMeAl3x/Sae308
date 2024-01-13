@@ -87,7 +87,7 @@ const Main = () => {
   };
 
   return (
-    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto overflow-hidden">
+    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto overflow-hidden justify-center">
       <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative">
         {db.map((Question, index) => (
           <TinderCard
@@ -113,7 +113,7 @@ const Main = () => {
                 {Question.Imagerep && (
                   <img
                     src={Question.Image}
-                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full hi"
+                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full"
                     draggable="false"
                     alt=""
                   />
