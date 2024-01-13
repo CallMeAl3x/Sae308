@@ -65,7 +65,7 @@ const AsideRight = () => {
               </div>
               {toggleAnswer && (
                 <div className="bg-white p-4 rounded-xl ml-4">
-                  <p className="text-black text-center max-w-[300px]">
+                  <p className="text-black text-center max-w-[300px] break-words">
                     {db[currentCardIndex].RéponseDéveloppé}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ const AsideRight = () => {
                 </div>
                 {toggleSources && (
                   <div className="bg-white p-4 rounded-xl ml-4">
-                    <p className="text-black text-center max-w-[300px]">
+                    <p className="text-black text-center max-w-[300px] break-words">
                       {db[currentCardIndex].Source}
                     </p>
                   </div>
