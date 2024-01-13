@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Home from "../icons/Home.svg";
 import Part1 from "../icons/1.svg";
@@ -7,12 +6,6 @@ import Advices from "../icons/Advices.svg";
 import Simulation from "../icons/Simulation.svg";
 
 const NavBar = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const hoveranim = () => {
-    setIsHovered(!isHovered);
-  };
-
   return (
     <div
       className={`ml-6 flex max-lg:h-auto h-screen max-lg:mb-2 mb-24 max-lg:hidden items-center fixed`}>
