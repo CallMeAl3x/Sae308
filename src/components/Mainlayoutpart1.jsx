@@ -17,6 +17,10 @@ import pp3before from "../img/pp3before.png"
 import pp3after from "../img/pp3after.png"
 import { FaRegHandPointLeft } from "react-icons/fa";
 import svg from "../img/decision-maker-analyze-balance-compare-svgrepo-com.svg"
+import { FaRegHandPointRight } from "react-icons/fa";
+import { FaArrowsAltH } from "react-icons/fa";
+import { Modal } from './Modal';
+
 
 
 
@@ -27,9 +31,32 @@ function Mainlayoutpart1() {
         const[showTitlteCard1,setShowTitleCard1] = useState(false);
         const[showTitlteCard2,setShowTitleCard2] = useState(false);
         const[showTitlteCard3,setShowTitleCard3] = useState(false);
+        
 
-
+        const tablee = useRef()
         const svgg = useRef();
+        const cardDrag = useRef()
+        const cardDrag2 = useRef()
+        const cardDrag3 = useRef()
+        const suiteTexte = useRef()
+        const citafre = useRef();
+        
+
+
+        const handleOpacity = () => {
+            const img1 = document.getElementsByClassName("img11")[0]; // Access the first element in the collection
+            img1.classList.add("img11anime"); // Remove the dot before "img11anime"
+        }
+
+        const handleOpacity2 = () => {
+            const img2 = document.getElementsByClassName("img22")[0]; // Access the first element in the collection
+            img2.classList.add("img22anime"); // Remove the dot before "img11anime"
+        }
+
+        const handleOpacity3 = () => {
+            const img3 = document.getElementsByClassName("img33")[0]; // Access the first element in the collection
+            img3.classList.add("img33anime"); // Remove the dot before "img11anime"
+        }
 
         useEffect(() => {
           const observer = new IntersectionObserver((entries) => {
@@ -41,8 +68,88 @@ function Mainlayoutpart1() {
                 svgg.current.classList.remove("active");
               }
           });
+
+          const observer2 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              tablee.current.classList.add("active");
+              console.log(tablee.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                tablee.current.classList.remove("active");
+              }
+          });
+
+
+
+          const observer3 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                cardDrag.current.classList.add("active");
+              console.log(cardDrag.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                cardDrag.current.classList.remove("active");
+              }
+          });
+
+
+          const observer4 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                cardDrag2.current.classList.add("active");
+              console.log(cardDrag2.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                cardDrag2.current.classList.remove("active");
+              }
+          });
+
+          const observer5 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                cardDrag3.current.classList.add("active");
+              console.log(cardDrag3.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                cardDrag3.current.classList.remove("active");
+              }
+          });
+
+
+
+          const observer6 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                suiteTexte.current.classList.add("active");
+              console.log(suiteTexte.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                suiteTexte.current.classList.remove("active");
+              }
+          });
+
+
+          const observer7 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                citafre.current.classList.add("active");
+              console.log(citafre.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                citafre.current.classList.remove("active");
+              }
+          });
+
+
+
+    
+          
+          
+
+
         
           observer.observe(svgg.current);
+          observer2.observe(tablee.current);
+          observer3.observe(cardDrag.current);
+          observer4.observe(cardDrag2.current);
+          observer5.observe(cardDrag3.current);
+          observer6.observe(suiteTexte.current);
+          observer7.observe(citafre.current);
         }, []);
 
 
@@ -61,8 +168,25 @@ function Mainlayoutpart1() {
 
 
 
+
+
+
+        const [isOpen, setIsOpen] = useState(false);
+        const openModal = ()=>{
+            setIsOpen(!isOpen);
+        }
+
+
+
+
+
+
+
+
+
+
   return (
-    <div className='h-[140vh] gradient bg-cover '> <NavBar/>
+    <div className='h-[140vh] gr2 '> <NavBar/>
             <div className='h-screen flex flex-col'>
     <NavBar />
     <div className='h-20 flex justify-center items-center aflouter rounded-br rounded-bl p-2'>
@@ -71,7 +195,7 @@ function Mainlayoutpart1() {
         </h2>
     </div>
     <div className='flex-1 ml-[6vw] px-12 py-6'>
-        <div className='w-full h-[800px] bg-white rounded-lg flex-col flex overflow-y-auto scrdiv shadow-2xl'>
+        <div className='w-full h-[800px] bg-white rounded-lg flex-col flex overflow-y-auto overflow-x-hidden scrdiv shadow-2xl relative '>
             
             <div className='w-full h-full '>
                 <div className='p-8 '>
@@ -123,19 +247,20 @@ function Mainlayoutpart1() {
                             </span>
                         </div>
                         
-                        <div className='w-full  h-96 flex justify-center items-center gap-[180px] mt-16'>
+                        <div className='w-full  h-96 flex justify-center items-center gap-[240px] mt-16'>
 
-                            <div className='flex '> 
+                            <div className='flex  cardDrag11' ref={cardDrag}> 
                                     <div className='w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative '>
-                                        <img src={pp1after} alt="" className='absolute w-full h-full rounded'/>
+                                        <img src={pp1after} alt="" className='absolute w-full h-full rounded' draggable={false}/>
                                     <motion.div
                                         className='w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden'
-                                        drag
-                                        dragConstraints={{ left: -150, right: 150, top: -150, bottom: 150 }}
+                                        drag ="x"
+                                        dragConstraints={{ left: -200, right: 150, top: -150, bottom: 150 }}
                                         onDragStart={showTitle}
+                                        onDragEnd={handleOpacity}
                                         >
 
-                                        <img src={pp1before} alt="" className='absolute w-full h-full'/>
+                                        <img src={pp1before} alt="" className='absolute w-full h-full img11 cursor-pointer' draggable={false}/>
                                         <button className=' bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 '>
                                             <span className='flex justify-around items-center'>
                                                 <span className='text-xl'>
@@ -164,17 +289,18 @@ function Mainlayoutpart1() {
 
                                 
 
-                                <div className='flex '> 
+                                <div className='flex cardDrag21' ref={cardDrag2}> 
                                     <div className='w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative '>
-                                        <img src={pp2after} alt="" className='absolute w-full h-full rounded'/>
+                                        <img src={pp2after} alt="" className='absolute w-full h-full rounded' draggable={false}/>
                                     <motion.div
                                         className='w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden'
-                                        drag
-                                        dragConstraints={{ left: -150, right: 150, top: -150, bottom: 150 }}
+                                        drag ="x"
+                                        dragConstraints={{ left: -200, right: 150, top: -150, bottom: 150 }}
                                         onDragStart={showTitle2}
+                                        onDragEnd={handleOpacity2}
                                         >
 
-                                        <img src={pp2before} alt="" className='absolute w-full h-full'/>
+                                        <img src={pp2before} alt="" className='absolute w-full h-full img22 cursor-pointer' draggable={false}/>
                                         <button className=' bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 '>
                                             <span className='flex justify-around items-center'>
                                                 <span className='text-xl'>
@@ -202,17 +328,18 @@ function Mainlayoutpart1() {
 
 
 
-                                <div className='flex '> 
+                                <div className='flex cardDrag31' ref={cardDrag3}> 
                                     <div className='w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative '>
-                                        <img src={pp3after} alt="" className='absolute w-full h-full rounded'/>
+                                        <img src={pp3after} alt="" className='absolute w-full h-full rounded' draggable={false}/>
                                     <motion.div
                                         className='w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden'
-                                        drag
-                                        dragConstraints={{ left: -150, right: 150, top: -150, bottom: 150 }}
+                                        drag ="x"
+                                        dragConstraints={{ left: -200, right: 150, top: -150, bottom: 150 }}
                                         onDragStart={showTitle3}
+                                        onDragEnd={handleOpacity3}
                                         >
 
-                                        <img src={pp3before} alt="" className='absolute w-full h-full'/>
+                                        <img src={pp3before} alt="" className='absolute w-full h-full img33 cursor-pointer' draggable={false}/>
                                         <button className=' bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 '>
                                             <span className='flex justify-around items-center'>
                                                 <span className='text-xl'>
@@ -262,7 +389,7 @@ function Mainlayoutpart1() {
                             </p>
                         </div>
                         <div className='w-full justify-center flex mt-12'>
-                            <table>
+                            <table ref={tablee}>
                                 <thead>
                                     <tr>
                                         <th>
@@ -334,16 +461,52 @@ function Mainlayoutpart1() {
                             </span>
                         </div>
 
-                        <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center mt-20'>
-                            <p className='text-black text-sm text-justify'>
-                            
-La compétition dans les applications de rencontres crée une atmosphère où les hommes se comparent constamment les uns aux autres. On évalue non seulement l'apparence, 
+                        <div className='w-full max-h-64  rounded-lg flex justify-around items-center mt-20'>
+                            <div className='h-48 w-full border-gradient2 p-4 rounded-lg z-10'>
+                                <div className='bg-white w-full h-full flex justify-center items-center '>
+                                        <p className='text-sm text-black text-justify'>
+                                        La compétition dans les applications de rencontres crée une atmosphère où les hommes se comparent constamment les uns aux autres. On évalue non seulement l'apparence, 
 mais aussi le succès professionnel, l'intelligence, et d'autres critères sociaux. Cette comparaison constante peut rendre certains hommes anxieux et moins sûrs d'eux, ce qui rend 
 la recherche d'un partenaire plus stressante. En d'autres termes, l'environnement compétitif de ces applications peut susciter des sentiments d'insécurité et d'infériorité chez certains 
-hommes, compliquant ainsi leur quête de relations amoureuses. Cette pression permanente de se mesurer aux autres peut également créer un climat anxiogène, où les individus se sentent 
-constamment jugés par des critères parfois idéalisés. En résumé, la compétition et la comparaison sociale dans ces applications peuvent avoir des conséquences significatives sur le 
-bien-être émotionnel des hommes qui y participent, soulignant la nécessité d'une réflexion sur les dynamiques induites par ces plateformes de rencontres.
-                            </p>
+hommes, compliquant ainsi leur quête de relations amoureuses.
+                                        </p>
+                                </div>
+                            </div>
+
+                            <motion.div className='h-48 w-full border-gradient p-4 cardtextedroite z-9 ' ref={suiteTexte} drag = "x" dragConstraints={{ left: -715, right: 0 }} initial={{ x: -715 }} >
+                                <div className='bg-white w-full h-full flex justify-center items-center gap-8 '>
+                                        <div className='w-[90%] flex justify-center items-center  h-full'>
+                                        <p className='text-sm text-black text-justify '>
+                                        Cette pression permanente de se mesurer aux autres peut également créer un climat anxiogène, où les individus se sentent 
+                                        constamment jugés par des critères parfois idéalisés. En résumé, la compétition et la comparaison sociale dans ces applications peuvent avoir des conséquences significatives sur le 
+                                        bien-être émotionnel des hommes qui y participent, soulignant la nécessité d'une réflexion sur les dynamiques induites par ces plateformes de rencontres.
+                                        </p>
+                                        </div>
+                                        <div className='w-[10%] border-2 border-[#ff0055] text-[#ff0055] rounded-lg  h-full flex justify-center items-center flex-col'>
+                                        <button className='w-full h-full'>
+                                            <p>
+                                                suite
+                                            </p>
+                                            <span className='relative flex justify-center items-center'>
+                                                    <div className='pulse2'>
+                                                    <div className='w-4 h-4 bg-[#E0861B] absolute opacity-40 rounded-full top-[-6px] right-0'>
+                                                    <span style={{'--j': 0}}></span>
+                                                    <span style={{'--j': 1}}></span>
+                                                    </div>
+                                                    </div>
+                                                    <div className='flex flex-col'>
+                                                        <FaRegHandPointRight size={25}/>
+                                                    <FaArrowsAltH  size={25}/>
+                                                    </div>
+                                                    
+
+
+                                                </span>
+                                        </button>
+                                        </div>
+
+                                </div>
+                            </motion.div>
                         </div>
 
 
@@ -358,9 +521,73 @@ bien-être émotionnel des hommes qui y participent, soulignant la nécessité d
                                              </div>
                         </div>
                         <div>
-                            <iframe className='rounded-lg shadow-lg iframe1' width="560" height="315" src="https://www.youtube.com/embed/WbhvBbmeKP8?si=4vTMpqjRVr98o-JT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
+                        <iframe className='rounded-lg shadow-xl border-4 border-[#E0861B]' width="560" height="315" src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        </div>
                     </div>
+                    <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center mt-12'>
+                            <span className='textgr font-bold text-3xl flex text-center justify-center items-center gap-2'>Peur du Rejet ou de l'Échec sur la Santé Mentale Masculine
+                                <span className='text-sm '>
+                                            
+                                </span>
+                            </span>
+                        </div>
+                                    
+                        <div className='w-full max-h-32  bg-white rounded-lg  mt-8 '>
+                            <div className='w-[70%] h-full bg-white border-[#ff0055] rounded-lg shadow-lg border-4 mx-auto'>
+                                <p className='p-4 text-black text-sm text-justify'>
+                                
+                                La nature impitoyable des rencontres en ligne peut entraîner des expériences fréquentes de rejet ou d'échec. Les hommes peuvent réagir différemment 
+                                à ces situations, mais pour beaucoup, cela peut avoir un impact significatif sur leur santé mentale. La répétition des rejets peut créer des sentiments de désespoir, 
+                                d'anxiété sociale et de dévalorisation personnelle. 
+                                Certains hommes peuvent internaliser ces expériences négatives, compromettant ainsi leur estime de soi et leur bien-être émotionnel.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='w-full h-96  bg-white rounded-lg  mt-8 '>
+                            <div className='w-[100%] h-full bg-white  rounded-lg shadow-xl mx-auto flex justify-around items-center'>
+                                
+                                <div className='h-full w-full flex justify-center items-center'>
+                                <iframe className='iframeetu rounded-lg shadow-xl border-4 border-[#E0861B]' width="560" height="315" src="https://www.youtube.com/embed/KR4o1i6uyjk?si=ocmoMT2Dz77fO99n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                                </div>
+                                <div className=' h-full w-full flex justify-center items-center relative'>
+                                <p className='text-black text-2xl absolute top-0 left-0 p-4'>
+                                            Témoignage de Karime Baudouin : <br />
+                                            <i className='text-base'>Etudiant en BUT GEII</i> 
+
+                                        </p>
+                                        <div className='flex max-h-32 w-[80%] border-[#ff0055]'>                                       
+                                            <p className='italic text-black citafre textgr' ref={citafre}>
+                                            Tu peux être affecté par certaines choses sur l'application, comme le fait de ne pas avoir de likes.
+                                            Le fait de catégoriser ou de se faire catégoriser peut baisser le morale où le monter.
+                                            </p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div className='w-full max-h-32  bg-white rounded-lg  mt-8 '>
+                            <div className='w-[85%] h-full gradient bg-cover  rounded-lg shadow-lg border-4 mx-auto'>
+                                <p className='p-4 text-white text-xl text-justify'>
+                                
+                                En somme, les tensions masculines dans le monde des applications de rencontres sont profondément ancrées dans les normes culturelles et les dynamiques sociales. 
+                                Comprendre ces pressions est essentiel 
+                                pour favoriser des interactions plus saines et promouvoir la santé mentale des hommes engagés dans ces espaces virtuels de recherche d'amour.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='w-full h-16 flex justify-center items-center rounded-lg  mt-8 '>
+                        <button className='rounded-lg px-4 py-2 text-white bg-blue-500 shadow-lg' onClick={openModal}>
+                                                    Sources
+                                                </button>
+                        </div>
+
+
+
+                        
 
 
                 </div>
@@ -378,13 +605,14 @@ bien-être émotionnel des hommes qui y participent, soulignant la nécessité d
          </div>
 
 
-
+                                               
             
         </div>
+        
     </div>
 </div>
 
-           
+           <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal}/>
     </div>
   )
 }
