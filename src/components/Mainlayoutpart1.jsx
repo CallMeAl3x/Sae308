@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import NavBar from "./NavBar";
 import "./Mainlayoutpart1.css";
+import { IoAccessibilityOutline } from "react-icons/io5";
 import tinderimg from "../img/Tinder-icon.png";
 import BadooImg from "../img/Badoo-icon-square.png";
 import fruitzImg from "../img/fruitz.png";
@@ -147,7 +149,10 @@ function Mainlayoutpart1() {
 
   return (
     <div className="h-[140vh] gr2 ">
+      {" "}
+      <NavBar />
       <div className="h-screen flex flex-col">
+        <NavBar />
         <div className="h-20 flex justify-center items-center aflouter rounded-br rounded-bl p-2">
           <h2 className="font-bold text-2xl">
             Tensions Masculines dans le Monde des Applis de Rencontres
