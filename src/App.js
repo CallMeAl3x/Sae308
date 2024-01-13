@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Introduction";
 import { createContext, useState } from "react";
 import Part1 from "./pages/Part1";
 import Part2 from "./pages/Part2";

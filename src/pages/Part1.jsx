@@ -1,13 +1,16 @@
-import React from 'react'
-import Aside from '../components/NavBar'
-import Mainlayoutpart1 from '../components/Mainlayoutpart1'
+import React from "react";
+import Mainlayoutpart1 from "../components/Mainlayoutpart1";
+import NavBar from "../components/NavBar";
+import AsideRight from "../components/AsideRight";
 
 const Part1 = () => {
   return (
     <div>
-        <Mainlayoutpart1/>
+      <NavBar />
+      <Mainlayoutpart1 />
+      <AsideRight />
     </div>
-  )
-}
+  );
+};
 
-export default Part1
+export default Part1;
