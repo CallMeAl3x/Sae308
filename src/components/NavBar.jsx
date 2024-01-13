@@ -7,46 +7,62 @@ import Advices from "../icons/Advices.svg";
 import Simulation from "../icons/Simulation.svg";
 
 const NavBar = () => {
+  const [isHovered, setIsHovered] = useState(false);
 
-const [isHovered,setIsHovered] = useState(false);
+  const hoveranim = () => {
+    setIsHovered(!isHovered);
+  };
 
-
-const hoveranim = () =>{
-  setIsHovered(!isHovered);
-}
-return (
-  <div className={`ml-6 flex max-lg:h-auto h-screen max-lg:mb-2 mb-24 max-lg:hidden items-center fixed`}>
-    <nav className={`px-5 py-6 bg-almost-white rounded-xl shadow-nav nav white bg-cover z-10 relative flex flex-col `}>
-      <ul className="flex flex-col gap-20 text-2xl mt-4 pb-6 pt-6">
-        <Link to="/" className="lii" data-text="Accueil">
-          <li>
-            <img src={Home} alt="" className="h-[34px] w-[42px] lii" />
-          </li>
-        </Link>
-        <Link to="/Part1" className="lii" data-text="Partie 1">
-          <li>
-            <img src={Part1} alt="" className="h-[34px] w-[42px] lii" />
-          </li>
-        </Link>
-        <Link to="/Part2" className="lii" data-text="Partie 2">
-          <li>
-            <img src={Part2} alt="" className="h-[34px] w-[42px] lii" />
-          </li>
-        </Link>
-        <Link to="/Part3" className="lii" data-text="Simulation">
-          <li>
-            <img src={Simulation} alt="" className="h-[34px] w-[42px] lii" />
-          </li>
-        </Link>
-        <Link to="/Part2" className="lii" data-text="Conseils">
-          <li>
-            <img src={Advices} alt="" className="h-[34px] w-[42px] lii" />
-          </li>
-        </Link>
-      </ul>
-    </nav>
-  </div>
-);
+  return (
+    <div
+      className={`ml-6 flex max-lg:h-auto h-screen max-lg:mb-2 mb-24 max-lg:hidden items-center fixed`}>
+      <nav
+        className={`px-5 py-6 bg-almost-white rounded-xl shadow-nav nav white bg-cover z-10 relative flex flex-col `}>
+        <ul className="flex flex-col gap-20 text-2xl mt-4 pb-6 pt-6">
+          <Link to="/" className="flex items-center relative Link">
+            <li>
+              <img src={Home} alt="" className="h-[34px] w-[42px] " />
+            </li>
+            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+              <span>Home</span>
+            </div>
+          </Link>
+          <Link to="/Part1" className="flex items-center relative Link">
+            <li>
+              <img src={Part1} alt="" className="h-[34px] w-[42px] " />
+            </li>
+            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+              <span>Partie&nbsp;1</span>
+            </div>
+          </Link>
+          <Link to="/Part2" className="flex items-center relative Link">
+            <li>
+              <img src={Part2} alt="" className="h-[34px] w-[42px] " />
+            </li>
+            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+              <span>Partie&nbsp;2</span>
+            </div>
+          </Link>
+          <Link to="/Part3" className="flex items-center relative Link">
+            <li>
+              <img src={Simulation} alt="" className="h-[34px] w-[42px] " />
+            </li>
+            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+              <span>Partie&nbsp;3</span>
+            </div>
+          </Link>
+          <Link to="/Part2" className="flex items-center relative Link">
+            <li>
+              <img src={Advices} alt="" className="h-[34px] w-[42px] " />
+            </li>
+            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+              <span>Conseils</span>
+            </div>
+          </Link>
+        </ul>
+      </nav>
+    </div>
+  );
 };
 
 export default NavBar;

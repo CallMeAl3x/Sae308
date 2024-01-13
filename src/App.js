@@ -52,7 +52,7 @@ function App() {
       Réponse: "Faux",
       RéponseDéveloppé:
         "Faux, en effet les utilisateurs de sites de rencontre passent en moyenne 35 minutes par jour",
-      Image: "./img/quizz/question4.jpg",
+      Image: "./img/quizz/question4.png",
       Source:
         "Les utilisateurs de Tinder passent environ 35 minutes par jour sur l'appli (Statista) https://fr.statista.com",
       Video: false,
@@ -64,7 +64,7 @@ function App() {
       Réponse: "Vrai",
       RéponseDéveloppé:
         "Vrai, en effet les utilisateurs de l'application Tinder l'ouvrent en moyenne 11 fois par jour.",
-      Image: "./img/quizz/question5.jpg",
+      Image: "./img/quizz/question5.png",
       Source:
         "D'après Statista les utilisateurs de l'application Tinder l'ouvrent en moyenne 11 fois par jour https://earthweb.com/tinder-statistics/#17_Average_Tinder_User_Opens_the_App_11_Times_a_Day",
       Video: false,
@@ -76,7 +76,7 @@ function App() {
       Réponse: "Vrai",
       RéponseDéveloppé:
         "Environ la moitié des moins de 30 ans utilisent des applis de rencontre, attirés par leur praticité pour rencontrer de nouvelles personnes partageant des intérêts similaires. Cette tendance reflète comment la technologie façonne les relations sociales des jeunes générations.",
-      Image: "./img/quizz/question6.jpg",
+      Image: "./img/quizz/question6.png",
       Source:
         "Près de 50% chez les adultes de moins de 30 ans ont déjà utilisés une application de rencontre https://www.cbnews.fr/etudes/image-dating-30-americains-ont-deja-utilise-application-ou-site-rencontres-49370",
       Video: false,
