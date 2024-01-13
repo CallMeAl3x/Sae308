@@ -5,7 +5,7 @@ import AsideRight from "../components/AsideRight";
 
 export const Home = () => {
   return (
-    <div className="gradient bg-cover  items-center">
+    <div className="gradient bg-cover  items-center w-screen">
       <NavBar />
       <div className="flex items-center justify-center">
         <MatchingCard />

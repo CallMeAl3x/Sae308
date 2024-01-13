@@ -7,15 +7,16 @@ import Simulation from "../icons/Simulation.svg";
 
 const NavBar = () => {
   return (
-    <div className={`flex items-center z-40`}>
+    <div
+      className={`fixed top-6 left-0 flex items-center justify-center w-screen z-40`}>
       <nav
-        className={`p-2 bg-almost-white shadow-nav nav white bg-cover z-10 relative flex w-screen justify-center`}>
-        <ul className="flex gap-20 text-2xl mt-4 pb-6 pt-6">
+        className={`p-4 bg-almost-white shadow-nav nav white bg-cover z-10 relative flex justify-center rounded-xl`}>
+        <ul className="flex gap-20 text-3xl ml-3 mr-3">
           <Link to="/" className="flex items-center relative Link">
             <li>
               <img src={Home} alt="" className="h-[34px] w-[42px] " />
             </li>
-            <div className="absolute left-24 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
+            <div className="absolute top-12 -left-0 rotate-90 bg-white rounded-xl px-3 py-2 text-sm text-black polygon">
               <span>Home</span>
             </div>
           </Link>
