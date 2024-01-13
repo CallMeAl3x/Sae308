@@ -12,7 +12,7 @@
    
 }
 body{
-    overflow-y: hidden;
+    
 }
 
 .aflouter {
@@ -133,6 +133,12 @@ body{
     animation-delay: calc(0.4s * var(--j));
     right: 0px;
   }
+
+
+  
+
+
+
 
 
   
@@ -338,5 +344,98 @@ th{
 
 
     .gr2{
-      background: linear-gradient(#FB4948,#FC5B67);
+      background: radial-gradient(#c28197 0%, #ff0055 100%);
+    }
+
+
+
+    .pulse3 span{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: inherit;
+        border-radius: inherit;
+        opacity: .8;
+        animation: pulseAnimate 2s ease-out infinite;
+        animation-delay: calc(0.4s * var(--k));
+        z-index: 0;
+    }
+
+    .logoo{
+      animation: scaleeee 2s ease-in-out infinite;
+    }
+
+    @keyframes scaleeee{
+      0%{
+        transform: scale(1.0);
+      }
+      15%{
+        transform: scale(1.1);
+      }
+      50%{
+        transform: scale(1.6);
+      }
+      100%{
+        transform: scale(1);
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .ocean {
+      height: 2%;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #015871;
+      z-index: 10;
+    }
+    
+    .wave {
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+      position: absolute;
+      width: 6400px;
+      top: -100px;
+      left: 0;
+      height: 100px;
+      transform: translate(0, 0, 0);
+      animation: wave 7s ease infinite;
+      z-index: 1;
+    }
+    
+    .wave:nth-of-type(2) {
+      top: -10px;
+      animation: swell 4s ease infinite;
+      opacity: 1;
+      z-index:0;
+    }
+    
+    @keyframes wave {
+      0% { margin-left: 0; }
+      100% { margin-left: -1600px;}
+    }
+    @keyframes swell {
+      0%, 100% {
+        transform: translate(0, -30px);
+      }
+      50% {
+        transform: translate(0, 5px);
+      }
     }

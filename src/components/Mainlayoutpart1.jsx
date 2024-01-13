@@ -20,6 +20,7 @@ import svg from "../img/decision-maker-analyze-balance-compare-svgrepo-com.svg"
 import { FaRegHandPointRight } from "react-icons/fa";
 import { FaArrowsAltH } from "react-icons/fa";
 import { Modal } from './Modal';
+import LogoT from "../img/logoT.png"
 
 
 
@@ -69,15 +70,7 @@ function Mainlayoutpart1() {
               }
           });
 
-          const observer2 = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              tablee.current.classList.add("active");
-              console.log(tablee.current.classList); // Vérifiez la classe ajoutée
-            }else {
-                // Enlève la classe si l'élément n'est plus dans la vue
-                tablee.current.classList.remove("active");
-              }
-          });
+          
 
 
 
@@ -144,7 +137,7 @@ function Mainlayoutpart1() {
 
         
           observer.observe(svgg.current);
-          observer2.observe(tablee.current);
+         
           observer3.observe(cardDrag.current);
           observer4.observe(cardDrag2.current);
           observer5.observe(cardDrag3.current);
@@ -186,24 +179,47 @@ function Mainlayoutpart1() {
 
 
   return (
-    <div className='h-[140vh] gr2 '> <NavBar/>
+    <div className='h-[360vh] gr2 '>
             <div className='h-screen flex flex-col'>
     <NavBar />
     <div className='h-20 flex justify-center items-center aflouter rounded-br rounded-bl p-2'>
-        <h2 className='font-bold text-2xl'>
+        <h2 className='font-bold text-white text-2xl'>
             Tensions Masculines dans le Monde des Applis de Rencontres
         </h2>
     </div>
     <div className='flex-1 ml-[6vw] px-12 py-6'>
-        <div className='w-full h-[800px] bg-white rounded-lg flex-col flex overflow-y-auto overflow-x-hidden scrdiv shadow-2xl relative '>
+        <div className='w-full h-[800px rounded-lg flex-col flex overflow-y-auto overflow-x-hidden scrdiv relative '>
             
             <div className='w-full h-full '>
                 <div className='p-8 '>
-                    <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center'>
-                        <p className='text-black text-sm'>
+
+
+
+                <div className='w-full h-64  rounded-lg flex justify-center items-center '>
+
+                    
+
+                        <div className='pulse3 w-32 h-32 bg-[#00c4ff] rounded-full relative flex justify-center items-center'>
+                            <span style={{'--k': 0}}></span>
+                            <span style={{'--k': 1}}></span>
+                            
+                            
+                            <img src={LogoT} alt="" className='w-20 h-[72px] z-10 logoo' />
+
+                        </div>
+
+                    
+                        
+                </div>
+
+
+
+
+                    <div className='w-full max-h-16 rounded-lg flex justify-center items-center mt-12'>
+                        <p className='text-black text-2xl text-justify p-32'><span className='text-[60px]'>"</span>
                         Les dynamiques complexes du monde des applications de rencontres exposent les hommes à diverses tensions, 
                         les poussant à naviguer dans un paysage où les attentes sociales en matière de masculinité sont omniprésentes.
-                        </p>
+                        <span className='text-[60px]'>"</span></p>
                     </div>
 
 
@@ -233,13 +249,13 @@ function Mainlayoutpart1() {
 
                             </div>
                         </div>
-                        <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center'>
+                        <div className='w-full max-h-16  rounded-lg flex justify-center items-center'>
                             <p className='text-black text-sm'>
                             Les hommes peuvent alors rencontrer des problèmes d'ordre psycho-sociologique 
                             qui peuvent être caractérisés sous formes de :
                             </p>
                         </div>
-                        <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center mt-8'>
+                        <div className='w-full max-h-16 rounded-lg flex justify-center items-center mt-8'>
                             <span className='textgr font-bold text-3xl flex text-center justify-center items-center gap-2'>Pression
                                 <span className='text-sm '>
                              [ pour Correspondre à des Normes de Masculinité ]
@@ -250,7 +266,7 @@ function Mainlayoutpart1() {
                         <div className='w-full  h-96 flex justify-center items-center gap-[240px] mt-16'>
 
                             <div className='flex  cardDrag11' ref={cardDrag}> 
-                                    <div className='w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative '>
+                                    <div className='w-52 h-[350px]  shadow-2xl rounded-lg border-2 border-[#b35574] relative '>
                                         <img src={pp1after} alt="" className='absolute w-full h-full rounded' draggable={false}/>
                                     <motion.div
                                         className='w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden'
@@ -580,9 +596,18 @@ hommes, compliquant ainsi leur quête de relations amoureuses.
                         </div>
 
                         <div className='w-full h-16 flex justify-center items-center rounded-lg  mt-8 '>
-                        <button className='rounded-lg px-4 py-2 text-white bg-blue-500 shadow-lg' onClick={openModal}>
-                                                    Sources
-                                                </button>
+                            <div className='flex gap-8'>
+                            <button className='rounded-lg px-8 py-3 text-white bg-blue-500 shadow-lg opacity-80 hover:opacity-100 ease-out duration-200' onClick={openModal}>
+                                    Sources
+                            </button>
+                            <button
+                                    className='rounded-lg px-8 py-3 text-white bg-purple-400 shadow-lg opacity-80 hover:opacity-100 ease-out duration-200'
+                                    onClick={() => window.location.href = '/Part2'}
+                                    >
+                                    Partie 2
+                            </button>
+                            </div>
+
                         </div>
 
 
@@ -611,6 +636,7 @@ hommes, compliquant ainsi leur quête de relations amoureuses.
         
     </div>
 </div>
+
 
            <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal}/>
     </div>

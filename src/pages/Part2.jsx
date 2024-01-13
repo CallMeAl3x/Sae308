@@ -5,7 +5,7 @@ const Part2 = () => {
   return (
     <div>
         <Aside/>
-        Partie 2
+        
     </div>
   )
 }

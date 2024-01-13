@@ -6,7 +6,7 @@ import AsideRight from "./AsideRight";
 const Mainlayout = () => {
   return (
     <div>
-      <div className="gradient bg-cover flex items-center flex-row max-lg:flex-col">
+      <div className="gradient bg-cover  items-center ">
         <NavBar />
         <Main />
         <AsideRight />
