@@ -8,10 +8,10 @@ import Simulation from "../icons/Simulation.svg";
 const NavBar = () => {
   return (
     <div
-      className={`ml-6 flex max-lg:h-auto h-screen max-lg:mb-2 mb-24 max-lg:hidden items-center fixed`}>
+      className={`ml-6 flex max-lg:h-auto h-screen max-lg:mb-2 mb-24 max-lg:hidden items-center z-40`}>
       <nav
         className={`px-5 py-6 bg-almost-white rounded-xl shadow-nav nav white bg-cover z-10 relative flex flex-col `}>
-        <ul className="flex flex-col gap-20 text-2xl mt-4 pb-6 pt-6">
+        <ul className="flex  gap-20 text-2xl mt-4 pb-6 pt-6">
           <Link to="/" className="flex items-center relative Link">
             <li>
               <img src={Home} alt="" className="h-[34px] w-[42px] " />

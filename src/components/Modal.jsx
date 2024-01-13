@@ -2,6 +2,7 @@ import * as React from "react"
 import { Dialog } from "@headlessui/react"
 import { motion, AnimatePresence } from "framer-motion"
 import { BiSolidVirus } from "react-icons/bi";
+import { FaInfo } from "react-icons/fa";
 
 
 
@@ -62,24 +63,24 @@ export const Modal = ({isOpen, setIsOpen,openModal}) => {
 							>
 								<div className={` px-4 pt-5 pb-4 sm:p-6 sm:pb-4 bg-white `}>
 									<div className="sm:flex sm:items-start">
-										<div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full border-2 border-purple-100 sm:mx-0 sm:h-10 sm:w-10">
-										<BiSolidVirus size={30} color="rgb(168 85 247)"/>
+										<div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full border-2 border-red-200 sm:mx-0 sm:h-10 sm:w-10">
+										<FaInfo size={25} color="#ff0055"/>
 
 										</div>
 										<div className={`mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left`}> 
 											<Dialog.Title
 												as="h3"
-												className={`text-lg leading-6 font-medium  text-gray-900`}
+												className={`text-lg leading-6 font-bold  text-[#000]`}
 												id="modal-headline"
 											>
-												Datavisualisation COVID-19
+												Sources
 											</Dialog.Title>
 											<div className="mt-2">
 												<Dialog.Description
 													as="p"
-													className={`text-sm text-gray-900`}
+													className={`text-sm text-blue-500`}
 												>
-													Ce projet a pour but de visualiser des données concernant le COVID-19 qui pourront permettre de connaitre les dernières actualités concernant ce dernier.
+													<a href="https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-020-0373-1?fd=5317710456904024%7C5456507360795513&lp=/dating-apps-mental-health#Sec20">Comportements des utilisateurs sur les applications de rencontres</a>
 												</Dialog.Description>
 											</div>
 										</div>
@@ -89,7 +90,7 @@ export const Modal = ({isOpen, setIsOpen,openModal}) => {
 									<button
 										type="button"
 										tabIndex={0}
-										className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-400 text-base font-medium text-white hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-700 sm:ml-3 sm:w-auto sm:text-sm"
+										className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#ff0055e8] text-base font-medium text-white hover:bg-[#ff0055] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff0055] sm:ml-3 sm:w-auto sm:text-sm"
 										onClick={() => setIsOpen(false)}
 									>
 										Continuer

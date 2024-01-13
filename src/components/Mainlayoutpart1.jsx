@@ -19,7 +19,10 @@ import { FaRegHandPointLeft } from "react-icons/fa";
 import svg from "../img/decision-maker-analyze-balance-compare-svgrepo-com.svg";
 import { FaRegHandPointRight } from "react-icons/fa";
 import { FaArrowsAltH } from "react-icons/fa";
-import { Modal } from "./Modal";
+import { Modal } from './Modal';
+
+
+
 
 function Mainlayoutpart1() {
   const [showTitlteCard1, setShowTitleCard1] = useState(false);
@@ -60,15 +63,17 @@ function Mainlayoutpart1() {
       }
     });
 
-    const observer2 = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        tablee.current.classList.add("active");
-        console.log(tablee.current.classList); // Vérifiez la classe ajoutée
-      } else {
-        // Enlève la classe si l'élément n'est plus dans la vue
-        tablee.current.classList.remove("active");
-      }
-    });
+          const observer2 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              tablee.current.classList.add("active");
+              console.log(tablee.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                tablee.current.classList.remove("active");
+              }
+          });
+
+
 
     const observer3 = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -110,24 +115,32 @@ function Mainlayoutpart1() {
       }
     });
 
-    const observer7 = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        citafre.current.classList.add("active");
-        console.log(citafre.current.classList); // Vérifiez la classe ajoutée
-      } else {
-        // Enlève la classe si l'élément n'est plus dans la vue
-        citafre.current.classList.remove("active");
-      }
-    });
+          const observer7 = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                citafre.current.classList.add("active");
+              console.log(citafre.current.classList); // Vérifiez la classe ajoutée
+            }else {
+                // Enlève la classe si l'élément n'est plus dans la vue
+                citafre.current.classList.remove("active");
+              }
+          });
 
-    observer.observe(svgg.current);
-    observer2.observe(tablee.current);
-    observer3.observe(cardDrag.current);
-    observer4.observe(cardDrag2.current);
-    observer5.observe(cardDrag3.current);
-    observer6.observe(suiteTexte.current);
-    observer7.observe(citafre.current);
-  }, []);
+
+
+    
+          
+          
+
+
+        
+          observer.observe(svgg.current);
+          observer2.observe(tablee.current);
+          observer3.observe(cardDrag.current);
+          observer4.observe(cardDrag2.current);
+          observer5.observe(cardDrag3.current);
+          observer6.observe(suiteTexte.current);
+          observer7.observe(citafre.current);
+        }, []);
 
   const showTitle = () => {
     setShowTitleCard1(true);
@@ -148,28 +161,25 @@ function Mainlayoutpart1() {
   };
 
   return (
-    <div className="h-[140vh] gr2 ">
-      {" "}
-      <NavBar />
-      <div className="h-screen flex flex-col">
-        <NavBar />
-        <div className="h-20 flex justify-center items-center aflouter rounded-br rounded-bl p-2">
-          <h2 className="font-bold text-lg lg:text-2xl">
+    <div className='h-[140vh] gr2 '> <NavBar/>
+            <div className='h-screen flex flex-col'>
+    <NavBar />
+    <div className='h-20 flex justify-center items-center aflouter rounded-br rounded-bl p-2'>
+        <h2 className='font-bold text-2xl'>
             Tensions Masculines dans le Monde des Applis de Rencontres
-          </h2>
-        </div>
-        <div className="flex-1 lg:ml-[6vw] lg:px-12 py-6 px-6">
-          <div className="w-full h-[800px] bg-white rounded-lg flex-col flex overflow-y-auto overflow-x-hidden scrdiv shadow-2xl relative ">
-            <div className="w-full h-full ">
-              <div className="p-8 ">
-                <div className="w-full max-h-16 bg-white rounded-lg flex justify-center items-center">
-                  <p className="text-black text-sm">
-                    Les dynamiques complexes du monde des applications de
-                    rencontres exposent les hommes à diverses tensions, les
-                    poussant à naviguer dans un paysage où les attentes sociales
-                    en matière de masculinité sont omniprésentes.
-                  </p>
-                </div>
+        </h2>
+    </div>
+    <div className='flex-1 ml-[6vw] px-12 py-6'>
+        <div className='w-full h-[800px] bg-white rounded-lg flex-col flex overflow-y-auto overflow-x-hidden scrdiv shadow-2xl relative '>
+            
+            <div className='w-full h-full '>
+                <div className='p-8 '>
+                    <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center'>
+                        <p className='text-black text-sm'>
+                        Les dynamiques complexes du monde des applications de rencontres exposent les hommes à diverses tensions, 
+                        les poussant à naviguer dans un paysage où les attentes sociales en matière de masculinité sont omniprésentes.
+                        </p>
+                    </div>
 
                 <div className="flex justify-center items-center w-full h-32 mt-8 ">
                   <div className="flex gap-12">
@@ -208,108 +218,60 @@ function Mainlayoutpart1() {
                       />
                     </span>
 
-                    <span style={{ "--i": 4 }} className="floatt">
-                      <img
-                        src={Hinge}
-                        alt=""
-                        className="w-20 h-20 rounded-2xl shadow-lg"
-                      />
-                    </span>
-                  </div>
-                </div>
-                <div className="w-full max-h-16 bg-white rounded-lg flex justify-center items-center">
-                  <p className="text-black text-sm">
-                    Les hommes peuvent alors rencontrer des problèmes d'ordre
-                    psycho-sociologique qui peuvent être caractérisés sous
-                    formes de :
-                  </p>
-                </div>
-                <div className="w-full max-h-16 bg-white rounded-lg flex justify-center items-center mt-8">
-                  <span className="textgr font-bold text-3xl flex text-center justify-center items-center gap-2">
-                    Pression
-                    <span className="text-sm ">
-                      [ pour Correspondre à des Normes de Masculinité ]
-                    </span>
-                  </span>
-                </div>
+                                <span style={{'--i': 4}} className='floatt'>
+                                    <img src={Hinge} alt="" className='w-20 h-20 rounded-2xl shadow-lg' />
+                                </span>
 
-                <div className="w-full  lg:h-96 flex justify-center items-center gap-4 lg:gap-[240px] mt-16 max-lg:flex-col">
-                  <div className="flex  cardDrag11" ref={cardDrag}>
-                    <div className="w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative ">
-                      <img
-                        src={pp1after}
-                        alt=""
-                        className="absolute w-full h-full rounded"
-                        draggable={false}
-                      />
-                      <motion.div
-                        className="w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden"
-                        drag="x"
-                        dragConstraints={{
-                          left: -200,
-                          right: 150,
-                          top: -150,
-                          bottom: 150,
-                        }}
-                        onDragStart={showTitle}
-                        onDragEnd={handleOpacity}>
-                        <img
-                          src={pp1before}
-                          alt=""
-                          className="absolute w-full h-full img11 cursor-pointer"
-                          draggable={false}
-                        />
-                        <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
-                          <span className="flex justify-around items-center">
-                            <span className="text-xl">Drag</span>
-                            <span className="relative">
-                              <div className="pulse">
-                                <div className="w-4 h-4 bg-[#ff0055] absolute opacity-40 rounded-full right-5 top-[2px]">
-                                  <span style={{ "--j": 0 }}></span>
-                                  <span style={{ "--j": 1 }}></span>
-                                </div>
-                              </div>
-                              <FaRegHandPointLeft size={25} className="" />
+                            </div>
+                        </div>
+                        <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center'>
+                            <p className='text-black text-sm'>
+                            Les hommes peuvent alors rencontrer des problèmes d'ordre psycho-sociologique 
+                            qui peuvent être caractérisés sous formes de :
+                            </p>
+                        </div>
+                        <div className='w-full max-h-16 bg-white rounded-lg flex justify-center items-center mt-8'>
+                            <span className='textgr font-bold text-3xl flex text-center justify-center items-center gap-2'>Pression
+                                <span className='text-sm '>
+                             [ pour Correspondre à des Normes de Masculinité ]
+                                </span>
                             </span>
-                          </span>
-                        </button>
-                      </motion.div>
-                    </div>
-                  </div>
+                        </div>
+                        
+                        <div className='w-full  h-96 flex justify-center items-center gap-[240px] mt-16'>
 
-                  <div className="flex cardDrag21" ref={cardDrag2}>
-                    <div className="w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative ">
-                      <img
-                        src={pp2after}
-                        alt=""
-                        className="absolute w-full h-full rounded"
-                        draggable={false}
-                      />
-                      <motion.div
-                        className="w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden"
-                        drag="x"
-                        dragConstraints={{
-                          left: -200,
-                          right: 150,
-                          top: -150,
-                          bottom: 150,
-                        }}
-                        onDragStart={showTitle2}
-                        onDragEnd={handleOpacity2}>
-                        <img
-                          src={pp2before}
-                          alt=""
-                          className="absolute w-full h-full img22 cursor-pointer"
-                          draggable={false}
-                        />
-                        <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
-                          <span className="flex justify-around items-center">
-                            <span className="text-xl">Drag</span>
-                            <span className="relative">
-                              <div className="pulse">
-                                <div className="w-4 h-4 bg-[#ff0055] absolute opacity-40 rounded-full right-5 top-[2px]">
-                                  <span style={{ "--j": 0 }}></span>
-                                  <span style={{ "--j": 1 }}></span>
+                            <div className='flex  cardDrag11' ref={cardDrag}> 
+                                    <div className='w-52 h-[350px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative '>
+                                        <img src={pp1after} alt="" className='absolute w-full h-full rounded' draggable={false}/>
+                                    <motion.div
+                                        className='w-52 h-[350px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden'
+                                        drag ="x"
+                                        dragConstraints={{ left: -200, right: 150, top: -150, bottom: 150 }}
+                                        onDragStart={showTitle}
+                                        onDragEnd={handleOpacity}
+                                        >
+
+                                        <img src={pp1before} alt="" className='absolute w-full h-full img11 cursor-pointer' draggable={false}/>
+                                        <button className=' bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 '>
+                                            <span className='flex justify-around items-center'>
+                                                <span className='text-xl'>
+                                                        Drag
+                                                </span>
+                                                <span className='relative'>
+                                                    <div className='pulse'>
+                                                    <div className='w-4 h-4 bg-[#ff0055] absolute opacity-40 rounded-full right-5 top-[2px]'>
+                                                    <span style={{'--j': 0}}></span>
+                                                    <span style={{'--j': 1}}></span>
+                                                    </div>
+                                                    </div>
+                                                    <FaRegHandPointLeft size={25} className=''/>
+
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </motion.div>
+                                    </div>
+                                    
                                 </div>
                               </div>
                               <FaRegHandPointLeft size={25} className="" />
@@ -620,20 +582,27 @@ function Mainlayoutpart1() {
                     </div>
                   </div>
 
-                  <div className="w-full h-16 flex justify-center items-center rounded-lg  mt-8 ">
-                    <button
-                      className="rounded-lg px-4 py-2 text-white bg-blue-500 shadow-lg"
-                      onClick={openModal}>
-                      Sources
-                    </button>
-                  </div>
+                        <div className='w-full h-16 flex justify-center items-center rounded-lg  mt-8 '>
+                        <button className='rounded-lg px-4 py-2 text-white bg-blue-500 shadow-lg' onClick={openModal}>
+                                                    Sources
+                                                </button>
+                        </div>
+
+
+
+                        
+
+
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} />
+        
+    </div>
+</div>
+
+           <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal}/>
     </div>
   );
 }
