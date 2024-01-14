@@ -8,7 +8,6 @@ const Part1 = () => {
     <div>
       <NavBar />
       <Mainlayoutpart1 />
-      <AsideRight />
     </div>
   );
 };

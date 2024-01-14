@@ -29,6 +29,8 @@ body {
   color: #f3f2f3;
   font-family: Jost;
   font-weight: 600;
+  background-image: url("../src/img/background.png");
+  background-size: cover;
 }
 
 @keyframes popup {
@@ -66,18 +68,54 @@ body {
 .polygon::before {
   content: "";
   position: absolute;
-  top: 25%;
-  left: -8px;
-  width: 12px;
+  top: -25%;
+  left: 30%;
+  width: 24px;
   height: 50%;
-  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: white;
 }
+
+.hideit {
+  opacity: 0;
+  animation: fadeOut 0.25s forwards; /* Utilisez 'forwards' pour maintenir le style final après l'animation */
+}
+
+.makeitvisible {
+  opacity: 1;
+  animation: fadeIn 0.25s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 
 .polygon {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.25s linear;
+}
+
+.rectangle {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 92%, 90% 92%, 90% 0);
+  background-color: white;
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
 }
 
 .Link:hover .polygon {
