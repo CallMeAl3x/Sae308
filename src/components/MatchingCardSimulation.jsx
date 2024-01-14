@@ -7,6 +7,17 @@ import { SimContext } from "../pages/Part3";
 import False from "../icons/False.svg";
 import True from "../icons/True.svg";
 function MatchingCardSimulation() {
+
+
+    const [grayscale, setGrayScale] = useState(false);
+
+    const activateGrayScale1 = () => {
+    setGrayScale(true);
+    };
+
+    const activateGrayScale2 = () => {
+        setGrayScale(false);
+        };
     const { db2, currentCardIndex2, setCurrentCardIndex2 } = useContext(SimContext);
 
     const [currentIndex, setCurrentIndex] = useState(db2.length - 1);
@@ -67,9 +78,7 @@ function MatchingCardSimulation() {
     };
   
     const outOfFrame = (Question, index, swipeDirection) => {
-      console.log(
-        `${Question} (${index}) left the screen with swipe direction: ${swipeDirection}`
-      );
+    
       if (canSwipe && currentIndexRef.current >= index) {
         childRefs[index].current.restoreCard();
       }
@@ -114,12 +123,14 @@ function MatchingCardSimulation() {
                   <h3 className="p-2 text-almost-black">{Question.Intitulé}</h3>
                 </div>
                 {Question.Imagerep && (
-                  <img
-                    src={Question.Image}
-                    className="absolute top-0 left-0 z-1 object-cover max-lg:h-full max-lg:w-full h-full"
-                    draggable="false"
-                    alt=""
-                  />
+                   <img
+                   src={Question.Image}
+                   className={`absolute cursor-pointer top-0 left-0 z-1 object-cover max-lg:h-full max-lg:w-full h-full grayscalee ${grayscale ? "active" : ""}`}
+                   draggable="false"
+                   alt=""
+                   onMouseEnter={activateGrayScale1}
+                   onMouseLeave={activateGrayScale2}
+                 />
                 )}
                 {!Question.Imagerep && (
                   <video

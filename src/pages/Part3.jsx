@@ -1,153 +1,129 @@
-import React, { createContext, useState } from 'react'
-import Logo from '../components/Logo'
-import NavBar from '../components/NavBar'
-import Simulation from '../components/Simulation'
-
-
-
+import React, { createContext, useState } from 'react';
+import Logo from '../components/Logo';
+import NavBar from '../components/NavBar';
+import Simulation from '../components/Simulation';
 
 export const SimContext = createContext();
 
-
-
 function Part3() {
 
+
+
+  
+  function nombreAleatoireEntreUnEtVingtSix() {
+    return Math.floor(Math.random() * (10 - 3 + 1)) + 3;
+  }
+
+  let nombreAleatoire = nombreAleatoireEntreUnEtVingtSix();
 
   const hobbiesList = [
     "Patinage", "Dessin", "Photographie", "Cuisine", "Voyages", "Musique", "Lecture", "Sport",
     "Jardinage", "Danse", "Théâtre", "Artisanat", "Natation", "Informatique", "Écriture", "Jeux vidéo",
     "Mode", "Shopping", "Randonnée", "Yoga"
   ];
-  
 
-// Fonction pour obtenir un hobby au hasard
-function getRandomHobby() {
+  function getRandomHobby() {
     const randomIndex = Math.floor(Math.random() * hobbiesList.length);
     return hobbiesList[randomIndex];
-}
+  }
 
-// Créer un deuxième tableau avec un hobby au hasard
-const secondTableau = [getRandomHobby()];
+  const secondTableau = [getRandomHobby()];
 
+  const beautyMapping = {
+    "woman3.jpg": "belle",
+    "woman4.jpg": "belle",
+    "woman5.jpg": "belle",
+    "woman6.jpg": "belle",
+    "woman7.jpg": "belle",
+    "woman8.jpg": "belle",
+    "woman9.jpg": "moche",
+    "woman10.jpg": "belle",
+    "woman11.jpg": "belle",
+    "woman12.jpg": "moche",
+    "woman13.jpg": "belle",
+    "woman14.jpg": "belle",
+    "woman15.jpg": "moche",
+    "woman16.jpg": "moche",
+    "woman17.jpg": "belle",
+    "woman18.jpg": "belle",
+    "woman19.jpg": "moche",
+    "woman20.jpg": "moche",
+    "woman21.jpg": "moche",
+    "woman22.jpg": "moche",
+    "woman23.jpg": "belle",
+    "woman24.jpg": "moche",
+    "woman25.jpg": "moche",
+    "woman26.jpg": "moche",
+    "woman27.jpg": "belle",
+  };
 
-const db2 = [
+  const randomImageName = () => `woman${nombreAleatoire}.jpg`;
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-      "Hobbys : Jardinage, cuisine",
-    Réponse: "Vrai",
-    Image: "./img/Part3img/woman8.jpg",
-    
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-    "Hobbys : Randonnée, peinture",
-    Réponse: "Vrai",
-    Image: "./img/Part3img/woman7.jpg",
-    
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-      "Hobbys : Yoga, lecture",
-    Réponse: "Faux",
-    Image: "./img/Part3img/woman6.jpg",
-   
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-    "Hobbys : Cinéma, photographie",
-    Réponse: "Faux",
-    Image: "./img/Part3img/woman5.jpg",
-    
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-      "Hobbys : Danse, sculpture",
-    Réponse: "Vrai",
-    Image: "./img/Part3img/woman4.jpg",
-    
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-      "Hobbys : Pêche, écriture",
-    Réponse: "Vrai",
-    Image: "./img/Part3img/woman3.jpg",
-    
-    Video: false,
-    Imagerep: true,
-  },
-  {
-    Prenom: "Julie, ",
-    Age: "26",
-    Intitulé:
-      "Hobbys : Ski, musique",
-    Réponse: "Vrai",
-    Image: "./videos/presentation.mp4",
-    
-    Video: true,
-    Imagerep: false,
-  },
-
-
-
-
-  
-];
-
-
+  const db2 = [
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Jardinage, cuisine",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Randonnée, peinture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Yoga, lecture",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Cinéma, photographie",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Danse, sculpture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie",
+      Age: "26",
+      Intitulé: "Hobbys : Pêche, écriture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé: "Hobbys : Ski, musique",
+      Réponse: "Vrai",
+      Image: "./videos/presentation.mp4",
+      Video: true,
+      Imagerep: false,
+    },
+  ];
 
   const prenomsList = [
     "Sophie", "Emma", "Charlotte", "Alice", "Léa", "Manon", "Camille", "Sarah", "Lucie", "Zoé",
@@ -157,45 +133,36 @@ const db2 = [
     "Louna", "Eloïse", "Romy", "Lily", "Nina", "Victoria", "Mélissa", "Laura", "Sofia"
   ];
 
-
-
-  
   const getRandomPrenom = () => prenomsList[Math.floor(Math.random() * prenomsList.length)];
-  const getRandomAge = () => Math.floor(Math.random() * 16) + 20; 
-  
+  const getRandomAge = () => Math.floor(Math.random() * 16) + 20;
 
-  
-  const db2Randomized = db2.map(entry => ({
-    ...entry,
-    Prenom: getRandomPrenom(),
-    Age: getRandomAge(),
-    
-  }));
-  
+  const db2Randomized = db2.map(entry => {
+    const imageName = entry.Video ? randomImageName() : entry.Image.split('/').pop();
+    const beautyValue = beautyMapping[imageName] || "belle";
 
+    console.log(`BeautyMapping for image ${imageName}: ${beautyValue}`);
 
-  const [currentCardIndex2, setCurrentCardIndex2] = useState(0); 
+    return {
+      ...entry,
+      Prenom: getRandomPrenom(),
+      Age: getRandomAge(),
+      Beaute: beautyValue,
+    };
+  });
 
-  
-
-
-
-
-
+  const [currentCardIndex2, setCurrentCardIndex2] = useState(0);
 
   return (
     <div>
-        <SimContext.Provider value={{ db2: db2Randomized, currentCardIndex2, setCurrentCardIndex2 }}>
+      <SimContext.Provider value={{ db2: db2Randomized, currentCardIndex2, setCurrentCardIndex2 }}>
         <div className='w-full h-40'>
-            <NavBar/>
-            <Logo/>
+          <NavBar />
+          <Logo />
         </div>
-        <Simulation/> 
-
-        </SimContext.Provider>
-        
+        <Simulation />
+      </SimContext.Provider>
     </div>
-  )
+  );
 }
 
-export default Part3
+export default Part3;
