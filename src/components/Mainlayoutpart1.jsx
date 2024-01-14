@@ -277,7 +277,7 @@ function Mainlayoutpart1() {
 
         <div className="flex items-center justify-center gap-12 mt-12">
           <button
-            to="/Partie2"
+            to="/Part2"
             onClick={openModal}
             className="flex items-center rounded-xl bg-slate-600 px-5 py-2">
             <p className="text-black">Sources</p>
