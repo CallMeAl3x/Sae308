@@ -102,7 +102,7 @@ function MatchingCardSimulation() {
             }>
             <div
               style={{ backgroundImage: "url(" + Question.url + ")" }}
-              className="w-[80vw] max-w-[475px] h-[480px] rounded-2xl relative overflow-hidden"
+              className="w-[80vw] max-w-[500px] h-[500px] rounded-2xl relative overflow-hidden"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
                 <div className="flex flex-col justify-between p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-lg w-9/12 max-lg:w-full mr-auto ml-auto">
@@ -133,7 +133,7 @@ function MatchingCardSimulation() {
           </TinderCard>
         ))}
       </div>
-      <div className="mt-4 flex flex-wrap gap-10">
+      <div className="mt-8 flex flex-wrap gap-16">
         <button
           style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
           className="bg-white w-20 h-20 rounded-full shadow-xl"

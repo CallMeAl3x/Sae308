@@ -31,13 +31,45 @@ const secondTableau = [getRandomHobby()];
 
 
 const db2 = [
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
   {
     Prenom: "Julie, ",
     Age: "26",
     Intitulé:
       "Hobbys : Jardinage, cuisine",
     Réponse: "Vrai",
-    Image: "./img/Part3img/woman3.jpg",
+    Image: "./img/Part3img/woman8.jpg",
     
     Video: false,
     Imagerep: true,
@@ -48,7 +80,7 @@ const db2 = [
     Intitulé:
     "Hobbys : Randonnée, peinture",
     Réponse: "Vrai",
-    Image: "./img/Part3img/woman6.jpg",
+    Image: "./img/Part3img/woman7.jpg",
     
     Video: false,
     Imagerep: true,
@@ -59,7 +91,7 @@ const db2 = [
     Intitulé:
       "Hobbys : Yoga, lecture",
     Réponse: "Faux",
-    Image: "./img/Part3img/woman3.jpg",
+    Image: "./img/Part3img/woman6.jpg",
    
     Video: false,
     Imagerep: true,
@@ -108,6 +140,11 @@ const db2 = [
     Video: true,
     Imagerep: false,
   },
+
+
+
+
+  
 ];
 
 
