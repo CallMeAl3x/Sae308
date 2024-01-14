@@ -9,7 +9,7 @@ function Part3() {
 
 
 
-  
+
   function nombreAleatoireEntreUnEtVingtSix() {
     return Math.floor(Math.random() * (10 - 3 + 1)) + 3;
   }
@@ -17,9 +17,9 @@ function Part3() {
   let nombreAleatoire = nombreAleatoireEntreUnEtVingtSix();
 
   const hobbiesList = [
-    "Patinage", "Dessin", "Photographie", "Cuisine", "Voyages", "Musique", "Lecture", "Sport",
-    "Jardinage", "Danse", "Théâtre", "Artisanat", "Natation", "Informatique", "Écriture", "Jeux vidéo",
-    "Mode", "Shopping", "Randonnée", "Yoga"
+    "Patinage ⛸️", "Dessin ✏️", "Photographie 📸", "Cuisine 🍽️", "Voyages🧳", "Musique 🎸", "Lecture 📖", "Sport ⚽",
+    "Jardinage 🪴", "Danse 💃", "Théâtre 🎬", "Artisanat 🎆", "Natation 🥽", "Informatique 💻", "Écriture 📝", "Jeux vidéo 🖥️",
+    "Mode 🧥", "Shopping 🧣", "Randonnée 🥾", "Yoga 🧘‍♀️, peinture 🎨"
   ];
 
   function getRandomHobby() {
@@ -28,6 +28,7 @@ function Part3() {
   }
 
   const secondTableau = [getRandomHobby()];
+  
 
   const beautyMapping = {
     "woman3.jpg": "belle",
@@ -63,7 +64,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Jardinage, cuisine",
+      Intitulé: "Hobbys : Jardinage 🪴 , cuisine 🍽️",
       Réponse: "Vrai",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -72,7 +73,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Randonnée, peinture",
+      Intitulé: "Hobbys : Randonnée 🥾, peinture 🎨",
       Réponse: "Vrai",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -81,7 +82,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Yoga, lecture",
+      Intitulé: "Hobbys : Yoga 🧘‍♀️, lecture 📖",
       Réponse: "Faux",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -90,7 +91,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Cinéma, photographie",
+      Intitulé: "Hobbys : Cinéma 🎬, photographie 📸",
       Réponse: "Faux",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -99,7 +100,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Danse, sculpture",
+      Intitulé: "Hobbys : Danse 💃, sculpture 🗿",
       Réponse: "Vrai",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -108,7 +109,7 @@ function Part3() {
     {
       Prenom: "Julie",
       Age: "26",
-      Intitulé: "Hobbys : Pêche, écriture",
+      Intitulé: "Hobbys : Pêche 🐟, écriture 📝",
       Réponse: "Vrai",
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
@@ -117,7 +118,7 @@ function Part3() {
     {
       Prenom: "Julie, ",
       Age: "26",
-      Intitulé: "Hobbys : Ski, musique",
+      Intitulé: "Hobbys : Ski ⛷️, musique 🎸",
       Réponse: "Vrai",
       Image: "./videos/presentation.mp4",
       Video: true,

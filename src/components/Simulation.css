@@ -12,7 +12,7 @@ body{
 
 
   .grayscalee {
-    filter: grayscale(100%);
+    filter: grayscale(40%);
     transition: filter 0.4s ease;
   }
   
@@ -20,4 +20,6 @@ body{
     filter: grayscale(0%);
   }
   
-  
+  .barreval1{
+    
+  }
