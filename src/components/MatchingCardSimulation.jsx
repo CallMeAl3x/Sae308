@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { SimContext } from "../pages/Part3";
 import False from "../icons/False.svg";
 import True from "../icons/True.svg";
-function MatchingCardSimulation() {
+function MatchingCardSimulation({baisserVal1,baisserVal2,baisserVal3,baisserVal4}) {
 
 
     const [grayscale, setGrayScale] = useState(false);
@@ -75,6 +75,10 @@ function MatchingCardSimulation() {
           theme: "light",
         });
       }
+        baisserVal1();
+        baisserVal2();
+        baisserVal3();
+        baisserVal4();
     };
   
     const outOfFrame = (Question, index, swipeDirection) => {
@@ -174,6 +178,7 @@ function MatchingCardSimulation() {
           Swipe la carte ou cliques sur les bouttons pour choisir !
         </h2>
       )}
+     
     
     </div>
   )

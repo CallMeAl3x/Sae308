@@ -14,5 +14,21 @@
   }
   
   .barreval1{
-    
+    background: linear-gradient(to right, #0083b0,#00b4db ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .barreval2{
+    background: linear-gradient(to right, #cb2d3e, #f15247); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .barreval3{
+    background: linear-gradient(to right, #11998e, #38ef7d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .barreval4{
+    background: linear-gradient(to right, #642b73, #c6426e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
