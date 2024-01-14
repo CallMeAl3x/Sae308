@@ -54,7 +54,7 @@ function Simulation() {
                                 <div className=''>
                                     <span>Confiance en soi</span>
                                     <div className='relative w-64 h-4 bg-white z-10 rounded'>
-                                        <div style={{ width: `${valbarre2}px` }} className='absolute h-full bg-red-500 barreval2 ease duration-300 rounded'></div>
+                                        <div style={{ width: `${valbarre2}px` }} className='absolute h-full  barreval2 ease duration-300 rounded'></div>
                                     </div>
                                 </div>
                             </div>
@@ -62,13 +62,13 @@ function Simulation() {
                                 <div className=''>
                                     <span>Situation financière</span>
                                     <div className='relative w-64 h-4 bg-white z-10 rounded'>
-                                        <div style={{ width: `${valbarre3}px` }} className='absolute h-full bg-red-500 barreval3 ease duration-300 rounded'></div>
+                                        <div style={{ width: `${valbarre3}px` }} className='absolute h-full  barreval3 ease duration-300 rounded'></div>
                                     </div>
                                 </div>
                                 <div className=''>
                                     <span>Bonheur</span>
                                     <div className='relative w-64 h-4 bg-white z-10 rounded'>
-                                        <div style={{ width: `${valbarre4}px` }} className='absolute h-full bg-red-500 barreval4 ease duration-300 rounded'></div>
+                                        <div style={{ width: `${valbarre4}px` }} className='absolute h-full barreval4 ease duration-300 rounded'></div>
                                     </div>
                                 </div>
                             </div>
