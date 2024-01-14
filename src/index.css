@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-   font-family: Jost;
+  font-family: Jost;
   src: url("../src/fonts/Jost/Jost-VariableFont_wght.ttf");
   font-weight: Medium;
-  font-style: normal; 
+  font-style: normal;
 }
 
 
@@ -36,21 +36,27 @@ body {
   0% {
     transform: scale(1, 1);
   }
+
   10% {
     transform: scale(1.1, 1.1);
   }
+
   30% {
     transform: scale(0.9, 0.9);
   }
+
   50% {
     transform: scale(1, 1);
   }
+
   57% {
     transform: scale(1, 1);
   }
+
   64% {
     transform: scale(1, 1);
   }
+
   100% {
     transform: scale(1, 1);
   }
@@ -77,7 +83,8 @@ body {
 
 .hideit {
   opacity: 0;
-  animation: fadeOut 0.25s forwards; /* Utilisez 'forwards' pour maintenir le style final après l'animation */
+  animation: fadeOut 0.25s forwards;
+  /* Utilisez 'forwards' pour maintenir le style final après l'animation */
 }
 
 .makeitvisible {
@@ -89,6 +96,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -98,6 +106,7 @@ body {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -113,11 +122,26 @@ body {
 .rectangle {
   clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 92%, 90% 92%, 90% 0);
   background-color: white;
-  width: 200px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
+  width: 200px;
+  /* Adjust width as needed */
+  height: 200px;
+  /* Adjust height as needed */
 }
 
 .Link:hover .polygon {
   visibility: visible;
   opacity: 1;
+}
+
+.likeimage,
+.tinderangry,
+.badooangry,
+.warning-top,
+.warning-bottom,
+.entonoir,
+.certificat,
+.fruitzeloscore,
+.tindereloscore,
+.fruitz {
+  position: absolute;
 }

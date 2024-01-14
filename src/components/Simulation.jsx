@@ -5,6 +5,7 @@ import SimulationAsideRight from './SimulationAsideRight';
 import imgbonhomme1 from "../img/bonhommepret.png";
 import woman1 from "../img/woman1.jpg"
 import { SimContext } from '../pages/Part3';
+import Balanceargent from '../img/Balanceargent.gif';
 
 
 function Simulation() {
@@ -52,7 +53,10 @@ function Simulation() {
 
                     <button className='border-2 border-red-500' onClick={baisserVal1}>
                                 click me
-                    </button>
+                          </button>
+                          <iframe className='w-fit h-fit' id="SVGmator__yemha1705248393865" frameBorder="0" src="https://www.svgmator.com/embed/xIuQgwkSkTiAyyD?onload=true&onclick=false&onhover=true">
+                              
+                          </iframe>
 
 
                         

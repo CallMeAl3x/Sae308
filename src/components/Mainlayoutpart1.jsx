@@ -211,11 +211,11 @@ function Mainlayoutpart1() {
             allowfullscreen></iframe>
         </div>
 
-        <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-24">
+        <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
           Peur du Rejet ou de l'Échec <br /> sur la Santé Mentale Masculine
         </h2>
 
-        <p className="mt-20 text-white max-w-lg text-center lg:text-start ml-auto mr-auto">
+        <p className="mt-12 text-white max-w-3xl text-center lg:text-start ml-auto mr-auto">
           La nature impitoyable des rencontres en ligne peut entraîner des
           expériences fréquentes de rejet ou d'échec. Les hommes peuvent réagir
           différemment à ces situations, mais pour beaucoup, cela peut avoir un
@@ -226,7 +226,7 @@ function Mainlayoutpart1() {
           bien-être émotionnel.
         </p>
 
-        <div className="flex flex-col lg:flex-row items-start text-white mt-24 gap-12">
+        <div className="flex flex-col lg:flex-row items-start text-white mt-48 gap-12">
           <div className="relative lg:w-1/2">
             <p className="text-center lg:text-start">
               Témoignage de Karime Baudouin : <br />
