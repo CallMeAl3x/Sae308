@@ -166,7 +166,7 @@ function Mainlayoutpart1() {
         </h2>
 
         <div className="mt-24 flex gap-3 flex-col lg:flex-row ">
-          <p className="fon-bold text-almost-black">
+          <p className=" text-almost-black">
             La compétition dans les applications de rencontres crée une
             atmosphère où les hommes se comparent constamment les uns aux
             autres. On évalue non seulement l'apparence, mais aussi le succès
