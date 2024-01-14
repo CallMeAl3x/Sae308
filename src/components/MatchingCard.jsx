@@ -87,7 +87,7 @@ const MatchingCard = () => {
   };
 
   return (
-    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto overflow-hidden justify-center">
+    <div className="flex flex-col items-center max-lg:ml-0 ml-auto h-screen max-lg:h-auto overflow-hidden justify-center mt-[80px]">
       <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative">
         {db.map((Question, index) => (
           <TinderCard
