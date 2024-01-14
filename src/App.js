@@ -3,11 +3,12 @@ import { Home } from "./pages/Introduction";
 import { createContext, useState } from "react";
 import Part1 from "./pages/Part1";
 import Part2 from "./pages/Part2";
+import Part3 from "./pages/Part3";
 
 export const AppContext = createContext();
 
 function App() {
-  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Nouvel état pour suivre l'index de la carte actuellement affichée
+  const [currentCardIndex, setCurrentCardIndex] = useState(0); 
 
   const db = [
     {
@@ -106,6 +107,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/Part1" element={<Part1 />} />
             <Route path="/Part2" element={<Part2 />} />
+            <Route path="/Part3" element={<Part3 />} />
           </Routes>
         </BrowserRouter>
       </AppContext.Provider>

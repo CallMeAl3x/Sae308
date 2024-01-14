@@ -7,7 +7,6 @@ import Logo from "../components/Logo";
 const Part2 = () => {
   return (
     <div className="">
-      <Logo />
       <Aside />
       <Mainlayoutpart1 />
     </div>

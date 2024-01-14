@@ -64,12 +64,12 @@ const NavBar = () => {
                 <p className="text-black">Partie 2</p>
               </li>
             </Link>
-            <Link to="/Partie3" className="flex items-center relative Link">
+            <Link to="/Part3" className="flex items-center relative Link">
               <li>
                 <p className="text-black">Simulation</p>
               </li>
             </Link>
-            <Link to="/Part2" className="flex items-center relative Link">
+            <Link to="/Part4" className="flex items-center relative Link">
               <li>
                 <p className="text-black">Conseils</p>
               </li>
