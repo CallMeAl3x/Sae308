@@ -34,7 +34,6 @@ const MatchingCard = () => {
     setLastDirection(direction);
     setCurrentCardIndex(index); // Mise à jour de l'index courant dans le contexte
     updateCurrentIndex(index - 1); // Mise à jour de l'index pour la prochaine carte
-    console.log(db[index].Réponse);
 
     if (
       (direction === "right" && db[index].Réponse === "Vrai") ||

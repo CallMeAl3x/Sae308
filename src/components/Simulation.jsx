@@ -53,7 +53,7 @@ function Simulation() {
   }
 
   const generateRandomValue = () => {
-    const i = Math.floor(Math.random() * 30); 
+    const i = Math.floor(Math.random() * 30);
 
     if (i < 0) {
       return 0; // Si le nombre est négatif, retourne 0.
@@ -66,12 +66,11 @@ function Simulation() {
     const alval = generateRandomValue(i);
     setValBarre((prevVal) => prevVal - alval);
     console.log(valbarre1);
-    console.log(valbarre2)
-    
+    console.log(valbarre2);
   };
 
   return (
-    <main className="flex w-screen items-center lg:flex-row flex-col h-screen overflow-hidden">
+    <main className="flex items-center lg:flex-row flex-col h-screen overflow-hidden">
       <div className="flex justify-center items-center bonhome">
         <img
           src={getImageUrl(valbarre1)}
@@ -85,7 +84,7 @@ function Simulation() {
         baisserVal3={() => baisserVal(setValBarre3, 3)}
         baisserVal4={() => baisserVal(setValBarre4, 4)}
         valbarre1={valbarre1}
-        valbarre2={valbarre2}  
+        valbarre2={valbarre2}
         valbarre3={valbarre3}
         valbarre4={valbarre4}
       />

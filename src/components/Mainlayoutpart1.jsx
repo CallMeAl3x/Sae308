@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Mainlayoutpart1.css";
 import { Modal } from "./Modal";
-import tinder from "../img/Tinder-icon.png";
+import tinder from "../img/tinder.svg";
 import badoo from "../img/Badoo-icon-square.png";
 import fruitz from "../img/fruitz.png";
 import meetic from "../img/meetic-8QZScb.png";
@@ -162,7 +162,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        Drag & drop ici pour continuer !
+                        Drag & drop l'image pour continuer !
                       </span>
                     </>
                   )}
@@ -179,7 +179,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        Drag & drop ici pour continuer !
+                        Drag & drop l'image pour continuer !
                       </span>
                     </>
                   )}
@@ -195,7 +195,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        Drag & drop ici pour continuer !
+                        Drag & drop l'image pour continuer !
                       </span>
                     </>
                   )}
@@ -256,9 +256,8 @@ function Mainlayoutpart1() {
             height="315"
             src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowFullScreen></iframe>
         </div>
 
         <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
@@ -303,9 +302,8 @@ function Mainlayoutpart1() {
               className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px]"
               src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+              allowFullScreen></iframe>
           </div>
         </div>
 
@@ -327,9 +325,8 @@ function Mainlayoutpart1() {
               className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px]"
               src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+              allowFullScreen></iframe>
           </div>
         </div>
 
