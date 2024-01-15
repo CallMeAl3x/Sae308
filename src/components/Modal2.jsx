@@ -3,13 +3,13 @@ import { Dialog } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInfo } from "react-icons/fa";
 
-export const Modal = ({ isOpen, setIsOpen, openModal }) => {
+export const Modal2 = ({isOpen2,setIsOpen2,openModal2}) => {
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen2 && (
         <Dialog
-          open={isOpen}
-          onClose={setIsOpen}
+          open={isOpen2}
+          onClose={setIsOpen2}
           as="div"
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto">
           <div className="flex flex-col py-8 px-4 text-center">
@@ -85,7 +85,7 @@ export const Modal = ({ isOpen, setIsOpen, openModal }) => {
                     type="button"
                     tabIndex={0}
                     className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#ff0055e8] text-base font-medium text-white hover:bg-[#ff0055] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff0055] sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setIsOpen(false)}>
+                    onClick={() => setIsOpen2(false)}>
                     Continuer
                   </button>
                 </div>

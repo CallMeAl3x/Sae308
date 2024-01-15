@@ -67,6 +67,8 @@ function Simulation() {
     const alval = generateRandomValue(i);
     setValBarre((prevVal) => prevVal - alval);
     console.log(valbarre1);
+    console.log(valbarre2)
+    
   };
 
   return (
@@ -83,7 +85,12 @@ function Simulation() {
         baisserVal2={() => baisserVal(setValBarre2, 2)}
         baisserVal3={() => baisserVal(setValBarre3, 3)}
         baisserVal4={() => baisserVal(setValBarre4, 4)}
+        valbarre1={valbarre1}
+        valbarre2={valbarre2}  
+        valbarre3={valbarre3}
+        valbarre4={valbarre4}
       />
+
       <ul className="lg:ml-12 mt-8 lg:mt-0 flex flex-col gap-4 lg:gap-8 lg:mb-24 lg:pb-0 pb-12">
         <li>
           <span>Cercle Sociale</span>
