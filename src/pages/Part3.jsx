@@ -373,7 +373,7 @@ function Part3() {
       Age: "26",
       Intitulé: "Hobbys : Ski ⛷️, musique 🎸",
       Réponse: "Vrai",
-      Image: "./videos/presentation.mp4",
+      Image: "./videos/Swipe.mp4",
       Video: true,
       Imagerep: false,
       Biographie:

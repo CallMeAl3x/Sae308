@@ -250,14 +250,7 @@ function Mainlayoutpart1() {
         </p>
 
         <div className="w-full flex justify-center mt-16">
-          <iframe
-            className="rounded-lg shadow-xl border-4 border-[#E0861B]"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen></iframe>
+          <iframe className="rounded-lg shadow-xl border-4 border-[#E0861B]" width="560" height="315" src="https://www.youtube.com/embed/ueWwnmjqTRE?si=xBIskaPRzw2SVBXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
@@ -298,12 +291,7 @@ function Mainlayoutpart1() {
             <div className="hidden lg:block absolute top-[81%] left-[67%] rectangle"></div>
           </div>
           <div className="lg:w-1/2 flex justify-center w-full">
-            <iframe
-              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px]"
-              src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen></iframe>
+          <iframe className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-[#E0861B]" width="560" height="315" src="https://www.youtube.com/embed/KR4o1i6uyjk?si=yoXRYXzHtvG0AUXT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -322,7 +310,7 @@ function Mainlayoutpart1() {
           </div>
           <div className="lg:w-1/2  flex justify-center w-full">
             <iframe
-              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px]"
+              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-[#E0861B]"
               src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

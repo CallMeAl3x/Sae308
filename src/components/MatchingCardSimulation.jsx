@@ -334,7 +334,7 @@ function MatchingCardSimulation({
                     autoPlay
                     draggable={false}
                     alt=""
-                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full">
+                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full">
                     <source src={Question.Image} type="video/mp4" />
                   </video>
                 )}
