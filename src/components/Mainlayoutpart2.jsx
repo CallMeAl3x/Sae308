@@ -12,6 +12,8 @@ import badooangry from "../img/part2/badooangry.svg";
 import fruitzeloscore from "../img/part2/fruitzeloscore.svg";
 import tindereloscore from "../img/part2/tindereloscore.svg";
 import fruitz from "../img/part2/fruitz.svg";
+import prenium from "../img/part2/prenium.svg";
+import selldata from "../img/part2/selldata.svg";
 
 const Mainlayoutpart2 = () => {
   return (
@@ -21,27 +23,77 @@ const Mainlayoutpart2 = () => {
         des applications
       </h1>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center mt-24">
-        <p className="text-center lg:text-justify font-bold max-w-2xl ml-auto mr-auto">
-          Le problème avec les applications de rencontre, c'est que si pour
-          vous, c'est un jeu, pour les créateurs de cette application, c'est un
-          business, dont le but est de tendre vers la rentabilité. Sauf que la
-          plupart des applications de rencontre sont gratuites.
-        </p>
+      <p className="text-center lg:text-justify font-bold max-w-3xl ml-auto mr-auto mt-12">
+        Le problème avec les applications de rencontre, c'est que si pour vous,
+        c'est un jeu, pour les créateurs de cette application, c'est un
+        business, dont le but est de tendre vers la rentabilité. Sauf que la
+        plupart des applications de rencontre sont gratuites.
+      </p>
+
+      <div className="flex flex-col lg:flex-row items-center mt-24 gap-12">
+        <h2 className="text-center text-almost-white mt-16 text-3xl lg:text-3xl lg:mt-4 font-bold">
+          "Si c'est gratuit, c'est toi le produit" <br />
+          D'où viennent leurs sources de revenus ? <br />
+          Quel est leur modèle économique ?
+        </h2>
+
         <iframe
-          className="w-fit h-fit lg:rotate-12 lg:mr-auto mt-6 lg:mt-0"
+          className="w-fit h-fit lg:mr-auto mt-6 lg:mt-0"
           id="SVGmator__yemha1705248393865"
           frameBorder="0"
           src="https://www.svgmator.com/embed/xIuQgwkSkTiAyyD?onload=true&onclick=false&onhover=true"></iframe>
       </div>
 
-      <h2 className="text-center text-[#571B46] mt-16 text-3xl lg:text-3xl lg:mt-4 font-bold">
-        "Si c'est gratuit, c'est toi le produit" <br />
-        D'où viennent leurs sources de revenus ? <br />
-        Quel est leur modèle économique ?
-      </h2>
+      <div className="flex justify-center mt-20">
+        <p className="text-center max-w-3xl">
+          La première chose à savoir, c'est que leur modèle économique repose
+          souvent sur l'engagement à long terme des utilisateurs sur la
+          plateforme en s'appuyant sur ces 3 principes :
+        </p>
+      </div>
 
-      <div className="w-full flex justify-center flex-col items-center mt-20 relative">
+      <ul className="flex lg:flex-row flex-col gap-24 mt-6 justify-center items-center">
+        <li className="flex flex-col items-center gap-4">
+          <img src={prenium} className="h-[208px] w-[180]" alt="" />
+          <p className="font-bold">Abonnement payant</p>
+        </li>
+
+        <li className="flex flex-col items-center gap-4">
+          <img src={ads} alt="" className="h-[208px] w-[180]" />
+          <p className="font-bold">Publicités</p>
+        </li>
+
+        <li className="flex flex-col items-center">
+          <div className="lg:h-[218px] lg:w-[180px] flex flex-col">
+            <img src={selldata} className=" lg:mt-20" alt="" />
+          </div>
+          <p className="font-bold lg:mt-0 mt-6">Vente de données</p>
+        </li>
+      </ul>
+
+      <div className="flex flex-col justify-center items-center lg:mt-24 mt-14">
+        <img src={prenium} className="h-[280px] w-[244px]" alt="" />
+
+        <p className="lg:text-start text-center">
+          Sur ces applications, des abonnements payants sont proposés et
+          permettent de :
+        </p>
+        <div className="flex lg:gap-8 gap-6 mt-6 lg:flex-row flex-col ">
+          <button className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit">
+            Avoir des likes illimités
+          </button>
+          <button className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit">
+            Avoir une meilleure visibilité
+          </button>
+        </div>
+
+        <p className="lg:text-start text-center mt-12">
+          Plusieurs abonnements différents avec des prix, eux aussi différents
+          sont proposés.
+        </p>
+      </div>
+
+      <div className="w-full flex justify-center flex-col items-center mt-24 relative">
         <img
           draggable={false}
           src={like}
@@ -56,7 +108,7 @@ const Mainlayoutpart2 = () => {
         />
         <img draggable={false} src={ads} className="h-60 w-60" alt="" />
         <h2 className="font-bold text-4xl text-center mt-8">Publicité</h2>
-        <p className="mt-8">
+        <p className="lg:mt-8 lg:text-start text-center mt-12">
           Ces applications ont des partenariats avec des entreprises pour
           promouvoir leurs produits ou services. <br />
           Les partenariats sont rémunérés et constituent une grande partie de la
@@ -147,7 +199,7 @@ const Mainlayoutpart2 = () => {
           <p>
             Le modèle économique de ces applications repose donc évidemment sur
             l'implication de ces utilisateurs <br /> <br />
-            Plus vous passez du temps dessus, plus vous regardez des publicités.{" "}
+            Plus vous passez du temps dessus, plus vous regardez des publicités.
             <br />
             Plus vous êtes impliqués sur l’application, plus vous serez
             suceptibles de prendre l’abonnement payant. <br />
@@ -185,7 +237,7 @@ const Mainlayoutpart2 = () => {
           />
         </div>
 
-        <p className="lg:text-start mt-8 max-w-4xl mr-4 ml-4 relative">
+        <div className="lg:text-start mt-8 max-w-4xl mr-4 ml-4 relative">
           <img
             draggable={false}
             src={entonoir}
@@ -213,7 +265,7 @@ const Mainlayoutpart2 = () => {
               <li>mais aussi des partenaires qui sont intéresses par vous.</li>
             </ul>
           </div>
-        </p>
+        </div>
 
         <div className="bg-white px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
           <p>
@@ -255,7 +307,7 @@ const Mainlayoutpart2 = () => {
         </div>
 
         <div className="ml-4 flex flex-col gap-2.5 max-w-4xl text-almost-black mt-10 relative">
-          <p className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <p className="text-xl">
               Apparition de l'
               <span className="text-almost-white">ELOSCORE</span>
@@ -267,7 +319,7 @@ const Mainlayoutpart2 = () => {
             points vous ignore, vous perdez des points. "Le serveur pourrait
             classer un utilisateur recevant plus de likes qu'un autre comme plus
             pertinent."
-          </p>
+          </div>
 
           <p>
             Cet <span className="text-almost-white">ELOSCORE</span> crée donc
