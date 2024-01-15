@@ -54,7 +54,7 @@ function Simulation() {
   }
 
   const generateRandomValue = () => {
-    const i = Math.floor(Math.random() * 76) + 25; // Génère un nombre entre 0 et 75, puis ajoute 25 pour obtenir un nombre entre 25 et 100.
+    const i = Math.floor(Math.random() * 30); 
 
     if (i < 0) {
       return 0; // Si le nombre est négatif, retourne 0.

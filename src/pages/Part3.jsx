@@ -8,7 +8,7 @@ export const SimContext = createContext();
 
 function Part3() {
   function nombreAleatoireEntreUnEtVingtSix() {
-    return Math.floor(Math.random() * (10 - 3 + 1)) + 3;
+    return Math.floor(Math.random() * (27 - 1 + 1)) + 1;
   }
 
   let nombreAleatoire = nombreAleatoireEntreUnEtVingtSix();
@@ -74,6 +74,229 @@ function Part3() {
   const randomImageName = () => `woman${nombreAleatoire}.jpg`;
 
   const db2 = [
+
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Yoga, lecture",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+     
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+      "Hobbys : Cinéma, photographie",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Danse, sculpture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Pêche, écriture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Ski, musique",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: true,
+      Imagerep: false,
+    },
+  
+  
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Jardinage, cuisine",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+      "Hobbys : Randonnée, peinture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Yoga, lecture",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+     
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+      "Hobbys : Cinéma, photographie",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Danse, sculpture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Pêche, écriture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Ski, musique",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: true,
+      Imagerep: false,
+    },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Jardinage, cuisine",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+      "Hobbys : Randonnée, peinture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Yoga, lecture",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+     
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+      "Hobbys : Cinéma, photographie",
+      Réponse: "Faux",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Danse, sculpture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Pêche, écriture",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: false,
+      Imagerep: true,
+    },
+    {
+      Prenom: "Julie, ",
+      Age: "26",
+      Intitulé:
+        "Hobbys : Ski, musique",
+      Réponse: "Vrai",
+      Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
+      
+      Video: true,
+      Imagerep: false,
+    },
+
+
     {
       Prenom: "Julie, ",
       Age: "26",
