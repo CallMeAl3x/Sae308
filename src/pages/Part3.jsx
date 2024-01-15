@@ -1,15 +1,11 @@
-import React, { createContext, useState } from 'react';
-import Logo from '../components/Logo';
-import NavBar from '../components/NavBar';
-import Simulation from '../components/Simulation';
+import React, { createContext, useState } from "react";
+import Logo from "../components/Logo";
+import NavBar from "../components/NavBar";
+import Simulation from "../components/Simulation";
 
 export const SimContext = createContext();
 
 function Part3() {
-
-
-
-
   function nombreAleatoireEntreUnEtVingtSix() {
     return Math.floor(Math.random() * (10 - 3 + 1)) + 3;
   }
@@ -17,9 +13,26 @@ function Part3() {
   let nombreAleatoire = nombreAleatoireEntreUnEtVingtSix();
 
   const hobbiesList = [
-    "Patinage ⛸️", "Dessin ✏️", "Photographie 📸", "Cuisine 🍽️", "Voyages🧳", "Musique 🎸", "Lecture 📖", "Sport ⚽",
-    "Jardinage 🪴", "Danse 💃", "Théâtre 🎬", "Artisanat 🎆", "Natation 🥽", "Informatique 💻", "Écriture 📝", "Jeux vidéo 🖥️",
-    "Mode 🧥", "Shopping 🧣", "Randonnée 🥾", "Yoga 🧘‍♀️, peinture 🎨"
+    "Patinage ⛸️",
+    "Dessin ✏️",
+    "Photographie 📸",
+    "Cuisine 🍽️",
+    "Voyages🧳",
+    "Musique 🎸",
+    "Lecture 📖",
+    "Sport ⚽",
+    "Jardinage 🪴",
+    "Danse 💃",
+    "Théâtre 🎬",
+    "Artisanat 🎆",
+    "Natation 🥽",
+    "Informatique 💻",
+    "Écriture 📝",
+    "Jeux vidéo 🖥️",
+    "Mode 🧥",
+    "Shopping 🧣",
+    "Randonnée 🥾",
+    "Yoga 🧘‍♀️, peinture 🎨",
   ];
 
   function getRandomHobby() {
@@ -28,7 +41,6 @@ function Part3() {
   }
 
   const secondTableau = [getRandomHobby()];
-  
 
   const beautyMapping = {
     "woman3.jpg": "belle",
@@ -127,18 +139,64 @@ function Part3() {
   ];
 
   const prenomsList = [
-    "Sophie", "Emma", "Charlotte", "Alice", "Léa", "Manon", "Camille", "Sarah", "Lucie", "Zoé",
-    "Chloé", "Eva", "Inès", "Lola", "Anna", "Clara", "Lina", "Mia", "Louise", "Léna",
-    "Jade", "Lilou", "Ambre", "Julia", "Romane", "Elsa", "Océane", "Maëlys", "Eléna", "Mélanie",
-    "Agathe", "Alicia", "Maëlle", "Amandine", "Mathilde", "Noémie", "Elise", "Lauren", "Margot",
-    "Louna", "Eloïse", "Romy", "Lily", "Nina", "Victoria", "Mélissa", "Laura", "Sofia"
+    "Sophie",
+    "Emma",
+    "Charlotte",
+    "Alice",
+    "Léa",
+    "Manon",
+    "Camille",
+    "Sarah",
+    "Lucie",
+    "Zoé",
+    "Chloé",
+    "Eva",
+    "Inès",
+    "Lola",
+    "Anna",
+    "Clara",
+    "Lina",
+    "Mia",
+    "Louise",
+    "Léna",
+    "Jade",
+    "Lilou",
+    "Ambre",
+    "Julia",
+    "Romane",
+    "Elsa",
+    "Océane",
+    "Maëlys",
+    "Eléna",
+    "Mélanie",
+    "Agathe",
+    "Alicia",
+    "Maëlle",
+    "Amandine",
+    "Mathilde",
+    "Noémie",
+    "Elise",
+    "Lauren",
+    "Margot",
+    "Louna",
+    "Eloïse",
+    "Romy",
+    "Lily",
+    "Nina",
+    "Victoria",
+    "Mélissa",
+    "Laura",
+    "Sofia",
   ];
 
-  const getRandomPrenom = () => prenomsList[Math.floor(Math.random() * prenomsList.length)];
+  const getRandomPrenom = () =>
+    prenomsList[Math.floor(Math.random() * prenomsList.length)];
   const getRandomAge = () => Math.floor(Math.random() * 16) + 20;
 
-  const db2Randomized = db2.map(entry => {
-    const imageName = entry.Video ? randomImageName() : entry.Image.split('/').pop();
+  const db2Randomized = db2.map((entry) => {
+    const imageName = entry.Video
+      ? randomImageName()
+      : entry.Image.split("/").pop();
     const beautyValue = beautyMapping[imageName] || "belle";
 
     console.log(`BeautyMapping for image ${imageName}: ${beautyValue}`);
@@ -155,12 +213,12 @@ function Part3() {
 
   return (
     <div>
-      <SimContext.Provider value={{ db2: db2Randomized, currentCardIndex2, setCurrentCardIndex2 }}>
-        <div className='w-full h-40'>
-          <NavBar />
-          <Logo />
+      <NavBar />
+      <SimContext.Provider
+        value={{ db2: db2Randomized, currentCardIndex2, setCurrentCardIndex2 }}>
+        <div className="flex items-center justify-center max-lg:flex-col">
+          <Simulation />
         </div>
-        <Simulation />
       </SimContext.Provider>
     </div>
   );

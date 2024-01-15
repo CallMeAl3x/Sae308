@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useCallback } from "react";
 import TinderCard from "react-tinder-card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +9,6 @@ import True from "../icons/True.svg";
 
 const MatchingCard = () => {
   const { db, currentCardIndex, setCurrentCardIndex } = useContext(AppContext);
-
   const [currentIndex, setCurrentIndex] = useState(db.length - 1);
   const [lastDirection, setLastDirection] = useState();
   const currentIndexRef = useRef(currentIndex);
@@ -19,7 +18,7 @@ const MatchingCard = () => {
       Array(db.length)
         .fill(0)
         .map((i) => React.createRef()),
-    []
+    [db.length]
   );
 
   const updateCurrentIndex = (val) => {
@@ -27,34 +26,19 @@ const MatchingCard = () => {
     currentIndexRef.current = val;
   };
 
-  const canGoBack = currentIndex < db.length - 1;
-
   const canSwipe = currentIndex >= 0;
 
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
+    // Vérifier si l'index courant a déjà été swipé.
     setLastDirection(direction);
-    updateCurrentIndex(index - 1);
-    setCurrentCardIndex(index); // Mise à jour de l'index de la carte actuelle via le contexte
+    setCurrentCardIndex(index); // Mise à jour de l'index courant dans le contexte
+    updateCurrentIndex(index - 1); // Mise à jour de l'index pour la prochaine carte
 
-    const currentQuestion = db[index];
-    const isCorrect =
-      (direction === "right" && currentQuestion.Réponse === "Vrai") ||
-      (direction === "left" && currentQuestion.Réponse === "Faux");
+    console.log(`Swiped at index ${index}: ${direction}`); // Débogage
 
-    if (isCorrect) {
-      toast.success("Bonne réponse", {
-        position: "top-center",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.error("Mauvaise réponse", {
+    if (direction === "right") {
+      toast.success("Swipe à droite détecté", {
         position: "top-center",
         autoClose: 1500,
         hideProgressBar: false,
@@ -65,23 +49,33 @@ const MatchingCard = () => {
         theme: "light",
       });
     }
+    if (direction === "left") {
+      toast.error("Swipe à gauche détecté", {
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    // Votre logique pour baisser les valeurs ici
+
+    // Marquer l'index comme swipé
+    currentIndexRef.current = index;
   };
 
-  const outOfFrame = (Question, index, swipeDirection) => {
-    console.log(
-      `${Question} (${index}) left the screen with swipe direction: ${swipeDirection}`
-    );
-    if (canSwipe && currentIndexRef.current >= index) {
-      childRefs[index].current.restoreCard();
+  const outOfFrame = useCallback((name, index) => {
+    if (index === currentIndexRef.current) {
+      console.log(`Card left the screen at index ${index}: ${name}`);
+      currentIndexRef.current = null; // Réinitialiser la référence d'index
     }
-  };
+  }, []);
 
   const swipe = async (dir) => {
     if (canSwipe && currentIndex < db.length) {
-      const currentQuestion = db[currentIndex];
-      const isCorrect =
-        (dir === "right" && currentQuestion.Réponse === "Vrai") ||
-        (dir === "left" && currentQuestion.Réponse === "Faux");
       await childRefs[currentIndex].current.swipe(dir);
     }
   };
@@ -91,6 +85,7 @@ const MatchingCard = () => {
       <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative">
         {db.map((Question, index) => (
           <TinderCard
+            preventSwipe={["up", "down"]}
             ref={childRefs[index]}
             className="absolute m-auto overflow-hidden"
             key={Question.Intitulé}
@@ -160,6 +155,7 @@ const MatchingCard = () => {
           Swipe la carte ou cliques sur les bouttons pour répondre !
         </h2>
       )}
+      <ToastContainer />
     </div>
   );
 };
