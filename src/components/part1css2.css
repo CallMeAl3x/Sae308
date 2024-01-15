@@ -1,0 +1,110 @@
+.imglogotinder {
+    position: absolute;
+    left: 0.25rem;
+    animation: moveLogo 1.5s ease-in-out forwards,opacity 0.75s ease-in-out forwards;
+    transform: translateY(2rem);
+    opacity: 0; /* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+.imglogofruitz {
+    position: absolute;
+    left: 0.5rem;
+    animation: moveLogo 1.5s ease-in-out 0.25s forwards,opacity 0.75s ease-in-out 0.25s forwards;
+    transform: translateY(2rem);
+    opacity: 0; /* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+.imglogobadoo {
+    position: absolute;
+    left: 0.25rem;
+    animation: moveLogo 1.5s ease-in-out 0.5s forwards,opacity 0.75s ease-in-out 0.5s forwards;
+    transform: translateY(2rem); 
+    opacity: 0;/* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+.imglogomeetic {
+    position: absolute;
+    left: 0.25rem;
+    animation: moveLogo 1.5s ease-in-out 0.75s forwards,opacity 0.75s ease-in-out 0.75s forwards;
+    transform: translateY(2rem);
+    opacity: 0; /* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+.imglogohappn {
+    position: absolute;
+    left: 0.25rem;
+    animation: moveLogo 1.5s ease-in-out 1s forwards,opacity 0.75s ease-in-out 1s forwards; 
+    transform: translateY(2rem);
+    opacity: 0;/* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+.imglogohinge {
+    position: absolute;
+    left: 0.25rem;
+    animation: moveLogo 1.5s ease-in-out 1.25s forwards,opacity 0.75s ease-in-out 1.25s forwards;
+    transform: translateY(2rem);
+    opacity: 0; /* Vous pouvez ajuster la durée et la fonction de temporisation selon vos préférences */
+}
+
+@keyframes moveLogo {
+    from {
+        transform: translateY(2rem);
+    }
+    to {
+        transform: translateY(0.25rem);
+    }
+}
+
+
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.flotter:nth-child(1) {
+    animation: flottement 8s infinite ease-in-out 0.25s; /* Animation infinie de 4 secondes */
+  }
+
+  .flotter:nth-child(2) {
+    animation: flottement 8s infinite ease-in-out 0.5s; /* Animation infinie de 4 secondes */
+  }
+
+  .flotter:nth-child(3) {
+    animation: flottement 8s infinite ease-in-out 0.75s; /* Animation infinie de 4 secondes */
+  }
+
+  .flotter:nth-child(4) {
+    animation: flottement 8s infinite ease-in-out 1s; /* Animation infinie de 4 secondes */
+  }
+
+  .flotter:nth-child(5) {
+    animation: flottement 8s infinite ease-in-out 1.25s; /* Animation infinie de 4 secondes */
+  }
+
+  .flotter:nth-child(6) {
+    animation: flottement 8s infinite ease-in-out 1.5s; /* Animation infinie de 4 secondes */
+  }
+  
+  @keyframes flottement {
+    0%, 100% {
+      transform: translate(0, 0); /* Position initiale */
+    }
+    25% {
+      transform: translate(2px, 2px); /* Déplacement en haut à droite */
+    }
+    50% {
+      transform: translate(-4px, 6px); /* Déplacement vers le haut à gauche */
+    }
+    75% {
+      transform: translate(4px, -2px); /* Déplacement vers le bas à droite */
+    }
+  }
+  
+  
+  
