@@ -7,6 +7,8 @@ import pp2before from "../img/pp2before.png";
 import pp3before from "../img/pp3before.png";
 import pp3after from "../img/pp3after.png";
 import { FaRegHandPointLeft } from "react-icons/fa";
+import { FaRegHandPointRight } from "react-icons/fa";
+
 
 function Card({ showTitle1, showTitle2, showTitle3 }) {
   const handleOpacity = () => {
@@ -26,7 +28,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
 
   return (
     <div className="flex lg:flex-row flex-col items-start cardDrag gap-8 lg:gap-32 justify-center">
-      <div className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg relative ">
+      <div className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg relative cardanim border-2 border-white">
         <img
           src={pp1after}
           alt=""
@@ -34,7 +36,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           draggable={false}
         />
         <motion.div
-          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg absolute overflow-hidden"
+          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white  shadow-2xl rounded-lg absolute overflow-hidden border-2 border-white ml-4 mt-2"
           drag="x"
           dragConstraints={{
             left: -200,
@@ -51,15 +53,15 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
             draggable={false}
           />
           <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
-            <span className="flex justify-around items-center">
-              <span className="text-xl">Drag</span>
-              <FaRegHandPointLeft size={25} />
+            <span className="flex justify-around items-center ">
+              <span className="text-xl ">Drag</span>
+              <FaRegHandPointLeft size={25} className="rotatehand"/>
             </span>
           </button>
         </motion.div>
       </div>
 
-      <div className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative ">
+      <div className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg border-2 border-white relative cardanim2 ">
         <img
           src={pp2after}
           alt=""
@@ -67,7 +69,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           draggable={false}
         />
         <motion.div
-          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden"
+          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white rounded-lg border-2 border-white ml-4 absolute overflow-hidden mt-2"
           drag="x"
           dragConstraints={{
             left: -200,
@@ -84,14 +86,14 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
             draggable={false}
           />
           <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
-            <span className="flex justify-around items-center">
+            <span className="flex justify-around items-center ">
               <span className="text-xl">Drag</span>
-              {/* Icône ou élément visuel pour indiquer de glisser la carte */}
+              <FaRegHandPointLeft size={25} className="rotatehand2" />
             </span>
           </button>
         </motion.div>
       </div>
-      <div className="lg:w-52 max-w-none lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg border-2 border-[#ff0055] relative ">
+      <div className="lg:w-52 max-w-none lg:h-[350px] w-40 h-[250px] bg-white shadow-2xl rounded-lg border-2 border-white relative cardanim3 ">
         <img
           src={pp3after}
           alt=""
@@ -99,7 +101,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           draggable={false}
         />
         <motion.div
-          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white rounded-lg border-2 border-[#E0861B] ml-4 absolute overflow-hidden"
+          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white rounded-lg border-2 border-white ml-4 absolute overflow-hidden mt-2"
           drag="x"
           dragConstraints={{
             left: -200,
@@ -118,7 +120,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
             <span className="flex justify-around items-center">
               <span className="text-xl">Drag</span>
-              {/* Icône ou élément visuel pour indiquer de glisser la carte */}
+              <FaRegHandPointLeft size={25} className="rotatehand3" />
             </span>
           </button>
         </motion.div>

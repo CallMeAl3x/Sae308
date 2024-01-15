@@ -12,7 +12,9 @@ import trophee from "../img/trophee.svg";
 import masque from "../img/masque.svg";
 import { Link } from "react-router-dom";
 import "../components/part1css2.css"
-import tindertriste from "../img/part1/tinndertriste2.svg"
+import tindertriste from "../img/part1/tinndertriste2.svg";
+import Svgtrophy from "./Svgtrophy";
+
 
 function Mainlayoutpart1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +38,8 @@ function Mainlayoutpart1() {
   const showTitle3 = () => {
     setShowTitleCard3(true);
   };
+
+  
 
   return (
     <main className="lg:p-24 p-6 max-w-7xl lg:ml-auto lg:mr-auto lg:mt-32 mt-6 text-almost-black">
@@ -121,10 +125,11 @@ function Mainlayoutpart1() {
         <h2 className="text-[#571B46] mt-12 text-center text-4xl lg:text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
            Pressions
         </h2>
-        <div className="w-full h-2 bg-white relative">
-          <div className=" absolute left-[-35%] top-32">
-            <img src={tindertriste} alt="" className="" />
-          </div>
+        <div className="w-full h-2 ">
+          <div className="relative logotinderrr">
+          <div className=" absolute left-[-35%] top-32 ">
+            <img src={tindertriste} alt="" className="vrailogo" />
+          </div></div>
       </div>
         <div className="mt-12 lg:mt-16">
           <Card
@@ -155,14 +160,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard1 ? (
                     <>
-                      <span className="spantableau" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau" >
                         {" "}
                         Les retouches photos ( faible ){" "}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau2" >
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -173,14 +178,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard2 ? (
                     <>
-                      <span className="spantableau" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau" >
                         {" "}
                         Changement de style vestimentaire drastique
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau2" >
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -190,14 +195,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard3 ? (
                     <>
-                      <span className="spantableau" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau" >
                         {" "}
                         Les retouches photos ( fort ){" "}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" style={{ textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)' }}>
+                      <span className="spantableau2" >
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -226,7 +231,9 @@ function Mainlayoutpart1() {
             d'infériorité chez certains hommes, compliquant ainsi leur quête de
             relations amoureuses.
           </p>
-          <img src={trophee} alt="" />
+          <div >
+          <Svgtrophy />
+          </div>
         </div>
 
         <div className="flex gap-24 lg:flex-row  flex-col-reverse">
@@ -264,9 +271,9 @@ function Mainlayoutpart1() {
         </h2>
 
         <p className="mt-12 text-white max-w-3xl text-center lg:text-start ml-auto mr-auto " style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-          La nature impitoyable des rencontres en ligne peut entraîner des
-          expériences fréquentes de rejet ou d'échec. Les hommes peuvent réagir
-          différemment à ces situations, mais pour beaucoup, cela peut avoir un
+         <span className=""> La nature impitoyable des rencontres en ligne peut entraîner des
+          expériences fréquentes de rejet ou</span> <span> d'échec. Les hommes peuvent réagir
+          différemment à ces situations, mais pour beaucoup, cela peut avoir</span> un
           impact significatif sur leur santé mentale. La répétition des rejets
           peut créer des sentiments de désespoir, d'anxiété sociale et de
           dévalorisation personnelle. Certains hommes peuvent internaliser ces
