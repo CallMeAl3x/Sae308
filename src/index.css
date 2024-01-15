@@ -5,42 +5,58 @@
 @font-face {
   font-family: Jost;
   src: url("../src/fonts/Jost/Jost-VariableFont_wght.ttf");
+  font-weight: Medium;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: Montserrat;
+  src: url("./fonts/MontSerra/Montserrat-VariableFont_wght.ttf");
   font-weight: Normal;
   font-style: normal;
 }
 
 * {
-  user-select: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Jost;
 }
 
 body {
   color: #f3f2f3;
   font-family: Jost;
-  font-weight: 600;  
+  font-weight: 600;
+  background-image: url("../src/img/background.png");
+  background-size: cover;
 }
 
 @keyframes popup {
   0% {
     transform: scale(1, 1);
   }
+
   10% {
     transform: scale(1.1, 1.1);
   }
+
   30% {
     transform: scale(0.9, 0.9);
   }
+
   50% {
     transform: scale(1, 1);
   }
+
   57% {
     transform: scale(1, 1);
   }
+
   64% {
     transform: scale(1, 1);
   }
+
   100% {
     transform: scale(1, 1);
   }
@@ -54,31 +70,78 @@ body {
   box-shadow: 9px 15px 13.9px 0px rgba(0, 0, 0, 0.25);
 }
 
-
-.lii {
-  position: relative;
-}
-
-.lii::after {
-  content: attr(data-text);
+.polygon::before {
+  content: "";
   position: absolute;
-  top: -5px;
-  left: 100px;
-  background-color: rgb(255, 255, 255);
-  color: #E0861B;
-  padding: 5px;
-  border-radius: 5px;
-  z-index: 999;
-  white-space: nowrap;
-  max-width: 150px; /* Ajustez la largeur maximale pour correspondre à votre mise en page */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Ajoute des points de suspension (...) si le texte est trop long */
-  transition: transform 0.3s ease; /* Ajout de la transition pour le changement d'échelle */
-  transform: scale(0); /* Définition initiale de l'échelle à 0 */
-  transform-origin: left;
+  top: -25%;
+  left: 30%;
+  width: 24px;
+  height: 50%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: white;
 }
 
-.lii:hover::after {
-  transform: scale(1); /* Au survol, l'échelle est mise à 1, ce qui fait apparaître le contenu */
-  content: attr(data-text); /* Assurez-vous que le contenu est également défini ici pour la transition */
+.hideit {
+  opacity: 0;
+  animation: fadeOut 0.25s forwards;
+  /* Utilisez 'forwards' pour maintenir le style final après l'animation */
+}
+
+.makeitvisible {
+  opacity: 1;
+  animation: fadeIn 0.25s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+.polygon {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.25s linear;
+}
+
+.rectangle {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 92%, 90% 92%, 90% 0);
+  background-color: white;
+  width: 200px;
+  /* Adjust width as needed */
+  height: 200px;
+  /* Adjust height as needed */
+}
+
+.Link:hover .polygon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.likeimage,
+.tinderangry,
+.badooangry,
+.warning-top,
+.warning-bottom,
+.entonoir,
+.certificat,
+.fruitzeloscore,
+.tindereloscore,
+.fruitz {
+  position: absolute;
 }
