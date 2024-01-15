@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Mainlayoutpart1.css";
 import { Modal } from "./Modal";
-import tinder from "../img/tinder.svg";
+import tinder from "../img/tinder-icon.svg";
 import badoo from "../img/Badoo-icon-square.png";
 import fruitz from "../img/fruitz.png";
 import meetic from "../img/meetic-8QZScb.png";
