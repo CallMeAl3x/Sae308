@@ -3,6 +3,7 @@ import "./Simulation.css";
 import MatchingCardSimulation from "./MatchingCardSimulation";
 import imgbonhomme1 from "../img/bonhommepret.png";
 import { SimContext } from "../pages/Part3";
+import { ToastContainer, toast } from "react-toastify";
 
 function Simulation() {
   const { db2, currentCardIndex2, setCurrentCardIndex2 } =
@@ -12,14 +13,33 @@ function Simulation() {
   const [valbarre2, setValBarre2] = useState(256);
   const [valbarre3, setValBarre3] = useState(256);
   const [valbarre4, setValBarre4] = useState(256);
+  const [bodyOffet, setBodyOffset] = useState(0);
 
-  const generateRandomValue = (i) => {
-    if (i !== 0) {
-      return Math.floor((Math.random() * 40) / i);
+  if (
+    valbarre1 === 0 ||
+    valbarre2 === 0 ||
+    valbarre3 === 0 ||
+    valbarre4 === 0
+  ) {
+    toast.success("Tu as perdu", {
+      position: "top-center",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+  const generateRandomValue = () => {
+    const i = Math.floor(Math.random() * 76) + 25; // Génère un nombre entre 0 et 75, puis ajoute 25 pour obtenir un nombre entre 25 et 100.
+
+    if (i < 0) {
+      return 0; // Si le nombre est négatif, retourne 0.
     } else {
-      // Handle division by zero case
-      console.error("Division by zero error!");
-      return null; // or any other appropriate action
+      return i;
     }
   };
 
@@ -29,7 +49,7 @@ function Simulation() {
   };
 
   return (
-    <main className="flex w-screen items-center justify-evenly lg:flex-row flex-col h-screen overflow-hidden">
+    <main className="flex w-screen items-center lg:flex-row flex-col h-screen overflow-hidden">
       <div className="flex justify-center items-center ">
         <img
           src={imgbonhomme1}
@@ -77,6 +97,7 @@ function Simulation() {
           </div>
         </li>
       </ul>
+      <ToastContainer />
     </main>
   );
 }

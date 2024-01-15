@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useRef, useCallback } from "react";
+import React, {
+  useState,
+  useMemo,
+  useRef,
+  useCallback,
+  useEffect,
+} from "react";
 import TinderCard from "react-tinder-card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +18,18 @@ function MatchingCardSimulation({
   baisserVal3,
   baisserVal4,
 }) {
+  const [bodyOffset, setBodyOffset] = useState(0);
+
+  const HandleBodyOffset = (direction) => {
+    if (direction === "right" || direction === "left") {
+      setBodyOffset((prevVal) => prevVal + 8);
+      console.log(bodyOffset);
+      document.body.style.boxShadow = `inset 0px 0px ${
+        bodyOffset + 6
+      }px 0px  #000000`;
+    }
+  };
+
   const [grayscale, setGrayScale] = useState(false);
 
   const activateGrayScale1 = () => {
@@ -81,6 +99,7 @@ function MatchingCardSimulation({
     baisserVal2();
     baisserVal3();
     baisserVal4();
+    HandleBodyOffset(direction);
 
     // Marquer l'index comme swipé
     currentIndexRef.current = index;
