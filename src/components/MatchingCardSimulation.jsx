@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useRef, useCallback, useEffect } from "react";
+import React, {
+  useState,
+  useMemo,
+  useRef,
+  useCallback,
+  useEffect,
+} from "react";
 import TinderCard from "react-tinder-card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +24,7 @@ function MatchingCardSimulation({
   valbarre1,
   valbarre2,
   valbarre3,
-  valbarre4
+  valbarre4,
 }) {
   const [bodyOffset, setBodyOffset] = useState(0);
 
@@ -32,186 +38,143 @@ function MatchingCardSimulation({
     }
   };
 
-<<<<<<< Updated upstream
-  const[affichagetoastb1,setaffichagetoastb1] = useState(0);
-  const[affichagetoastb2,setaffichagetoastb2] = useState(0);
-  const[affichagetoastb3,setaffichagetoastb3] = useState(0);
-  const[affichagetoastb4,setaffichagetoastb4] = useState(0);
-
+  const [affichagetoastb1, setaffichagetoastb1] = useState(0);
+  const [affichagetoastb2, setaffichagetoastb2] = useState(0);
+  const [affichagetoastb3, setaffichagetoastb3] = useState(0);
+  const [affichagetoastb4, setaffichagetoastb4] = useState(0);
 
   const [isOpen2, setIsOpen2] = useState(false);
   const openModal2 = () => {
     setIsOpen2(!isOpen2);
   };
 
-  const affichagetoastb11 = ()=>{
-  if(valbarre1 <= 180 && affichagetoastb1<1){
-    toast.warn('Tu es entrain de perdre ton cercle social. Fais attention à ne pas t\'isoler !', {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      
-      });
-      setaffichagetoastb1((prevVal) => prevVal +1);
-
+  const affichagetoastb11 = () => {
+    if (valbarre1 <= 180 && affichagetoastb1 < 1) {
+      toast.warn(
+        "Tu es entrain de perdre ton cercle social. Fais attention à ne pas t'isoler !",
+        {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+      setaffichagetoastb1((prevVal) => prevVal + 1);
     }
-  }
+  };
 
-
-
-
-const affichagetoastb22 = ()=>{
-  if(valbarre2 <= 140 && affichagetoastb2<1){
-    toast.warn('Souris un peu et fais des activités que tu aimes pour te remonter le morale !', {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      
-      });
+  const affichagetoastb22 = () => {
+    if (valbarre2 <= 140 && affichagetoastb2 < 1) {
+      toast.warn(
+        "Souris un peu et fais des activités que tu aimes pour te remonter le morale !",
+        {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
       setaffichagetoastb2((prevVal) => prevVal + 1);
+    }
+  };
 
-  }
-}
-
-
-
-const affichagetoastb33 = ()=>{
-  if(valbarre3 <= 110 && affichagetoastb3<1){
-    toast.warn('Tu es sur tes economies, il est temps de regarder l\'argent qu\'il te reste', {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      
-      });
+  const affichagetoastb33 = () => {
+    if (valbarre3 <= 110 && affichagetoastb3 < 1) {
+      toast.warn(
+        "Tu es sur tes economies, il est temps de regarder l'argent qu'il te reste",
+        {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
       setaffichagetoastb3((prevVal) => prevVal + 1);
+    }
+  };
 
-  }
-}
-
-
-
-const affichagetoastb44 = ()=>{
-  if(valbarre4 <= 80 && affichagetoastb4<1){
-    toast.warn('ça devient pas un peu toxique tout ça ? Fais attention à toi !', {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      
-      });
+  const affichagetoastb44 = () => {
+    if (valbarre4 <= 80 && affichagetoastb4 < 1) {
+      toast.warn(
+        "ça devient pas un peu toxique tout ça ? Fais attention à toi !",
+        {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
       setaffichagetoastb4((prevVal) => prevVal + 1);
-
-  }
-}
-
-
-
-
-const affichagetModal = ()=>{
-  if(valbarre1 <= 15 && affichagetoastb1<2){
-    
-    toast.error("Il faut songer à désinstaller l'application");
-    setaffichagetoastb1((prevVal) => prevVal +1);
-    openModal2();
-      
-
     }
-  }
+  };
 
-  const affichagetModal2 = ()=>{
-    if(valbarre2 <= 15 && affichagetoastb2<2){
-      
+  const affichagetModal = () => {
+    if (valbarre1 <= 15 && affichagetoastb1 < 2) {
       toast.error("Il faut songer à désinstaller l'application");
-      setaffichagetoastb2((prevVal) => prevVal +1);
+      setaffichagetoastb1((prevVal) => prevVal + 1);
       openModal2();
-  
-      }
     }
+  };
 
+  const affichagetModal2 = () => {
+    if (valbarre2 <= 15 && affichagetoastb2 < 2) {
+      toast.error("Il faut songer à désinstaller l'application");
+      setaffichagetoastb2((prevVal) => prevVal + 1);
+      openModal2();
+    }
+  };
 
-    const affichagetModal3 = ()=>{
-      if(valbarre3 <= 15 && affichagetoastb3<2){
-        
-        toast.error("Il faut songer à désinstaller l'application");
-        setaffichagetoastb3((prevVal) => prevVal +1);
-        openModal2();
-    
-        }
-      }
+  const affichagetModal3 = () => {
+    if (valbarre3 <= 15 && affichagetoastb3 < 2) {
+      toast.error("Il faut songer à désinstaller l'application");
+      setaffichagetoastb3((prevVal) => prevVal + 1);
+      openModal2();
+    }
+  };
 
+  const affichagetModal4 = () => {
+    if (valbarre4 <= 15 && affichagetoastb4 < 2) {
+      toast.error("Il faut songer à désinstaller l'application");
+      setaffichagetoastb4((prevVal) => prevVal + 1);
+      openModal2();
+    }
+  };
 
-      const affichagetModal4 = ()=>{
-        if(valbarre4 <= 15 && affichagetoastb4<2){
-          
-          toast.error("Il faut songer à désinstaller l'application");
-          setaffichagetoastb4((prevVal) => prevVal +1);
-          openModal2();
-      
-          }
-        }
-  
+  useEffect(() => {
+    affichagetoastb11();
+    affichagetModal();
+  }, [valbarre1]);
 
+  useEffect(() => {
+    affichagetoastb22();
+    affichagetModal2();
+  }, [valbarre2]);
 
+  useEffect(() => {
+    affichagetoastb33();
+    affichagetModal3();
+  }, [valbarre3]);
 
-
-
-
-
-
-useEffect(()=>{
-  affichagetoastb11();
-  affichagetModal();
-  
-},[valbarre1])
-
-useEffect(()=>{
-  affichagetoastb22();
-  affichagetModal2()
-  
-},[valbarre2])
-
-useEffect(()=>{
-  affichagetoastb33()
-  affichagetModal3()
-},[valbarre3])
-
-
-useEffect(()=>{
-  affichagetoastb44()
-  affichagetModal4()
-},[valbarre4])
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  useEffect(() => {
+    affichagetoastb44();
+    affichagetModal4();
+  }, [valbarre4]);
 
   const [grayscale, setGrayScale] = useState(false);
 
@@ -224,9 +187,6 @@ useEffect(()=>{
   };
   const { db2, currentCardIndex2, setCurrentCardIndex2 } =
     useContext(SimContext);
-=======
-  const { db2, setCurrentCardIndex2 } = useContext(SimContext);
->>>>>>> Stashed changes
 
   const [currentIndex, setCurrentIndex] = useState(db2.length - 1);
   const [lastDirection, setLastDirection] = useState();
@@ -268,8 +228,7 @@ useEffect(()=>{
         progress: undefined,
         theme: "light",
       });
-    }
-    else if (direction === "left") {
+    } else if (direction === "left") {
       toast.error(`Ce profil a été ignoré`, {
         position: "top-right",
         autoClose: 1500,
@@ -279,8 +238,8 @@ useEffect(()=>{
         draggable: true,
         progress: undefined,
         theme: "light",
-    });
-  }
+      });
+    }
 
     baisserVal1();
     baisserVal2();
@@ -411,16 +370,13 @@ useEffect(()=>{
         </h2>
       ) : (
         <>
-        <h2 className="lg:mt-2 text-almost-white text-lg lg:max-w-[55%] max-w-[90%] mt-12 text-center font-bold tracking-wide">
-          Swipe la carte ou cliques sur les bouttons pour choisir !
-        </h2>
-        
-        
+          <h2 className="lg:mt-2 text-almost-white text-lg lg:max-w-[55%] max-w-[90%] mt-12 text-center font-bold tracking-wide">
+            Swipe la carte ou cliques sur les bouttons pour choisir !
+          </h2>
         </>
       )}
       <ToastContainer />
       <Modal2 isOpen={isOpen2} setIsOpen={setIsOpen2} openModal={openModal2} />
-      
     </div>
   );
 }
