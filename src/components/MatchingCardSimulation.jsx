@@ -32,6 +32,7 @@ function MatchingCardSimulation({
     }
   };
 
+<<<<<<< Updated upstream
   const[affichagetoastb1,setaffichagetoastb1] = useState(0);
   const[affichagetoastb2,setaffichagetoastb2] = useState(0);
   const[affichagetoastb3,setaffichagetoastb3] = useState(0);
@@ -223,6 +224,9 @@ useEffect(()=>{
   };
   const { db2, currentCardIndex2, setCurrentCardIndex2 } =
     useContext(SimContext);
+=======
+  const { db2, setCurrentCardIndex2 } = useContext(SimContext);
+>>>>>>> Stashed changes
 
   const [currentIndex, setCurrentIndex] = useState(db2.length - 1);
   const [lastDirection, setLastDirection] = useState();
@@ -233,6 +237,7 @@ useEffect(()=>{
       Array(db2.length)
         .fill(0)
         .map((i) => React.createRef()),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -360,9 +365,7 @@ useEffect(()=>{
                 {Question.Imagerep && (
                   <img
                     src={Question.Image}
-                    className={`absolute cursor-pointer top-0 left-0 z-1 object-cover max-lg:h-full max-lg:w-full h-full grayscalee ${
-                      grayscale ? "active" : ""
-                    }`}
+                    className={`absolute cursor-pointer top-0 left-0 z-1 object-cover max-lg:h-full max-lg:w-full h-full grayscalee}`}
                     draggable={false}
                     alt=""
                   />

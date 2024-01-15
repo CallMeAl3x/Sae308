@@ -1,12 +1,17 @@
-import React, { createContext, useState } from "react";
-import Logo from "../components/Logo";
+import React, { createContext, useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Simulation from "../components/Simulation";
-import { PiWine } from "react-icons/pi";
 
 export const SimContext = createContext();
 
 function Part3() {
+  useEffect(() => {
+    // Reset box shadow when component unmounts or page changes
+    return () => {
+      document.body.style.boxShadow = "none";
+    };
+  }, []);
+
   function nombreAleatoireEntreUnEtVingtSix() {
     return Math.floor(Math.random() * (27 - 1 + 1)) + 1;
   }
@@ -41,7 +46,7 @@ function Part3() {
     return hobbiesList[randomIndex];
   }
 
-  const secondTableau = [getRandomHobby()];
+  getRandomHobby();
 
   const beautyMapping = {
     "woman3.jpg": "belle",

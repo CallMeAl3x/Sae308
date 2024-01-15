@@ -4,11 +4,9 @@ import { Modal } from "./Modal";
 import tinder from "../img/Tinder-icon.png";
 import badoo from "../img/Badoo-icon-square.png";
 import fruitz from "../img/fruitz.png";
-import hapn from "../img/Hapn.png";
 import meetic from "../img/meetic-8QZScb.png";
 import hinge from "../img/hinge.png";
 import Card from "./Card";
-import trophee from "../img/trophee.svg";
 import masque from "../img/masque.svg";
 import { Link } from "react-router-dom";
 import "../components/part1css2.css";
@@ -164,8 +162,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        {" "}
-                        Vous avez oublié de draguer la première carte ;){" "}
+                        Drag & drop ici pour continuer !
                       </span>
                     </>
                   )}
@@ -182,8 +179,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        {" "}
-                        Vous avez oublié de draguer la première carte ;){" "}
+                        Drag & drop ici pour continuer !
                       </span>
                     </>
                   )}
@@ -199,8 +195,7 @@ function Mainlayoutpart1() {
                   ) : (
                     <>
                       <span className="spantableau2">
-                        {" "}
-                        Vous avez oublié de draguer la première carte ;){" "}
+                        Drag & drop ici pour continuer !
                       </span>
                     </>
                   )}
@@ -216,7 +211,9 @@ function Mainlayoutpart1() {
           Comparaison sociale et concurrence
         </h2>
 
-        <div className="mt-24 flex gap-3 flex-col lg:flex-row ">
+        <div
+          className="mt-24 flex gap-3 flex-col lg:flex-row lg:items-start items-center
+        ">
           <p className=" text-almost-black">
             La compétition dans les applications de rencontres crée une
             atmosphère où les hommes se comparent constamment les uns aux
@@ -350,13 +347,13 @@ function Mainlayoutpart1() {
           <button
             to="/Part2"
             onClick={openModal}
-            className="flex items-center rounded-xl bg-slate-600 px-5 py-2">
-            <p className="text-black">Sources</p>
+            className="flex items-center rounded-xl border-4 px-5 py-2 buttongradient">
+            <p className="">Sources</p>
           </button>
           <Link
-            to="/Partie2"
-            className="flex items-center rounded-xl bg-slate-600 px-5 py-2">
-            <p className="text-black">Partie 2</p>
+            to="/Part2"
+            className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
+            <p className="">Partie 2</p>
           </Link>
         </div>
       </div>

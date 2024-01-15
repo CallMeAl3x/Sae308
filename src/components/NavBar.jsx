@@ -10,29 +10,31 @@ import Logo from "./Logo";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-    const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
-    if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
-      setShow(false); 
-    } else { // if scroll up show the navbar
-      setShow(true);  
+    if (window.scrollY > lastScrollY) {
+      // if scroll down hide the navbar
+      setShow(false);
+    } else {
+      // if scroll up show the navbar
+      setShow(true);
     }
 
     // remember current page location to use in the next move
-    setLastScrollY(window.scrollY); 
+    setLastScrollY(window.scrollY);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', controlNavbar);
+    window.addEventListener("scroll", controlNavbar);
 
     // cleanup function
     return () => {
-       window.removeEventListener('scroll', controlNavbar);
+      window.removeEventListener("scroll", controlNavbar);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
-
 
   return (
     <div>
@@ -78,7 +80,10 @@ const NavBar = () => {
         </nav>
       </div>
 
-<div className={`hidden sm:flex sm:fixed top-16 left-0 items-center justify-center w-screen z-40 active ${show ? 'makeitvisible' : 'hideit'}`}>
+      <div
+        className={`hidden sm:flex sm:fixed top-16 left-0 items-center justify-center w-screen z-40 active ${
+          show ? "makeitvisible" : "hideit"
+        }`}>
         <nav className="p-4 bg-almost-white shadow-nav nav white bg-cover z-10 relative flex justify-center rounded-xl">
           <ul className="flex gap-20 text-3xl ml-3 mr-3">
             <Link to="/" className="flex items-center relative Link">

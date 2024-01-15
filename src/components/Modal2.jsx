@@ -3,6 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInfo } from "react-icons/fa";
 
+<<<<<<< Updated upstream
 export const Modal2 = ({isOpen2,setIsOpen2,openModal2}) => {
   return (
     <AnimatePresence>
@@ -10,6 +11,15 @@ export const Modal2 = ({isOpen2,setIsOpen2,openModal2}) => {
         <Dialog
           open={isOpen2}
           onClose={setIsOpen2}
+=======
+export const Modal2 = ({ isOpen, setIsOpen, openModal }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <Dialog
+          open={isOpen}
+          onClose={setIsOpen}
+>>>>>>> Stashed changes
           as="div"
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto">
           <div className="flex flex-col py-8 px-4 text-center">
@@ -85,7 +95,11 @@ export const Modal2 = ({isOpen2,setIsOpen2,openModal2}) => {
                     type="button"
                     tabIndex={0}
                     className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#ff0055e8] text-base font-medium text-white hover:bg-[#ff0055] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff0055] sm:ml-3 sm:w-auto sm:text-sm"
+<<<<<<< Updated upstream
                     onClick={() => setIsOpen2(false)}>
+=======
+                    onClick={() => setIsOpen(false)}>
+>>>>>>> Stashed changes
                     Continuer
                   </button>
                 </div>

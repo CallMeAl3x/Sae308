@@ -8,7 +8,7 @@ import False from "../icons/False.svg";
 import True from "../icons/True.svg";
 
 const MatchingCard = () => {
-  const { db, currentCardIndex, setCurrentCardIndex } = useContext(AppContext);
+  const { db, setCurrentCardIndex } = useContext(AppContext);
   const [currentIndex, setCurrentIndex] = useState(db.length - 1);
   const [lastDirection, setLastDirection] = useState();
   const currentIndexRef = useRef(currentIndex);
@@ -34,11 +34,13 @@ const MatchingCard = () => {
     setLastDirection(direction);
     setCurrentCardIndex(index); // Mise à jour de l'index courant dans le contexte
     updateCurrentIndex(index - 1); // Mise à jour de l'index pour la prochaine carte
+    console.log(db[index].Réponse);
 
-    console.log(`Swiped at index ${index}: ${direction}`); // Débogage
-
-    if (direction === "right") {
-      toast.success("Swipe à droite détecté", {
+    if (
+      (direction === "right" && db[index].Réponse === "Vrai") ||
+      (direction === "left" && db[index].Réponse === "Faux")
+    ) {
+      toast.success("Tu as la bonne réponse", {
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
@@ -49,8 +51,11 @@ const MatchingCard = () => {
         theme: "light",
       });
     }
-    if (direction === "left") {
-      toast.error("Swipe à gauche détecté", {
+    if (
+      (direction === "left" && db[index].Réponse === "Vrai") ||
+      (direction === "right" && db[index].Réponse === "Faux")
+    ) {
+      toast.error("Tu as la mauvaise réponse", {
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
@@ -69,7 +74,6 @@ const MatchingCard = () => {
 
   const outOfFrame = useCallback((name, index) => {
     if (index === currentIndexRef.current) {
-      console.log(`Card left the screen at index ${index}: ${name}`);
       currentIndexRef.current = null; // Réinitialiser la référence d'index
     }
   }, []);

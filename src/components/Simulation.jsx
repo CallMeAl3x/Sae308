@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Simulation.css";
 import MatchingCardSimulation from "./MatchingCardSimulation";
 import { SimContext } from "../pages/Part3";
@@ -27,8 +27,7 @@ function Simulation() {
     return imageUrl;
   }
 
-  const { db2, currentCardIndex2, setCurrentCardIndex2 } =
-    useContext(SimContext);
+  useContext(SimContext);
 
   const [valbarre1, setValBarre1] = useState(256);
   const [valbarre2, setValBarre2] = useState(256);

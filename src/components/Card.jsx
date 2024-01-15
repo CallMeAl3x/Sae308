@@ -7,8 +7,6 @@ import pp2before from "../img/pp2before.png";
 import pp3before from "../img/pp3before.png";
 import pp3after from "../img/pp3after.png";
 import { FaRegHandPointLeft } from "react-icons/fa";
-import { FaRegHandPointRight } from "react-icons/fa";
-
 
 function Card({ showTitle1, showTitle2, showTitle3 }) {
   const handleOpacity = () => {
@@ -55,7 +53,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           <button className=" bg-white text-[#E0861B] absolute py-2 px-6 bottom-0 left-0 right-0 ">
             <span className="flex justify-around items-center ">
               <span className="text-xl ">Drag</span>
-              <FaRegHandPointLeft size={25} className="rotatehand"/>
+              <FaRegHandPointLeft size={25} className="rotatehand" />
             </span>
           </button>
         </motion.div>

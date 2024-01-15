@@ -14,8 +14,56 @@ import tindereloscore from "../img/part2/tindereloscore.svg";
 import fruitz from "../img/part2/fruitz.svg";
 import prenium from "../img/part2/prenium.svg";
 import selldata from "../img/part2/selldata.svg";
+import { Link } from "react-router-dom";
+import { Modal2 } from "./Modal2";
+import { useState } from "react";
 
 const Mainlayoutpart2 = () => {
+  const [isBlured, setIsBlured] = useState(true);
+  const [isBlured1, setIsBlured1] = useState(true);
+  const [isBlured2, setIsBlured2] = useState(true);
+  const [isBlured3, setIsBlured3] = useState(true);
+  const [isBlured4, setIsBlured4] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleisblured = () => {
+    setIsBlured(false);
+    if (isBlured === false) {
+      setIsBlured(true);
+    }
+  };
+
+  const handleisblured1 = () => {
+    setIsBlured1(false);
+    if (isBlured1 === false) {
+      setIsBlured1(true);
+    }
+  };
+
+  const handleisblured2 = () => {
+    setIsBlured2(false);
+    if (isBlured2 === false) {
+      setIsBlured2(true);
+    }
+  };
+
+  const handleisblured3 = () => {
+    setIsBlured3(false);
+    if (isBlured3 === false) {
+      setIsBlured3(true);
+    }
+  };
+
+  const handleisblured4 = () => {
+    setIsBlured4(false);
+    if (isBlured4 === false) {
+      setIsBlured4(true);
+    }
+  };
+
   return (
     <main className="lg:p-24 p-6 max-w-7xl lg:ml-auto lg:mr-auto lg:mt-32 mt-6 text-almost-black">
       <h1 className="lg:text-5xl text-4xl text-center">
@@ -79,10 +127,18 @@ const Mainlayoutpart2 = () => {
           permettent de :
         </p>
         <div className="flex lg:gap-8 gap-6 mt-6 lg:flex-row flex-col ">
-          <button className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit">
+          <button
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit ${
+              isBlured ? "blur-[2.5px]" : "blur-[0px]"
+            }`}
+            onClick={handleisblured}>
             Avoir des likes illimités
           </button>
-          <button className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit">
+          <button
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit ${
+              isBlured1 ? "blur-[2.5px]" : "blur-[0px]"
+            }`}
+            onClick={handleisblured1}>
             Avoir une meilleure visibilité
           </button>
         </div>
@@ -129,13 +185,22 @@ const Mainlayoutpart2 = () => {
         </div>
 
         <ul className="flex flex-col lg:flex-row justify-center w-full mt-8 gap-8 lg:gap-16">
-          <li className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3">
+          <li
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            ${isBlured2 ? "blur-[2.5px]" : "blur-[0px]"}`}
+            onClick={handleisblured2}>
             Consacrent + de temps aux réseaux sociaux
           </li>
-          <li className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3">
+          <li
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            ${isBlured3 ? "blur-[2.5px]" : "blur-[0px]"}`}
+            onClick={handleisblured3}>
             Qu'ils sont plus amenés à accepter des invitations pour sortir
           </li>
-          <li className="border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3">
+          <li
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            ${isBlured4 ? "blur-[2.5px]" : "blur-[0px]"}`}
+            onClick={handleisblured4}>
             Que leurs achats en rapport avec les voyages augmentent de 25 %
           </li>
         </ul>
@@ -189,7 +254,7 @@ const Mainlayoutpart2 = () => {
           </p>
         </div>
 
-        <div className="bg-white p-4 text-center max-w-[50rem] flex items-center flex-col relative lg:mt-12 mt-20 rounded">
+        <div className="bg-white p-4 text-center max-w-[48rem] flex items-center flex-col relative lg:mt-12 mt-20 rounded">
           <img
             draggable={false}
             src={badooangry}
@@ -333,6 +398,20 @@ const Mainlayoutpart2 = () => {
             En effet, cela implique que les "produits non matchés" restent entre
             eux et qu'à l'inverse les "produits a succès" en ont encore plus.
           </p>
+          <div className="flex items-center justify-center gap-12 mt-12">
+            <button
+              to="/Part2"
+              onClick={openModal}
+              className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
+              <p className="text-black">Sources</p>
+            </button>
+            <Link
+              to="/Part3"
+              className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
+              <p className="text-black">Partie 3</p>
+            </Link>
+          </div>
+          <Modal2 isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} />
           <img
             draggable={false}
             src={fruitzeloscore}
