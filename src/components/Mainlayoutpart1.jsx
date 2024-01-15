@@ -11,10 +11,9 @@ import Card from "./Card";
 import trophee from "../img/trophee.svg";
 import masque from "../img/masque.svg";
 import { Link } from "react-router-dom";
-import "../components/part1css2.css"
+import "../components/part1css2.css";
 import tindertriste from "../img/part1/tinndertriste2.svg";
 import Svgtrophy from "./Svgtrophy";
-
 
 function Mainlayoutpart1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,17 +38,18 @@ function Mainlayoutpart1() {
     setShowTitleCard3(true);
   };
 
-  
-
   return (
     <main className="lg:p-24 p-6 max-w-7xl lg:ml-auto lg:mr-auto lg:mt-32 mt-6 text-almost-black">
       <div>
-        <h1 className="lg:text-5xl text-4xl text-center" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        <h1
+          className="lg:text-5xl text-4xl text-center"
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
           Tension masculines dans les applications de rencontre
         </h1>
-        
 
-        <p className="lg:mt-24 mt-12 text-center lg:text-start" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+        <p
+          className="lg:mt-24 mt-12 text-center lg:text-start"
+          style={{ textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)" }}>
           Les dynamiques complexes du monde des applications de rencontres
           exposent les hommes à diverses tensions, les poussant à naviguer dans
           un paysage où les attentes sociales en matière de masculinité sont
@@ -57,80 +57,74 @@ function Mainlayoutpart1() {
         </p>
 
         <div className="grid grid-rows-2 grid-cols-3 grid-flow-col gap-5 mt-12 lg:flex lg:w-full lg:justify-center lg:gap-12">
-        <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter "> 
-              
-                        
-              <img
-                src={tinder}
-                alt=""
-                className="rounded-xl w-[72px] h-[72px] imglogotinder  p-1"
-              />               
-            </div>
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter ">
+            <img
+              src={tinder}
+              alt=""
+              className="rounded-xl w-[72px] h-[72px] imglogotinder  p-1"
+            />
+          </div>
 
-            <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter"> 
-              
-                     <div className="p-1"> 
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter">
+            <div className="p-1">
               <img
                 src={fruitz}
                 alt=""
                 className="rounded-xl w-16 h-16 imglogofruitz bg-[#FD5883] p-1"
-              />     
-              </div>            
+              />
             </div>
+          </div>
 
-            <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter"> 
-              
-                        
-              <img
-                src={badoo}
-                alt=""
-                className="rounded-xl w-[72px] h-[72px] imglogobadoo  p-1"
-              />               
-            </div>
-          
-            <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter"> 
-              
-                        
-              <img
-                src={meetic}
-                alt=""
-                className="rounded-xl w-[72px] h-[72px] imglogomeetic  p-1"
-              />               
-            </div>
-            <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter"> 
-              
-                        
-              <img
-                src={badoo}
-                alt=""
-                className="rounded-xl w-[72px] h-[72px] imglogohappn  p-1"
-              />               
-            </div>
-            <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter"> 
-              
-                        
-              <img
-                src={hinge}
-                alt=""
-                className="rounded-xl w-[72px] h-[72px] imglogohinge  p-1"
-              />               
-            </div>
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter">
+            <img
+              src={badoo}
+              alt=""
+              className="rounded-xl w-[72px] h-[72px] imglogobadoo  p-1"
+            />
+          </div>
+
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter">
+            <img
+              src={meetic}
+              alt=""
+              className="rounded-xl w-[72px] h-[72px] imglogomeetic  p-1"
+            />
+          </div>
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter">
+            <img
+              src={badoo}
+              alt=""
+              className="rounded-xl w-[72px] h-[72px] imglogohappn  p-1"
+            />
+          </div>
+          <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter">
+            <img
+              src={hinge}
+              alt=""
+              className="rounded-xl w-[72px] h-[72px] imglogohinge  p-1"
+            />
+          </div>
         </div>
 
-        <p className="mt-12 text-center" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+        <p
+          className="mt-12 text-center"
+          style={{ textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)" }}>
           Les hommes peuvent alors rencontrer des problèmes d'ordre
           psycho-sociologique qui peuvent être caractérisés sous formes de :
         </p>
 
-        <h2 className="text-[#571B46] mt-12 text-center text-4xl lg:text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-           Pressions
+        <h2
+          className="text-[#571B46] mt-12 text-center text-4xl lg:text-6xl font-bold"
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+          Pressions
         </h2>
         <div className="w-full h-2 ">
           <div className="relative logotinderrr">
-          <div className=" absolute left-[-35%] top-32 ">
-            <img src={tindertriste} alt="" className="vrailogo" />
-          </div></div>
-      </div>
+            <div className=" absolute left-[-35%] top-32 ">
+              <img src={tindertriste} alt="" className="vrailogo" />
+            </div>
+          </div>
+        </div>
         <div className="mt-12 lg:mt-16">
           <Card
             showTitle1={showTitle}
@@ -140,7 +134,9 @@ function Mainlayoutpart1() {
           />
         </div>
 
-        <p className="mt-16" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+        <p
+          className="mt-16"
+          style={{ textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)" }}>
           Certains comportements aparaissent pour apaiser cette pression comme
           <b>”la façace sociale"</b> ou <b>"le conformisme social "</b>
           Découvrez comment ils apparaissent en glissant les cartes !
@@ -160,14 +156,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard1 ? (
                     <>
-                      <span className="spantableau" >
+                      <span className="spantableau">
                         {" "}
                         Les retouches photos ( faible ){" "}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" >
+                      <span className="spantableau2">
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -178,14 +174,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard2 ? (
                     <>
-                      <span className="spantableau" >
+                      <span className="spantableau">
                         {" "}
                         Changement de style vestimentaire drastique
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" >
+                      <span className="spantableau2">
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -195,14 +191,14 @@ function Mainlayoutpart1() {
                 <td>
                   {showTitlteCard3 ? (
                     <>
-                      <span className="spantableau" >
+                      <span className="spantableau">
                         {" "}
                         Les retouches photos ( fort ){" "}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="spantableau2" >
+                      <span className="spantableau2">
                         {" "}
                         Vous avez oublié de draguer la première carte ;){" "}
                       </span>
@@ -214,12 +210,14 @@ function Mainlayoutpart1() {
           </table>
         </div>
 
-        <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-24" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        <h2
+          className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-24"
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
           Comparaison sociale et concurrence
         </h2>
 
         <div className="mt-24 flex gap-3 flex-col lg:flex-row ">
-          <p className=" text-almost-black" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+          <p className=" text-almost-black">
             La compétition dans les applications de rencontres crée une
             atmosphère où les hommes se comparent constamment les uns aux
             autres. On évalue non seulement l'apparence, mais aussi le succès
@@ -231,14 +229,14 @@ function Mainlayoutpart1() {
             d'infériorité chez certains hommes, compliquant ainsi leur quête de
             relations amoureuses.
           </p>
-          <div >
-          <Svgtrophy />
+          <div>
+            <Svgtrophy />
           </div>
         </div>
 
         <div className="flex gap-24 lg:flex-row  flex-col-reverse">
           <img src={masque} alt="" className="-mt-12" />
-          <p className="font-bold text-almost-black" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+          <p className="font-bold text-almost-black">
             Cette pression permanente de se mesurer aux autres peut également
             créer un climat anxiogène, où les individus se sentent constamment
             jugés par des critères parfois idéalisés. En résumé, la compétition
@@ -250,7 +248,7 @@ function Mainlayoutpart1() {
           </p>
         </div>
 
-        <p className=" text-2xl font-bold mt-24 text-center" style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}>
+        <p className=" text-2xl font-bold mt-24 text-center">
           Entrevue avec Ivy Daure, psychologue en blablabla
         </p>
 
@@ -266,16 +264,25 @@ function Mainlayoutpart1() {
             allowfullscreen></iframe>
         </div>
 
-        <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
           Peur du Rejet ou de l'Échec <br /> sur la Santé Mentale Masculine
         </h2>
 
-        <p className="mt-12 text-white max-w-3xl text-center lg:text-start ml-auto mr-auto " style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-         <span className=""> La nature impitoyable des rencontres en ligne peut entraîner des
-          expériences fréquentes de rejet ou</span> <span> d'échec. Les hommes peuvent réagir
-          différemment à ces situations, mais pour beaucoup, cela peut avoir</span> un
-          impact significatif sur leur santé mentale. La répétition des rejets
-          peut créer des sentiments de désespoir, d'anxiété sociale et de
+        <p
+          className="mt-12 text-white max-w-3xl text-center lg:text-start ml-auto mr-auto "
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+          <span className="">
+            {" "}
+            La nature impitoyable des rencontres en ligne peut entraîner des
+            expériences fréquentes de rejet ou
+          </span>{" "}
+          <span>
+            {" "}
+            d'échec. Les hommes peuvent réagir différemment à ces situations,
+            mais pour beaucoup, cela peut avoir
+          </span>{" "}
+          un impact significatif sur leur santé mentale. La répétition des
+          rejets peut créer des sentiments de désespoir, d'anxiété sociale et de
           dévalorisation personnelle. Certains hommes peuvent internaliser ces
           expériences négatives, compromettant ainsi leur estime de soi et leur
           bien-être émotionnel.
@@ -283,9 +290,14 @@ function Mainlayoutpart1() {
 
         <div className="flex flex-col lg:flex-row items-start text-white mt-48 gap-12">
           <div className="relative lg:w-1/2">
-            <p className="text-center lg:text-start" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+            <p
+              className="text-center lg:text-start"
+              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
               Témoignage de Karime Baudouin : <br />
-              Etudiant en BUT GEII : <br /> <br /> Tu peux être affecté par certaines choses sur l'application, comme le fait de ne pas avoir delikes. Le fait de catégoriser ou de se faire catégoriser peut baisser le morale où le monter.
+              Etudiant en BUT GEII : <br /> <br /> "Tu peux être affecté par
+              certaines choses sur l'application, comme le fait de ne pas avoir
+              delikes. Le fait de catégoriser ou de se faire catégoriser peut
+              baisser le morale où le monter".
             </p>
             <div className="hidden lg:block absolute top-[81%] left-[67%] rectangle"></div>
           </div>
@@ -302,12 +314,14 @@ function Mainlayoutpart1() {
 
         <div className="flex lg:flex-row-reverse flex-col items-start text-white mt-2 gap-12">
           <div className="relative lg:w-1/2">
-            <p className="mt-8 lg:text-start text-center " style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+            <p
+              className="mt-8 lg:text-start text-center "
+              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
               Point de vue du coach : <br />
-              Etudiant en BUT GEII : <br /> <br /> Tu peux être affecté par
-              certaines choses sur l'application, comme le fait de ne pas avoir
-              delikes. Le fait de catégoriser ou de se faire catégoriser peut
-              baisser le morale où le monter.
+              **Citation** <br /> <br /> "Tu peux être affecté par certaines
+              choses sur l'application, comme le fait de ne pas avoir delikes.
+              Le fait de catégoriser ou de se faire catégoriser peut baisser le
+              morale où le monter".
             </p>
             <div className="hidden lg:block absolute top-[0%] -left-[7.5%] rectangle rotate-180"></div>
           </div>
@@ -322,7 +336,9 @@ function Mainlayoutpart1() {
           </div>
         </div>
 
-        <p className="text-white max-w-xl ml-auto mr-auto mt-24 text-center" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        <p
+          className="text-white max-w-xl ml-auto mr-auto mt-24 text-center"
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
           En somme, les tensions masculines dans le monde des applications de
           rencontres sont profondément ancrées dans les normes culturelles et
           les dynamiques sociales. Comprendre ces pressions est essentiel pour

@@ -31,7 +31,7 @@ const Mainlayoutpart2 = () => {
       </p>
 
       <div className="flex flex-col lg:flex-row items-center mt-24 gap-12">
-        <h2 className="text-center text-almost-white mt-16 text-3xl lg:text-3xl lg:mt-4 font-bold">
+        <h2 className="text-center text-[#571B46] mt-16 text-3xl lg:text-3xl lg:mt-4 font-bold">
           "Si c'est gratuit, c'est toi le produit" <br />
           D'où viennent leurs sources de revenus ? <br />
           Quel est leur modèle économique ?
@@ -115,7 +115,7 @@ const Mainlayoutpart2 = () => {
           richesse perçue par l'application.
         </p>
 
-        <div className="bg-white px-12 py-5 mt-8 relative lg:text-start text-center">
+        <div className="bg-white rounded px-12 py-5 mt-8 relative lg:text-start text-center">
           <p>
             Après une étude menée par Facebook, il a été découvert que les
             personnes en pleine rupture amoureuse :
@@ -189,7 +189,7 @@ const Mainlayoutpart2 = () => {
           </p>
         </div>
 
-        <div className="bg-white p-4 text-center max-w-[50rem] flex items-center flex-col relative lg:mt-12 mt-20">
+        <div className="bg-white p-4 text-center max-w-[50rem] flex items-center flex-col relative lg:mt-12 mt-20 rounded">
           <img
             draggable={false}
             src={badooangry}
@@ -222,7 +222,7 @@ const Mainlayoutpart2 = () => {
           recette de cuisine qui permet d'obtenir un plat.
         </p>
 
-        <div className="bg-white px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
+        <div className="bg-white rounded px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
           <p>
             D'après le brevet US9733811B2 déposé par "Matchgroup" , maison mère
             de Tinder,Meetic et OkCupid, une application de rencontre est bien
@@ -267,7 +267,7 @@ const Mainlayoutpart2 = () => {
           </div>
         </div>
 
-        <div className="bg-white px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
+        <div className="bg-white rounded px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
           <p>
             Les algorithmes des applicationss ne sont pas connu du grand public,
             ces informations sont prises à partir de brevets, aucune preuve
@@ -292,7 +292,7 @@ const Mainlayoutpart2 = () => {
           Mais comment l'algorithme peut faire ce tri ?
         </h3>
 
-        <div className="bg-white px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
+        <div className="bg-white rounded px-4 lg:px-12 py-5 mt-8 relative max-w-4xl text-center">
           <p>
             D'après le brevet mentionnné précedemment : "Un utilisateur devrait
             obtenir un avantage à être présenté a des potentiels matchs qui sur

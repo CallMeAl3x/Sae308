@@ -39,7 +39,7 @@ const MatchingCard = () => {
 
     if (direction === "right") {
       toast.success("Swipe à droite détecté", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
@@ -51,7 +51,7 @@ const MatchingCard = () => {
     }
     if (direction === "left") {
       toast.error("Swipe à gauche détecté", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
