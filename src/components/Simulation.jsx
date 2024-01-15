@@ -1,11 +1,32 @@
 import React, { createContext, useContext, useState } from "react";
 import "./Simulation.css";
 import MatchingCardSimulation from "./MatchingCardSimulation";
-import imgbonhomme1 from "../img/bonhommepret.png";
 import { SimContext } from "../pages/Part3";
 import { ToastContainer, toast } from "react-toastify";
+import bonhome from "../img/part3/bonhommepret.png";
+import bonhome2 from "../img/part3/bonhommepret2.png";
+import bonhome3 from "../img/part3/bonhommepret3.png";
+import bonhome4 from "../img/part3/bonhommepret4.png";
+import bonhome5 from "../img/part3/bonhommepret5.png";
 
 function Simulation() {
+  function getImageUrl(valbarre1) {
+    console.log("Valeur actuelle de valbarre1:", valbarre1);
+    let imageUrl;
+    if (valbarre1 === 0) {
+      imageUrl = bonhome2;
+    } else if (bonhome5 < 25) {
+      imageUrl = bonhome4;
+    } else if (valbarre1 < 50) {
+      imageUrl = bonhome3;
+    } else if (valbarre1 < 75) {
+      imageUrl = bonhome2;
+    } else {
+      imageUrl = bonhome;
+    }
+    return imageUrl;
+  }
+
   const { db2, currentCardIndex2, setCurrentCardIndex2 } =
     useContext(SimContext);
 
@@ -13,7 +34,6 @@ function Simulation() {
   const [valbarre2, setValBarre2] = useState(256);
   const [valbarre3, setValBarre3] = useState(256);
   const [valbarre4, setValBarre4] = useState(256);
-  const [bodyOffet, setBodyOffset] = useState(0);
 
   if (
     valbarre1 === 0 ||
@@ -46,13 +66,14 @@ function Simulation() {
   const baisserVal = (setValBarre, i) => {
     const alval = generateRandomValue(i);
     setValBarre((prevVal) => prevVal - alval);
+    console.log(valbarre1);
   };
 
   return (
     <main className="flex w-screen items-center lg:flex-row flex-col h-screen overflow-hidden">
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center bonhome">
         <img
-          src={imgbonhomme1}
+          src={getImageUrl(valbarre1)}
           className="lg:h-[700px] lg:w-auto h-auto w-24 hidden lg:block"
           alt=""
         />

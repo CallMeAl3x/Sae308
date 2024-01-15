@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar";
 import Simulation from "../components/Simulation";
+import { PiWine } from "react-icons/pi";
 
 export const SimContext = createContext();
 
@@ -81,6 +82,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Cuisinière cherche partenaire pour partager de délicieuses recettes ?",
     },
     {
       Prenom: "Julie, ",
@@ -90,6 +93,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Hello, une aventurière passionnée de randonnée. Prêt à explorer les sentiers de la vie avec moi ?",
     },
     {
       Prenom: "Julie, ",
@@ -99,6 +104,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Coucou, originaire de Dijon ! Qui veut faire un tour virtuel dans ma ville natale ?",
     },
     {
       Prenom: "Julie, ",
@@ -108,6 +115,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Je fais quoi ici? Quelqu'un peut me sortir d'ici? S'il vous plait ? ...🤔",
     },
     {
       Prenom: "Julie, ",
@@ -117,6 +126,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Qui aurait cru que je viendrais un jour ici ? A la découverte de l'inattendu !",
     },
     {
       Prenom: "Julie",
@@ -126,6 +137,8 @@ function Part3() {
       Image: "./img/Part3img/woman" + nombreAleatoire + ".jpg",
       Video: false,
       Imagerep: true,
+      Biographie:
+        "Amoureuse de la pêche, passionnée d'écriture, et gourmande de chocolats.",
     },
     {
       Prenom: "Julie, ",
@@ -135,6 +148,8 @@ function Part3() {
       Image: "./videos/presentation.mp4",
       Video: true,
       Imagerep: false,
+      Biographie:
+        "Je cherche quelqu’un avec qui partager un compte Netflix et une cinquantaine de McNuggets.",
     },
   ];
 
@@ -189,6 +204,13 @@ function Part3() {
     "Sofia",
   ];
 
+  const relationList = [
+    "Relation sérieuse",
+    "Hésitant",
+    "Relation courte",
+    "Coup d'un soir",
+  ];
+
   const getRandomPrenom = () =>
     prenomsList[Math.floor(Math.random() * prenomsList.length)];
   const getRandomAge = () => Math.floor(Math.random() * 16) + 20;
@@ -203,6 +225,7 @@ function Part3() {
 
     return {
       ...entry,
+      Relation: relationList[Math.floor(Math.random() * relationList.length)],
       Prenom: getRandomPrenom(),
       Age: getRandomAge(),
       Beaute: beautyValue,

@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useMemo,
-  useRef,
-  useCallback,
-  useEffect,
-} from "react";
+import React, { useState, useMemo, useRef, useCallback } from "react";
 import TinderCard from "react-tinder-card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +6,9 @@ import { useContext } from "react";
 import { SimContext } from "../pages/Part3";
 import False from "../icons/False.svg";
 import True from "../icons/True.svg";
+import { PiConfettiLight, PiWine } from "react-icons/pi";
+import { IoIosBed } from "react-icons/io";
+import { FaGrinBeamSweat } from "react-icons/fa";
 function MatchingCardSimulation({
   baisserVal1,
   baisserVal2,
@@ -136,12 +133,44 @@ function MatchingCardSimulation({
               className="w-[80vw] max-w-[500px] h-[400px] lg:h-[500px] rounded-2xl relative overflow-hidden"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
-                <div className="flex flex-col justify-between p-4 z-10 relative top-[74%] left-0 bg-almost-white rounded-lg w-9/12 max-lg:w-full mr-auto ml-auto">
+                <div className="absolute top-6 left-[65%] z-50 bg-white rounded-xl p-2 text-black">
+                  {Question.Relation === "Relation sérieuse" && (
+                    <div className="flex items-center gap-2">
+                      <PiWine />
+                      {Question.Relation}
+                    </div>
+                  )}
+
+                  {Question.Relation === "Hésitant" && (
+                    <div className="flex items-center gap-2">
+                      <FaGrinBeamSweat />
+                      {Question.Relation}
+                    </div>
+                  )}
+
+                  {Question.Relation === "Relation courte" && (
+                    <div className="flex items-center gap-2">
+                      <PiConfettiLight />
+                      {Question.Relation}
+                    </div>
+                  )}
+
+                  {Question.Relation === "Coup d'un soir" && (
+                    <div className="flex items-center gap-2">
+                      <IoIosBed />
+                      {Question.Relation}
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-col justify-between p-4 z-10 relative top-[70%] left-0 bg-almost-white rounded-lg w-[80%] max-lg:w-full mr-auto ml-auto">
                   <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
                     {Question.Prenom}, {Question.Age}
                   </h2>
 
                   <h3 className="p-2 text-almost-black">{Question.Intitulé}</h3>
+                  <h4 className="text-almost-black ml-2 text-[15px]">
+                    {Question.Biographie}
+                  </h4>
                 </div>
                 {Question.Imagerep && (
                   <img
