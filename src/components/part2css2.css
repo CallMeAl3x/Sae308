@@ -1,0 +1,83 @@
+@keyframes flottement {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+      /* Position initiale */
+    }
+  
+    25% {
+      transform: translate(2px, 2px);
+      /* Déplacement en haut à droite */
+    }
+  
+    50% {
+      transform: translate(-4px, 6px);
+      /* Déplacement vers le haut à gauche */
+    }
+  
+    75% {
+      transform: translate(4px, -2px);
+      /* Déplacement vers le bas à droite */
+    }
+  }
+
+
+  .imggg {
+    animation: flottement 8s infinite ease-in-out;
+    /* Animation infinie de 4 secondes */
+  }
+
+  .imggg2 {
+    animation: flottement 8s infinite ease-in-out 0.5s;
+    /* Animation infinie de 4 secondes */
+  }
+
+  .imggg3 {
+    animation: flottement 8s infinite ease-in-out 1s;
+    /* Animation infinie de 4 secondes */
+  }
+  
+
+  .imggg3 {
+    animation: flottement 8s infinite ease-in-out 3s;
+    /* Animation infinie de 4 secondes */
+  }
+
+
+  @keyframes flottement2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+      /* Position initiale */
+    }
+  
+    25% {
+      transform: translate(10px, 10px);
+      /* Déplacement en haut à droite */
+    }
+  
+    50% {
+      transform: translate(-20px, 30px);
+      /* Déplacement vers le haut à gauche */
+    }
+  
+    75% {
+      transform: translate(20px, -10px);
+      /* Déplacement vers le bas à droite */
+    }
+  }
+
+
+
+  .imggg22 {
+    animation: flottement 8s infinite ease-in-out;
+    /* Animation infinie de 4 secondes */
+  }
+
+
+  .imggg44 {
+    animation: flottement 8s infinite ease-in-out;
+    /* Animation infinie de 4 secondes */
+  }

@@ -266,7 +266,7 @@ function MatchingCardSimulation({
 
   return (
     <div className="flex flex-col items-center max-lg:ml-0 h-screen max-lg:h-auto overflow-hidden justify-center mt-0 lg:mt-[80px]">
-      <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative">
+      <div className="flex justify-center max-lg:mt-12 w-[90vw] max-w-[320px] lg:min-w-[500px] h-[480px] relative ">
         {db2.map((Question, index) => (
           <TinderCard
             ref={childRefs[index]}
@@ -279,7 +279,7 @@ function MatchingCardSimulation({
             }>
             <div
               style={{ backgroundImage: "url(" + Question.url + ")" }}
-              className="w-[80vw] max-w-[500px] h-[400px] lg:h-[500px] rounded-2xl relative overflow-hidden"
+              className="w-[80vw] max-w-[500px] h-[400px] lg:h-[500px] rounded-2xl relative overflow-hidden border-4 border-white"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
                 <div className="absolute top-6 left-[65%] z-50 bg-white rounded-xl p-2 text-black">

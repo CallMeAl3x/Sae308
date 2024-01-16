@@ -92,7 +92,7 @@ function Simulation() {
       <ul className="lg:ml-12 mt-8 lg:mt-0 flex flex-col gap-4 lg:gap-8 lg:mb-24 lg:pb-0 pb-12">
         <li>
           <span>Cercle Sociale</span>
-          <div className="relative bg-white rounded w-64 h-4">
+          <div className="relative bg-white rounded w-64 h-4 border-[1px] border-white">
             <div
               style={{ width: `${valbarre1}px` }}
               className="absolute barreval1 ease duration-300 w-full h-full rounded z-10"></div>
@@ -100,7 +100,7 @@ function Simulation() {
         </li>
         <li>
           <span>Confiance en soi</span>
-          <div className="relative bg-white rounded w-64 h-4">
+          <div className="relative bg-white rounded w-64 h-4 border-[1px] border-white">
             <div
               style={{ width: `${valbarre2}px` }}
               className="absolute barreval2 ease duration-300 w-full h-full rounded z-10"></div>
@@ -108,7 +108,7 @@ function Simulation() {
         </li>
         <li>
           <span>Situation financière</span>
-          <div className="relative bg-white rounded w-64 h-4">
+          <div className="relative bg-white rounded w-64 h-4 border-[1px] border-white">
             <div
               style={{ width: `${valbarre3}px` }}
               className="absolute barreval3 ease duration-300 w-full h-full rounded z-10"></div>
@@ -116,7 +116,7 @@ function Simulation() {
         </li>
         <li>
           <span>Bonheur</span>
-          <div className="relative bg-white rounded w-64 h-4">
+          <div className="relative bg-white rounded w-64 h-4 border-[1px] border-white">
             <div
               style={{ width: `${valbarre4}px` }}
               className="absolute barreval4 ease duration-300 w-full h-full rounded z-10"></div>

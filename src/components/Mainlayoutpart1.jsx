@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import "../components/part1css2.css";
 import tindertriste from "../img/part1/tinndertriste2.svg";
 import Svgtrophy from "./Svgtrophy";
+import tinderlogo3 from "../img/Tinderloogo3.png"
 
 function Mainlayoutpart1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,9 +58,9 @@ function Mainlayoutpart1() {
         <div className="grid grid-rows-2 grid-cols-3 grid-flow-col gap-5 mt-12 lg:flex lg:w-full lg:justify-center lg:gap-12">
           <div className="w-20 h-20 bg-white rounded-xl relative shadow-xl flotter ">
             <img
-              src={tinder}
+              src={tinderlogo3}
               alt=""
-              className="rounded-xl w-[72px] h-[72px] imglogotinder  p-1"
+              className="rounded-xl w-[72px] h-[72px] imglogotinder p-1" 
             />
           </div>
 
@@ -119,7 +120,7 @@ function Mainlayoutpart1() {
         <div className="w-full h-2 ">
           <div className="relative logotinderrr">
             <div className=" absolute left-[-35%] top-32 ">
-              <img src={tindertriste} alt="" className="vrailogo" />
+              <img src={tindertriste} alt="" className="vrailogo" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}/>
             </div>
           </div>
         </div>
@@ -232,7 +233,7 @@ function Mainlayoutpart1() {
         </div>
 
         <div className="flex gap-24 lg:flex-row  flex-col-reverse">
-          <img src={masque} alt="" className="-mt-12" />
+          <img src={masque} alt="" className="-mt-12" style={{ filter: 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))' }}/>
           <p className="font-bold text-almost-black">
             Cette pression permanente de se mesurer aux autres peut également
             créer un climat anxiogène, où les individus se sentent constamment
@@ -246,11 +247,11 @@ function Mainlayoutpart1() {
         </div>
 
         <p className=" text-2xl font-bold mt-24 text-center">
-          Entrevue avec Ivy Daure, psychologue en blablabla
+          Entrevue avec Ivy Daure, psychologue clinicienne
         </p>
 
         <div className="w-full flex justify-center mt-16">
-          <iframe className="rounded-lg shadow-xl border-4 border-[#E0861B]" width="560" height="315" src="https://www.youtube.com/embed/ueWwnmjqTRE?si=xBIskaPRzw2SVBXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe className="rounded-lg shadow-xl border-4 border-white" width="560" height="315" src="https://www.youtube.com/embed/ueWwnmjqTRE?si=xBIskaPRzw2SVBXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
@@ -291,7 +292,7 @@ function Mainlayoutpart1() {
             <div className="hidden lg:block absolute top-[81%] left-[67%] rectangle"></div>
           </div>
           <div className="lg:w-1/2 flex justify-center w-full">
-          <iframe className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-[#E0861B]" width="560" height="315" src="https://www.youtube.com/embed/KR4o1i6uyjk?si=yoXRYXzHtvG0AUXT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-white" width="560" height="315" src="https://www.youtube.com/embed/KR4o1i6uyjk?si=yoXRYXzHtvG0AUXT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -301,16 +302,13 @@ function Mainlayoutpart1() {
               className="mt-8 lg:text-start text-center "
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
               Point de vue du coach : <br />
-              **Citation** <br /> <br /> "Tu peux être affecté par certaines
-              choses sur l'application, comme le fait de ne pas avoir delikes.
-              Le fait de catégoriser ou de se faire catégoriser peut baisser le
-              morale où le monter".
+              **Citation** <br /> <br /> "Il faut le comprendre, les 'applications de rencontre', c'est du marketing. Le produit, c'est toi, et ce produit, tu dois le mettre en valeur."
             </p>
             <div className="hidden lg:block absolute top-[0%] -left-[7.5%] rectangle rotate-180"></div>
           </div>
           <div className="lg:w-1/2  flex justify-center w-full">
             <iframe
-              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-[#E0861B]"
+              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-white"
               src="https://www.youtube.com/embed/tiDNAr9lFuc?si=a_yoIZBgvx802qkY"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

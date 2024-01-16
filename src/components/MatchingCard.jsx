@@ -90,7 +90,7 @@ const MatchingCard = () => {
           <TinderCard
             preventSwipe={["up", "down"]}
             ref={childRefs[index]}
-            className="absolute m-auto overflow-hidden"
+            className="absolute m-auto overflow-hidden "
             key={Question.Intitulé}
             onSwipe={(dir) => swiped(dir, Question.Intitulé, index)}
             onCardLeftScreen={(dir) =>
@@ -98,7 +98,7 @@ const MatchingCard = () => {
             }>
             <div
               style={{ backgroundImage: "url(" + Question.url + ")" }}
-              className="w-[80vw] max-w-[475px] h-[480px] rounded-2xl relative overflow-hidden"
+              className="w-[80vw] max-w-[475px] h-[480px] rounded-2xl relative overflow-hidden border-4 border-white"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
                 <div className="flex flex-col justify-between p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-t-[25px] w-9/12 max-lg:w-full mr-auto ml-auto">

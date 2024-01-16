@@ -17,6 +17,7 @@ import selldata from "../img/part2/selldata.svg";
 import { Link } from "react-router-dom";
 import { Modal2 } from "./Modal2";
 import { useState } from "react";
+import "../components/part2css2.css";
 
 const Mainlayoutpart2 = () => {
   const [isBlured, setIsBlured] = useState(true);
@@ -86,7 +87,7 @@ const Mainlayoutpart2 = () => {
         </h2>
 
         <iframe
-          className="w-fit h-fit lg:mr-auto mt-6 lg:mt-0"
+          className="w-fit h-fit lg:mr-auto mt-6 lg:mt-0 imggg3 " style={{ filter: 'drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.5))' }}
           id="SVGmator__yemha1705248393865"
           frameBorder="0"
           src="https://www.svgmator.com/embed/xIuQgwkSkTiAyyD?onload=true&onclick=false&onhover=true"></iframe>
@@ -102,25 +103,29 @@ const Mainlayoutpart2 = () => {
 
       <ul className="flex lg:flex-row flex-col gap-24 mt-6 justify-center items-center">
         <li className="flex flex-col items-center gap-4">
-          <img src={prenium} className="h-[208px] w-[180]" alt="" />
-          <p className="font-bold">Abonnement payant</p>
+        <img
+  src={prenium}
+  className="h-[208px] w-[180px] imggg image-with-shadow"
+  alt=""
+  style={{ filter: 'drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5))' }}
+/>          <p className="font-bold">Abonnement payant</p>
         </li>
 
         <li className="flex flex-col items-center gap-4">
-          <img src={ads} alt="" className="h-[208px] w-[180]" />
+          <img src={ads} alt="" className="h-[208px] w-[180] imggg2" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }} />
           <p className="font-bold">Publicités</p>
         </li>
 
         <li className="flex flex-col items-center">
           <div className="lg:h-[218px] lg:w-[180px] flex flex-col">
-            <img src={selldata} className=" lg:mt-20" alt="" />
+            <img src={selldata} className=" lg:mt-20 imggg3" alt="" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}/>
           </div>
           <p className="font-bold lg:mt-0 mt-6">Vente de données</p>
         </li>
       </ul>
 
       <div className="flex flex-col justify-center items-center lg:mt-24 mt-14">
-        <img src={prenium} className="h-[280px] w-[244px]" alt="" />
+        <img src={prenium} className="h-[280px] w-[244px]" alt="" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}/>
 
         <p className="lg:text-start text-center">
           Sur ces applications, des abonnements payants sont proposés et
@@ -128,14 +133,14 @@ const Mainlayoutpart2 = () => {
         </p>
         <div className="flex lg:gap-8 gap-6 mt-6 lg:flex-row flex-col ">
           <button
-            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit ${
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center ease-in-out duration-300 lg:w-fit ${
               isBlured ? "blur-[2.5px]" : "blur-[0px]"
             }`}
             onClick={handleisblured}>
             Avoir des likes illimités
           </button>
           <button
-            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-fit ${
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center ease-in-out duration-300 lg:w-fit ${
               isBlured1 ? "blur-[2.5px]" : "blur-[0px]"
             }`}
             onClick={handleisblured1}>
@@ -153,16 +158,16 @@ const Mainlayoutpart2 = () => {
         <img
           draggable={false}
           src={like}
-          className="likeimage w-[359.69px] h-[328.13px] top-[-151px] right-[-118px]"
-          alt=""
+          className="likeimage w-[359.69px] h-[328.13px] top-[-151px] right-[-118px] imggg"
+          alt="" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}
         />
         <img
           draggable={false}
           src={tinderangry}
-          className="tinderangry top-[9%] left-[-18%] lg:top-[7%] lg:left-[-25%] lg:w-[359.69px] lg:h-[328.13px] w-24 h-24"
-          alt=""
+          className="tinderangry top-[9%] left-[-18%] lg:top-[7%] lg:left-[-25%] lg:w-[359.69px] lg:h-[328.13px] w-24 h-24 imggg22"
+          alt="" style={{ filter: 'drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5))' }}
         />
-        <img draggable={false} src={ads} className="h-60 w-60" alt="" />
+        <img draggable={false} src={ads} className="h-60 w-60" alt="" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }} />
         <h2 className="font-bold text-4xl text-center mt-8">Publicité</h2>
         <p className="lg:mt-8 lg:text-start text-center mt-12">
           Ces applications ont des partenariats avec des entreprises pour
@@ -180,25 +185,25 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={certificat}
             alt=""
-            className="certificat w-[88px] h-[56px] top-[-15%] left-[82%] lg:top-[-31%] lg:left-[94%]"
+            className="certificat w-[88px] h-[56px] top-[-15%] left-[82%] lg:top-[-31%] lg:left-[94%]" style={{ filter: 'drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5))' }}
           />
         </div>
 
         <ul className="flex flex-col lg:flex-row justify-center w-full mt-8 gap-8 lg:gap-16">
           <li
-            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center ease-in-out duration-300 cursor-pointer lg:w-1/3
             ${isBlured2 ? "blur-[2.5px]" : "blur-[0px]"}`}
             onClick={handleisblured2}>
             Consacrent + de temps aux réseaux sociaux
           </li>
           <li
-            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center ease-in-out duration-300 cursor-pointer lg:w-1/3
             ${isBlured3 ? "blur-[2.5px]" : "blur-[0px]"}`}
             onClick={handleisblured3}>
             Qu'ils sont plus amenés à accepter des invitations pour sortir
           </li>
           <li
-            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center lg:w-1/3
+            className={`border-[3px] border-white rounded-[5px] bg-[#DD6064] text-white p-6 text-center ease-in-out duration-300 cursor-pointer lg:w-1/3
             ${isBlured4 ? "blur-[2.5px]" : "blur-[0px]"}`}
             onClick={handleisblured4}>
             Que leurs achats en rapport avec les voyages augmentent de 25 %
@@ -220,7 +225,7 @@ const Mainlayoutpart2 = () => {
           <img
             draggable={false}
             src={fruitz}
-            className="fruitz lg:w-[240px] lg:h-[240px] w-24 h-24 top-[76%] left-[73%] lg:top-[25%] lg:left-[110%]"
+            className="fruitz lg:w-[240px] lg:h-[240px] w-24 h-24 top-[76%] left-[73%] lg:top-[25%] lg:left-[110%] imggg22" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}
             alt=""
           />
         </div>
@@ -241,12 +246,12 @@ const Mainlayoutpart2 = () => {
             src={personsad}
             height={85}
             width={85}
-            alt=""
+            alt="" style={{ filter: 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))' }}
           />
         </div>
 
         <div className="max-w-2xl mt-8 flex flex-col-reverse lg:flex-row items-center lg:items-start gap-4">
-          <img draggable={false} src={money} alt="" height={85} width={85} />
+          <img draggable={false} src={money} alt="" height={85} width={85} style={{ filter: 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))' }}/>
           <p className="text-center lg:text-justify">
             Donc avec les données que l'application a, elle peut les revendre à
             d'autres entreprises qui sont intéressées par ces données, et même
@@ -259,7 +264,7 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={badooangry}
             alt=""
-            className=" top-[-14%] left-[-14%] lg:top-[7%] lg:left-[-30%] w-24 h-24 lg:w-[166px] lg:h-[137.27px] badooangry"
+            className=" top-[-14%] left-[-14%] lg:top-[7%] lg:left-[-30%] w-24 h-24 lg:w-[166px] lg:h-[137.27px] badooangry imggg22" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}
           />
           <p>
             Le modèle économique de ces applications repose donc évidemment sur
@@ -273,7 +278,7 @@ const Mainlayoutpart2 = () => {
           <img
             draggable={false}
             src={fruitztime}
-            className="w-[123px] h-[84px]"
+            className="w-[123px] h-[84px] imggg2" style={{ filter: 'drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5))' }}
             alt=""
           />
         </div>
@@ -298,7 +303,7 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={certificat}
             alt=""
-            className="certificat top-[-10%] left-[82%] lg:top-[-20%] lg:left-[94%]"
+            className="certificat top-[-10%] left-[82%] lg:top-[-20%] lg:left-[94%]" style={{ filter: 'drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5))' }}
           />
         </div>
 
@@ -307,7 +312,7 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={entonoir}
             alt=""
-            className="entonoir lg:top-[-40%] lg:left-[90%] lg:w-[486.21px] lg:h-[366.52px] top-[-5%]"
+            className="entonoir lg:top-[-40%] lg:left-[90%] lg:w-[486.21px] lg:h-[366.52px] top-[-5%] imggg22" style={{ filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5))' }}
           />
           <div className="mt-52 lg:mt-0">
             Avec cette notion, on obtient un système qui contrôle à qui est
@@ -343,13 +348,13 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={warning}
             alt=""
-            className="warning-top w-[46px] h-[43px] top-[-12%] left-[88%] lg:top-[-9%] lg:left-[96%]"
+            className="warning-top w-[46px] h-[43px] top-[-12%] left-[88%] lg:top-[-9%] lg:left-[96%]" style={{ filter: 'drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5))' }}
           />
           <img
             draggable={false}
             src={warning}
             alt=""
-            className="warning-bottom w-[46px] h-[43px] top-[88%] left-[-5%] lg:top-[62.5%] lg:left-[-2%]"
+            className="warning-bottom w-[46px] h-[43px] top-[88%] left-[-5%] lg:top-[62.5%] lg:left-[-2%]" style={{ filter: 'drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5))' }}
           />
         </div>
 
@@ -367,7 +372,7 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={certificat}
             alt=""
-            className="certificat top-[-10%] left-[82%] lg:top-[-31%] lg:left-[94%]"
+            className="certificat top-[-10%] left-[82%] lg:top-[-31%] lg:left-[94%]" style={{ filter: 'drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5))' }}
           />
         </div>
 
@@ -416,13 +421,13 @@ const Mainlayoutpart2 = () => {
             draggable={false}
             src={fruitzeloscore}
             alt=""
-            className="fruitzeloscore lg:top-[100%] lg:left-[55%] lg:w-[255.5px] lg:h-[255.5px] top-[100%] left-[55%] w-24 h-24"
+            className="fruitzeloscore lg:top-[100%] lg:left-[55%] lg:w-[255.5px] lg:h-[255.5px] top-[100%] left-[55%] w-24 h-24 imggg44"
           />
           <img
             draggable={false}
             src={tindereloscore}
             alt=""
-            className="tindereloscore lg:top-[115%] lg:left-[12%] lg:w-[234.5px] lg:h-[274px] top-[100%] left-[15%] w-24 h-24"
+            className="tindereloscore lg:top-[115%] lg:left-[12%] lg:w-[234.5px] lg:h-[274px] top-[100%] left-[15%] w-24 h-24 imggg44"
           />
         </div>
       </div>
