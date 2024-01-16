@@ -118,7 +118,7 @@ const NavBar = () => {
                 <span>Partie&nbsp;3</span>
               </div>
             </Link>
-            <Link to="/Part2" className="flex items-center relative Link">
+            <Link to="/Sources" className="flex items-center relative Link">
               <li>
                 <img src={Advices} alt="" className="h-[34px] w-[42px]" />
               </li>

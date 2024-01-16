@@ -4,6 +4,7 @@ import { createContext, useState } from "react";
 import Part1 from "./pages/Part1";
 import Part2 from "./pages/Part2";
 import Part3 from "./pages/Part3";
+import Sources from "./pages/Sources";
 
 export const AppContext = createContext();
 
@@ -108,6 +109,7 @@ function App() {
             <Route path="/Part1" element={<Part1 />} />
             <Route path="/Part2" element={<Part2 />} />
             <Route path="/Part3" element={<Part3 />} />
+            <Route path="/Sources" element={<Sources />} />
           </Routes>
         </BrowserRouter>
       </AppContext.Provider>

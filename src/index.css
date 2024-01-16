@@ -129,6 +129,15 @@ body {
   /* Adjust height as needed */
 }
 
+.rectangle1 {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 92%, 90% 92%, 90% 0);
+  background-color: white;
+  width: 150px;
+  /* Adjust width as needed */
+  height: 150px;
+  /* Adjust height as needed */
+}
+
 .Link:hover .polygon {
   visibility: visible;
   opacity: 1;
