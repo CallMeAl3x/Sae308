@@ -4,7 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaInfo } from "react-icons/fa";
 import { CgDanger } from "react-icons/cg";
 
-export const Modal = ({ isOpen, setIsOpen, openModal,etatModal2,setEtatModal2,etatModal1,setEtatModal1,etatModal3,setEtatModal3 }) => {
+export const Modal = ({
+  isOpen,
+  setIsOpen,
+  openModal,
+  etatModal2,
+  setEtatModal2,
+  etatModal1,
+  setEtatModal1,
+  etatModal3,
+  setEtatModal3,
+}) => {
   return (
     <AnimatePresence>
       {isOpen && etatModal1 && (
@@ -71,10 +81,63 @@ export const Modal = ({ isOpen, setIsOpen, openModal,etatModal2,setEtatModal2,et
                         <Dialog.Description
                           as="p"
                           className={`text-sm text-blue-500`}>
-                          <a href="https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-020-0373-1?fd=5317710456904024%7C5456507360795513&lp=/dating-apps-mental-health#Sec20">
-                            Comportements des utilisateurs sur les applications
-                            de rencontres
-                          </a>
+                          <div className="flex gap-4 flex-col mb-2">
+                            <p className="text-black">Vidéos youtube :</p>
+                            <a
+                              className=""
+                              href="https://www.youtube.com/watch?v=x3lypVnJ0HM">
+                              Why Men Get So Few Matches on Dating Apps
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=ODTETEGQSmo">
+                              The Unexpected Dangers of Online Dating: Don't
+                              Fall For These Scams!
+                            </a>
+                            <a href="https://www.bbc.com/worklife/article/20210623-the-darkest-side-of-online-dating">
+                              The darkest side of online dating
+                            </a>
+                            <a href="https://crimestoppers-uk.org/keeping-safe/online-safety/internet-dating">
+                              Internet dating dangers
+                            </a>
+                            <a href="https://www.kaspersky.fr/resource-center/threats/anatomy-of-online-dating-scams-how-not-to-become-a-victim-of-cyber-romance">
+                              Faux site de rencontre, arnaques, faux profils :
+                              le danger de la romance sur internet
+                            </a>
+                          </div>
+                          <div className="flex gap-4 flex-col">
+                            <p className="mt-6 mb-6 text-black">Articles :</p>
+                            <a href="https://magazine.hms.harvard.edu/articles/isolation-social-media#:~:text=Social%20media%20should%20promote%20conversation,exchange%2C%20yet%20increasingly%20it%20doesn%27t">
+                              The Isolation of Social Media | Harvard Medicine
+                              Magazine
+                            </a>
+                            <a href="https://www.psychologytoday.com/us/blog/live-long-and-prosper/202210/technology-use-loneliness-and-isolation#:~:text=,life%20social%20isolation">
+                              Technology Use, Loneliness, and Isolation
+                            </a>
+                            <a href="https://www.reuters.com/article/us-health-isolation-social-media-idUSKBN16K2IN/">
+                              Social media linked to feelings of isolation in
+                              real life | Reuters
+                            </a>
+                            <a href="https://irep.ntu.ac.uk/id/eprint/40045/1/1333059_Griffiths.pdf">
+                              Online Dating and Problematic Use: A Systematic
+                              Review Gabriel Bonilla-Zorita, Mark D. Griffiths &
+                              Daria J. Kuss
+                            </a>
+                          </div>
+                          <div className="flex flex-col gap-4 mt-2">
+                            <p className="mt-6 mb-2 text-black">
+                              Personne interviewées :
+                            </p>
+
+                            <a href="https://fr.linkedin.com/in/ivy-daure-20ab21170">
+                              Ivy Daure, Proffessionnelle : Docteure en
+                              psychologie
+                            </a>
+                            <a href="https://www.youtube.com/@laseductionpourleszeros2910">
+                              Brice : vulgarisateur et coach en séducteur
+                            </a>
+                            <a href="https://www.youtube.com/@benjaminetoundi2640">
+                              Benjamin Etoundi: Vulgarisateur
+                            </a>
+                          </div>
                         </Dialog.Description>
                       </div>
                     </div>
@@ -160,11 +223,28 @@ export const Modal = ({ isOpen, setIsOpen, openModal,etatModal2,setEtatModal2,et
                           as="p"
                           className={`text-sm text-gray-400`}>
                           <p>
-                          "Tu l'as vu, tes barres sont toutes proches de 0, mais pourquoi ? <br />
-                            Les applications de rencontres ont du <span className=" text-emerald-400 ">positif</span> comme du <span className=" text-red-400 ">négatif</span>. 
-                            Parmi le <span className=" text-emerald-400 font-bold">positif</span>, on peut compter le fait d'être heureux lorsque l'on matche ou que l'on parle à une 
-                            personne. <span className=" text-red-400 font-bold">Cependant</span>, ces applications sont vite addictives et l'on commence vite à ne plus faire attention 
-                            à ce qui nous entoure. Dans la simulation, tu te laissais consumer en continuant de swiper. C'est quelque chose qu'il faut à tout prix éviter !"
+                            "Tu l'as vu, tes barres sont toutes proches de 0,
+                            mais pourquoi ? <br />
+                            Les applications de rencontres ont du{" "}
+                            <span className=" text-emerald-400 ">
+                              positif
+                            </span>{" "}
+                            comme du{" "}
+                            <span className=" text-red-400 ">négatif</span>.
+                            Parmi le{" "}
+                            <span className=" text-emerald-400 font-bold">
+                              positif
+                            </span>
+                            , on peut compter le fait d'être heureux lorsque
+                            l'on matche ou que l'on parle à une personne.{" "}
+                            <span className=" text-red-400 font-bold">
+                              Cependant
+                            </span>
+                            , ces applications sont vite addictives et l'on
+                            commence vite à ne plus faire attention à ce qui
+                            nous entoure. Dans la simulation, tu te laissais
+                            consumer en continuant de swiper. C'est quelque
+                            chose qu'il faut à tout prix éviter !"
                           </p>
                         </Dialog.Description>
                       </div>
@@ -251,11 +331,28 @@ export const Modal = ({ isOpen, setIsOpen, openModal,etatModal2,setEtatModal2,et
                           as="p"
                           className={`text-sm text-gray-400`}>
                           <p>
-                          "Tu l'as vu, tes barres sont toutes proches de 0, mais pourquoi ? <br />
-                            Les applications de rencontres ont du <span className=" text-emerald-400 ">positif</span> comme du <span className=" text-red-400 ">négatif</span>. 
-                            Parmi le <span className=" text-emerald-400 font-bold">positif</span>, on peut compter le fait d'être heureux lorsque l'on matche ou que l'on parle à une 
-                            personne. <span className=" text-red-400 font-bold">Cependant</span>, ces applications sont vite addictives et l'on commence vite à ne plus faire attention 
-                            à ce qui nous entoure. Dans la simulation, tu te laissais consumer en continuant de swiper. C'est quelque chose qu'il faut à tout prix éviter !"
+                            "Tu l'as vu, tes barres sont toutes proches de 0,
+                            mais pourquoi ? <br />
+                            Les applications de rencontres ont du{" "}
+                            <span className=" text-emerald-400 ">
+                              positif
+                            </span>{" "}
+                            comme du{" "}
+                            <span className=" text-red-400 ">négatif</span>.
+                            Parmi le{" "}
+                            <span className=" text-emerald-400 font-bold">
+                              positif
+                            </span>
+                            , on peut compter le fait d'être heureux lorsque
+                            l'on matche ou que l'on parle à une personne.{" "}
+                            <span className=" text-red-400 font-bold">
+                              Cependant
+                            </span>
+                            , ces applications sont vite addictives et l'on
+                            commence vite à ne plus faire attention à ce qui
+                            nous entoure. Dans la simulation, tu te laissais
+                            consumer en continuant de swiper. C'est quelque
+                            chose qu'il faut à tout prix éviter !"
                           </p>
                         </Dialog.Description>
                       </div>

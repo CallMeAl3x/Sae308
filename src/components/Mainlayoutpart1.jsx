@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Mainlayoutpart1.css";
 import { Modal } from "./Modal";
-import tinder from "../img/tinder-icon.svg";
 import badoo from "../img/Badoo-icon-square.png";
 import fruitz from "../img/fruitz.png";
 import meetic from "../img/meetic-8QZScb.png";
@@ -12,7 +11,7 @@ import { Link } from "react-router-dom";
 import "../components/part1css2.css";
 import tindertriste from "../img/part1/tinndertriste2.svg";
 import Svgtrophy from "./Svgtrophy";
-import tinderlogo3 from "../img/Tinderloogo3.png"
+import tinderlogo3 from "../img/Tinderloogo3.png";
 
 function Mainlayoutpart1() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +22,7 @@ function Mainlayoutpart1() {
   const [showTitlteCard1, setShowTitleCard1] = useState(false);
   const [showTitlteCard2, setShowTitleCard2] = useState(false);
   const [showTitlteCard3, setShowTitleCard3] = useState(false);
-  const [etatModal1,setEtatModal1] = useState(true);
+  const [etatModal1, setEtatModal1] = useState(true);
 
   const showTitle = () => {
     setShowTitleCard1(true);
@@ -61,7 +60,7 @@ function Mainlayoutpart1() {
             <img
               src={tinderlogo3}
               alt=""
-              className="rounded-xl w-[72px] h-[72px] imglogotinder p-1" 
+              className="rounded-xl w-[72px] h-[72px] imglogotinder p-1"
             />
           </div>
 
@@ -121,7 +120,14 @@ function Mainlayoutpart1() {
         <div className="w-full h-2 ">
           <div className="relative logotinderrr">
             <div className=" absolute left-[-35%] top-32 ">
-              <img src={tindertriste} alt="" className="vrailogo" style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}/>
+              <img
+                src={tindertriste}
+                alt=""
+                className="vrailogo"
+                style={{
+                  filter: "drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -234,7 +240,12 @@ function Mainlayoutpart1() {
         </div>
 
         <div className="flex gap-24 lg:flex-row  flex-col-reverse">
-          <img src={masque} alt="" className="-mt-12" style={{ filter: 'drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))' }}/>
+          <img
+            src={masque}
+            alt=""
+            className="-mt-12"
+            style={{ filter: "drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5))" }}
+          />
           <p className="font-bold text-almost-black">
             Cette pression permanente de se mesurer aux autres peut également
             créer un climat anxiogène, où les individus se sentent constamment
@@ -242,7 +253,9 @@ function Mainlayoutpart1() {
             et la comparaison sociale dans ces applications peuvent avoir des
             conséquences significatives sur le bien-être émotionnel des hommes
             qui y participent, soulignant la nécessité d'une réflexion sur les
-            dynamiques induites par ces plateformes de rencontres. Des expert(e)s se sont penché(e)s sur ce sujet en analysant la place des hommes dans ces applications/sites de rencontres, comme Ivy Daure.
+            dynamiques induites par ces plateformes de rencontres. Des
+            expert(e)s se sont penché(e)s sur ce sujet en analysant la place des
+            hommes dans ces applications/sites de rencontres, comme Ivy Daure.
           </p>
         </div>
 
@@ -251,7 +264,15 @@ function Mainlayoutpart1() {
         </p>
 
         <div className="w-full flex justify-center mt-16">
-          <iframe className="rounded-lg shadow-xl border-4 border-white" width="560" height="315" src="https://www.youtube.com/embed/ueWwnmjqTRE?si=xBIskaPRzw2SVBXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe
+            className="rounded-lg shadow-xl border-4 border-white"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ueWwnmjqTRE?si=xBIskaPRzw2SVBXs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
 
         <h2 className="text-[#571B46] text-4xl lg:text-6xl font-bold text-center mt-36">
@@ -292,7 +313,15 @@ function Mainlayoutpart1() {
             <div className="hidden lg:block absolute top-[81%] left-[67%] rectangle"></div>
           </div>
           <div className="lg:w-1/2 flex justify-center w-full">
-          <iframe className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-white" width="560" height="315" src="https://www.youtube.com/embed/KR4o1i6uyjk?si=yoXRYXzHtvG0AUXT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe
+              className="rounded-lg shadow-xl lg:w-[560px] lg:h-[315px] w-[300px] h-[200px] border-2 border-white"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/KR4o1i6uyjk?si=yoXRYXzHtvG0AUXT"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
 
@@ -302,7 +331,9 @@ function Mainlayoutpart1() {
               className="mt-8 lg:text-start text-center "
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
               Point de vue du coach : <br />
-              **Citation** <br /> <br /> "Il faut le comprendre, les 'applications de rencontre', c'est du marketing. Le produit, c'est toi, et ce produit, tu dois le mettre en valeur."
+              **Citation** <br /> <br /> "Il faut le comprendre, les
+              'applications de rencontre', c'est du marketing. Le produit, c'est
+              toi, et ce produit, tu dois le mettre en valeur."
             </p>
             <div className="hidden lg:block absolute top-[0%] -left-[7.5%] rectangle rotate-180"></div>
           </div>
@@ -340,7 +371,13 @@ function Mainlayoutpart1() {
           </Link>
         </div>
       </div>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} etatModal1={etatModal1} setEtatModal1={setEtatModal1} />
+      <Modal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        openModal={openModal}
+        etatModal1={etatModal1}
+        setEtatModal1={setEtatModal1}
+      />
     </main>
   );
 }

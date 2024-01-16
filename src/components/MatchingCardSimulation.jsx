@@ -15,8 +15,7 @@ import True from "../icons/True.svg";
 import { PiConfettiLight, PiWine } from "react-icons/pi";
 import { IoIosBed } from "react-icons/io";
 import { FaGrinBeamSweat } from "react-icons/fa";
-import { Modal2 } from "./Modal2";
-import { Flip,Slide } from 'react-toastify';
+import { Flip, Slide } from "react-toastify";
 import { Modal } from "./Modal";
 import { Link } from "react-router-dom";
 function MatchingCardSimulation({
@@ -30,8 +29,7 @@ function MatchingCardSimulation({
   valbarre4,
 }) {
   const [bodyOffset, setBodyOffset] = useState(0);
-  const [hasSwiped, setHasSwiped] = useState(false); 
-
+  const [hasSwiped, setHasSwiped] = useState(false);
 
   const HandleBodyOffset = (direction) => {
     if (direction === "right" || direction === "left") {
@@ -53,7 +51,7 @@ function MatchingCardSimulation({
     setIsOpen(!isOpen);
   };
 
-  const [etatModal2,setEtatModal2] = useState(true);
+  const [etatModal2, setEtatModal2] = useState(true);
 
   const affichagetoastb11 = () => {
     if (valbarre1 <= 180 && affichagetoastb1 < 1) {
@@ -135,12 +133,15 @@ function MatchingCardSimulation({
     }
   };
 
-  
-
- 
   const affichagetModal = () => {
-    if (valbarre3 <= 15 && affichagetoastb3<2 && valbarre2 <= 15 && valbarre4 <= 15 && valbarre1 <= 15) {
-      toast.error('Il faut songer à désinstaller l\'application !', {
+    if (
+      valbarre3 <= 15 &&
+      affichagetoastb3 < 2 &&
+      valbarre2 <= 15 &&
+      valbarre4 <= 15 &&
+      valbarre1 <= 15
+    ) {
+      toast.error("Il faut songer à désinstaller l'application !", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,
@@ -150,8 +151,7 @@ function MatchingCardSimulation({
         progress: undefined,
         theme: "dark",
         transition: Flip,
-        
-        });
+      });
       setaffichagetoastb3((prevVal) => prevVal + 1);
       setTimeout(() => {
         openModal(); // Utilisation d'une fonction de rappel
@@ -159,16 +159,12 @@ function MatchingCardSimulation({
     }
   };
 
-  
-
   useEffect(() => {
     affichagetoastb11();
-    
   }, [valbarre1]);
 
   useEffect(() => {
     affichagetoastb22();
-    
   }, [valbarre2]);
 
   useEffect(() => {
@@ -178,7 +174,6 @@ function MatchingCardSimulation({
 
   useEffect(() => {
     affichagetoastb44();
-    
   }, [valbarre4]);
 
   const [grayscale, setGrayScale] = useState(false);
@@ -293,46 +288,48 @@ function MatchingCardSimulation({
               <div className="h-full w-full relative overflow-hidden shadow-lg">
                 {hasSwiped && (
                   <div className="absolute top-6 left-[65%] z-50 bg-white rounded-xl p-2 text-black">
-                  {Question.Relation === "Relation sérieuse" && (
-                    <div className="flex items-center gap-2">
-                      <PiWine />
-                      {Question.Relation}
-                    </div>
-                  )}
+                    {Question.Relation === "Relation sérieuse" && (
+                      <div className="flex items-center gap-2">
+                        <PiWine />
+                        {Question.Relation}
+                      </div>
+                    )}
 
-                  {Question.Relation === "Hésitant" && (
-                    <div className="flex items-center gap-2">
-                      <FaGrinBeamSweat />
-                      {Question.Relation}
-                    </div>
-                  )}
+                    {Question.Relation === "Hésitant" && (
+                      <div className="flex items-center gap-2">
+                        <FaGrinBeamSweat />
+                        {Question.Relation}
+                      </div>
+                    )}
 
-                  {Question.Relation === "Relation courte" && (
-                    <div className="flex items-center gap-2">
-                      <PiConfettiLight />
-                      {Question.Relation}
-                    </div>
-                  )}
+                    {Question.Relation === "Relation courte" && (
+                      <div className="flex items-center gap-2">
+                        <PiConfettiLight />
+                        {Question.Relation}
+                      </div>
+                    )}
 
-                  {Question.Relation === "Coup d'un soir" && (
-                    <div className="flex items-center gap-2">
-                      <IoIosBed />
-                      {Question.Relation}
-                    </div>
-                  )}
-                </div>
+                    {Question.Relation === "Coup d'un soir" && (
+                      <div className="flex items-center gap-2">
+                        <IoIosBed />
+                        {Question.Relation}
+                      </div>
+                    )}
+                  </div>
                 )}
                 {hasSwiped && (
                   <div className="flex flex-col justify-between p-4 z-10 relative top-[70%] left-0 bg-almost-white rounded-lg w-[80%] max-lg:w-full mr-auto ml-auto">
-                  <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
-                    {Question.Prenom}, {Question.Age}
-                  </h2>
+                    <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
+                      {Question.Prenom}, {Question.Age}
+                    </h2>
 
-                  <h3 className="p-2 text-almost-black">{Question.Intitulé}</h3>
-                  <h4 className="text-almost-black ml-2 text-[15px]">
-                    {Question.Biographie}
-                  </h4>
-                </div>
+                    <h3 className="p-2 text-almost-black">
+                      {Question.Intitulé}
+                    </h3>
+                    <h4 className="text-almost-black ml-2 text-[15px]">
+                      {Question.Biographie}
+                    </h4>
+                  </div>
                 )}
                 {Question.Imagerep && (
                   <img
@@ -344,7 +341,7 @@ function MatchingCardSimulation({
                 )}
                 {!Question.Imagerep && !hasSwiped && (
                   <video
-                  autoPlay
+                    autoPlay
                     controls
                     draggable={false}
                     alt=""
@@ -355,10 +352,9 @@ function MatchingCardSimulation({
               </div>
             </div>
           </TinderCard>
-          
         ))}
         <div className="w-full  h-full bg-gray-50 rounded-2xl mx-4 flex justify-center items-center ">
-        <Link
+          <Link
             to="/Sources"
             className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
             <p className="">Conseils</p>
@@ -395,12 +391,17 @@ function MatchingCardSimulation({
           <h2 className="lg:mt-2 text-almost-white text-lg lg:max-w-[55%] max-w-[90%] mt-12 text-center font-bold tracking-wide">
             Swipe la carte ou cliques sur les bouttons pour choisir !
           </h2>
-          
         </>
       )}
       <ToastContainer />
-      
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} setEtatModal2={setEtatModal2} etatModal2={etatModal2} />
+
+      <Modal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        openModal={openModal}
+        setEtatModal2={setEtatModal2}
+        etatModal2={etatModal2}
+      />
     </div>
   );
 }
