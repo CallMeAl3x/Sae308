@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import False from "../icons/False.svg";
 import True from "../icons/True.svg";
+import { Slide } from "react-toastify";
 
 const MatchingCard = () => {
   const { db, setCurrentCardIndex } = useContext(AppContext);
@@ -48,6 +49,7 @@ const MatchingCard = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
+        transition: Slide,
       });
     }
     if (
@@ -63,6 +65,7 @@ const MatchingCard = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
+        transition: Slide,
       });
     }
     // Votre logique pour baisser les valeurs ici
