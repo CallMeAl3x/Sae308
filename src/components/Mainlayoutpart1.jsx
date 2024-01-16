@@ -23,6 +23,7 @@ function Mainlayoutpart1() {
   const [showTitlteCard1, setShowTitleCard1] = useState(false);
   const [showTitlteCard2, setShowTitleCard2] = useState(false);
   const [showTitlteCard3, setShowTitleCard3] = useState(false);
+  const [etatModal1,setEtatModal1] = useState(true);
 
   const showTitle = () => {
     setShowTitleCard1(true);
@@ -241,8 +242,7 @@ function Mainlayoutpart1() {
             et la comparaison sociale dans ces applications peuvent avoir des
             conséquences significatives sur le bien-être émotionnel des hommes
             qui y participent, soulignant la nécessité d'une réflexion sur les
-            dynamiques induites par ces plateformes de rencontres. [transiton
-            phrase ]
+            dynamiques induites par ces plateformes de rencontres. Des expert(e)s se sont penché(e)s sur ce sujet en analysant la place des hommes dans ces applications/sites de rencontres, comme Ivy Daure.
           </p>
         </div>
 
@@ -340,7 +340,7 @@ function Mainlayoutpart1() {
           </Link>
         </div>
       </div>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} />
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} etatModal1={etatModal1} setEtatModal1={setEtatModal1} />
     </main>
   );
 }

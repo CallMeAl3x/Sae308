@@ -17,6 +17,8 @@ import { IoIosBed } from "react-icons/io";
 import { FaGrinBeamSweat } from "react-icons/fa";
 import { Modal2 } from "./Modal2";
 import { Flip,Slide } from 'react-toastify';
+import { Modal } from "./Modal";
+import { Link } from "react-router-dom";
 function MatchingCardSimulation({
   baisserVal1,
   baisserVal2,
@@ -28,6 +30,8 @@ function MatchingCardSimulation({
   valbarre4,
 }) {
   const [bodyOffset, setBodyOffset] = useState(0);
+  const [hasSwiped, setHasSwiped] = useState(false); 
+
 
   const HandleBodyOffset = (direction) => {
     if (direction === "right" || direction === "left") {
@@ -44,10 +48,12 @@ function MatchingCardSimulation({
   const [affichagetoastb3, setaffichagetoastb3] = useState(0);
   const [affichagetoastb4, setaffichagetoastb4] = useState(0);
 
-  const [isOpen2, setIsOpen2] = useState(false);
-  const openModal2 = () => {
-    setIsOpen2(!isOpen2);
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(!isOpen);
   };
+
+  const [etatModal2,setEtatModal2] = useState(true);
 
   const affichagetoastb11 = () => {
     if (valbarre1 <= 180 && affichagetoastb1 < 1) {
@@ -129,49 +135,14 @@ function MatchingCardSimulation({
     }
   };
 
+  
+
+ 
   const affichagetModal = () => {
-    if (valbarre1 <= 15 && affichagetoastb1 < 2) {
+    if (valbarre3 <= 15 && affichagetoastb3<2 && valbarre2 <= 15 && valbarre4 <= 15 && valbarre1 <= 15) {
       toast.error('Il faut songer à désinstaller l\'application !', {
         position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Flip,
-        
-        });
-      setaffichagetoastb1((prevVal) => prevVal + 1);
-      openModal2();
-    }
-  };
-
-  const affichagetModal2 = () => {
-    if (valbarre2 <= 15 && affichagetoastb2 < 2) {
-      toast.error('Il faut songer à désinstaller l\'application !', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Flip,
-        
-        });
-      setaffichagetoastb2((prevVal) => prevVal + 1);
-      openModal2();
-    }
-  };
-
-  const affichagetModal3 = () => {
-    if (valbarre3 <= 15 && affichagetoastb3 < 2) {
-      toast.error('Il faut songer à désinstaller l\'application !', {
-        position: "top-center",
-        autoClose: 5000,
+        autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -182,47 +153,32 @@ function MatchingCardSimulation({
         
         });
       setaffichagetoastb3((prevVal) => prevVal + 1);
-      openModal2();
+      setTimeout(() => {
+        openModal(); // Utilisation d'une fonction de rappel
+      }, 3000);
     }
   };
 
-  const affichagetModal4 = () => {
-    if (valbarre4 <= 15 && affichagetoastb4 < 2) {
-      toast.error('Il faut songer à désinstaller l\'application !', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Flip,
-        
-        });
-      setaffichagetoastb4((prevVal) => prevVal + 1);
-      openModal2();
-    }
-  };
+  
 
   useEffect(() => {
     affichagetoastb11();
-    affichagetModal();
+    
   }, [valbarre1]);
 
   useEffect(() => {
     affichagetoastb22();
-    affichagetModal2();
+    
   }, [valbarre2]);
 
   useEffect(() => {
     affichagetoastb33();
-    affichagetModal3();
+    affichagetModal();
   }, [valbarre3]);
 
   useEffect(() => {
     affichagetoastb44();
-    affichagetModal4();
+    
   }, [valbarre4]);
 
   const [grayscale, setGrayScale] = useState(false);
@@ -263,6 +219,8 @@ function MatchingCardSimulation({
     setLastDirection(direction);
     setCurrentCardIndex2(index); // Mise à jour de l'index courant dans le contexte
     updateCurrentIndex(index - 1); // Mise à jour de l'index pour la prochaine carte
+    currentIndexRef.current = index;
+    setHasSwiped(true); // Mettez à jour la variable d'état
 
     console.log(`Swiped at index ${index}: ${direction}`); // Débogage
 
@@ -333,7 +291,8 @@ function MatchingCardSimulation({
               className="w-[80vw] max-w-[500px] h-[400px] lg:h-[500px] rounded-2xl relative overflow-hidden border-4 border-white"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
-                <div className="absolute top-6 left-[65%] z-50 bg-white rounded-xl p-2 text-black">
+                {hasSwiped && (
+                  <div className="absolute top-6 left-[65%] z-50 bg-white rounded-xl p-2 text-black">
                   {Question.Relation === "Relation sérieuse" && (
                     <div className="flex items-center gap-2">
                       <PiWine />
@@ -362,7 +321,9 @@ function MatchingCardSimulation({
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col justify-between p-4 z-10 relative top-[70%] left-0 bg-almost-white rounded-lg w-[80%] max-lg:w-full mr-auto ml-auto">
+                )}
+                {hasSwiped && (
+                  <div className="flex flex-col justify-between p-4 z-10 relative top-[70%] left-0 bg-almost-white rounded-lg w-[80%] max-lg:w-full mr-auto ml-auto">
                   <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
                     {Question.Prenom}, {Question.Age}
                   </h2>
@@ -372,6 +333,7 @@ function MatchingCardSimulation({
                     {Question.Biographie}
                   </h4>
                 </div>
+                )}
                 {Question.Imagerep && (
                   <img
                     src={Question.Image}
@@ -380,9 +342,10 @@ function MatchingCardSimulation({
                     alt=""
                   />
                 )}
-                {!Question.Imagerep && (
+                {!Question.Imagerep && !hasSwiped && (
                   <video
-                    autoPlay
+                  autoPlay
+                    controls
                     draggable={false}
                     alt=""
                     className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full">
@@ -392,7 +355,15 @@ function MatchingCardSimulation({
               </div>
             </div>
           </TinderCard>
+          
         ))}
+        <div className="w-full  h-full bg-gray-50 rounded-2xl mx-4 flex justify-center items-center ">
+        <Link
+            to="/Sources"
+            className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
+            <p className="">Conseils</p>
+          </Link>
+        </div>
       </div>
       <div className="-mt-12 flex flex-wrap gap-16 lg:mt-8">
         <button
@@ -424,10 +395,12 @@ function MatchingCardSimulation({
           <h2 className="lg:mt-2 text-almost-white text-lg lg:max-w-[55%] max-w-[90%] mt-12 text-center font-bold tracking-wide">
             Swipe la carte ou cliques sur les bouttons pour choisir !
           </h2>
+          
         </>
       )}
       <ToastContainer />
-      <Modal2 isOpen={isOpen2} setIsOpen={setIsOpen2} openModal={openModal2} />
+      
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} setEtatModal2={setEtatModal2} etatModal2={etatModal2} />
     </div>
   );
 }

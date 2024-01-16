@@ -34,7 +34,7 @@ function Card({ showTitle1, showTitle2, showTitle3 }) {
           draggable={false}
         />
         <motion.div
-          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white  shadow-2xl rounded-lg absolute overflow-hidden border-2 border-white ml-4 mt-2"
+          className="lg:w-52 lg:h-[350px] w-40 h-[250px] bg-white  shadow-2xl rounded-lg absolute overflow-hidden border-2 border-white ml-4 mt-2 "
           drag="x"
           dragConstraints={{
             left: -200,

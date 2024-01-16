@@ -413,7 +413,7 @@ const Mainlayoutpart2 = () => {
             <Link
               to="/Part3"
               className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
-              <p className="text-black">Partie 3</p>
+              <p className="text-black">Simulation</p>
             </Link>
           </div>
           <Modal2 isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} />

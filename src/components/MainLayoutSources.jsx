@@ -4,7 +4,7 @@ const MainLayoutSources = () => {
             <h2 className="text-center text-3xl">Nos conseils</h2>
             <div className="flex  justify-evenly mt-8 flex-col lg:flex-row lg:items-start items-center gap-6 lg:gap-0">
                 <div className="flex flex-col">
-                    <p className="text-center text-2xl">Par un coach de séduction</p>
+                    <p className="text-center text-2xl">Par un utilisateur ( utilisation régulière )</p>
                     <iframe
                 className="rounded-lg shadow-xl lg:w-[460px] lg:h-[315px] w-[300px] h-[200px] border-2 border-white mt-6"
                 src="https://www.youtube.com/embed/rY20ubOasGI?si=VS5j6UABCUp13TIi"
@@ -19,7 +19,7 @@ const MainLayoutSources = () => {
                 </div>
 
                 <div className="flex flex-col justify-center items-center">
-                    <p className="text-center  text-2xl">Par une professionnelle</p>
+                    <p className="text-center  text-2xl">Par un utilisateur : ( utilisation occasionelle )</p>
                     <iframe
                 className="rounded-lg shadow-xl lg:w-[460px] lg:h-[315px] w-[300px] h-[200px] border-2 ml-auto mr-auto border-white mt-6"
                 src="https://www.youtube.com/embed/P-TLTlX_eZ8?si=3IBsUQDPznvLItpv"
@@ -65,8 +65,9 @@ const MainLayoutSources = () => {
 
                 </div>
 
-                <h3 className="text-4xl mt-32">
-                Pour en savoir plus 
+                <h3 className="text-4xl mt-32 text-center">
+                Pour en savoir plus <br />
+                Interviews complètes
                 </h3>
 
                 <div className="flex gap-24 mt-8">

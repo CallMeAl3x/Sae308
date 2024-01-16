@@ -7,12 +7,21 @@ import { AppContext } from "../App";
 import False from "../icons/False.svg";
 import True from "../icons/True.svg";
 import { Slide } from "react-toastify";
-
+import { Modal } from "./Modal";
+import { Link } from "react-router-dom";
 const MatchingCard = () => {
   const { db, setCurrentCardIndex } = useContext(AppContext);
   const [currentIndex, setCurrentIndex] = useState(db.length - 1);
   const [lastDirection, setLastDirection] = useState();
   const currentIndexRef = useRef(currentIndex);
+  const [count,setCount] = useState(0);
+  const [hasSwiped, setHasSwiped] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const [etatModal3,setEtatModal3] = useState(true);
 
   const childRefs = useMemo(
     () =>
@@ -35,6 +44,8 @@ const MatchingCard = () => {
     setLastDirection(direction);
     setCurrentCardIndex(index); // Mise à jour de l'index courant dans le contexte
     updateCurrentIndex(index - 1); // Mise à jour de l'index pour la prochaine carte
+    currentIndexRef.current = index;
+    setHasSwiped(true); // Mettez à jour la variable d'état
 
     if (
       (direction === "right" && db[index].Réponse === "Vrai") ||
@@ -104,13 +115,15 @@ const MatchingCard = () => {
               className="w-[80vw] max-w-[475px] h-[480px] rounded-2xl relative overflow-hidden border-4 border-white"
               id={index}>
               <div className="h-full w-full relative overflow-hidden shadow-lg">
-                <div className="flex flex-col justify-between p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-t-[25px] w-9/12 max-lg:w-full mr-auto ml-auto">
+                {hasSwiped && (
+                  <div className="flex flex-col justify-between p-4 z-10 relative top-[72%] left-0 bg-almost-white rounded-t-[25px] w-9/12 max-lg:w-full mr-auto ml-auto">
                   <h2 className="text-almost-black text-3xl font-bold ml-2 font-title">
                     Anecdote n<sup>o</sup>
                     {db.length - index}
                   </h2>
                   <h3 className="p-2 text-almost-black">{Question.Intitulé}</h3>
                 </div>
+                )}
                 {Question.Imagerep && (
                   <img
                     src={Question.Image}
@@ -119,17 +132,29 @@ const MatchingCard = () => {
                     alt=""
                   />
                 )}
-                {!Question.Imagerep && (
+                {!Question.Imagerep && !hasSwiped && (
                   <video
                     autoPlay
-                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full">
+                    controls
+                    className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full"
+                  >
                     <source src={Question.Image} type="video/mp4" />
                   </video>
+                )}
+                {!Question.Imagerep && hasSwiped && (
+                  <div className="absolute top-0 left-0 z-0 object-cover max-lg:h-full max-lg:w-full h-full"></div>
                 )}
               </div>
             </div>
           </TinderCard>
         ))}
+        <div className="w-full  h-full bg-gray-50 rounded-2xl mx-4 flex justify-center items-center ">
+        <Link
+            to="/Part1"
+            className="flex items-center rounded-xl bg-slate-600 px-5 py-2 buttongradient">
+            <p className="">Partie 2</p>
+          </Link>
+        </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-10">
         <button
@@ -158,10 +183,12 @@ const MatchingCard = () => {
         </h2>
       ) : (
         <h2 className="mt-2 text-almost-white text-lg max-w-[55%] text-center font-bold tracking-wide">
-          Swipe la carte ou cliques sur les bouttons pour répondre !
+          Swipe la carte ou cliques sur les boutons pour répondre !
         </h2>
       )}
       <ToastContainer />
+      
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} openModal={openModal} etatModal3={etatModal3} setEtatModal3={setEtatModal3} />
     </div>
   );
 };
