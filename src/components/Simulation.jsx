@@ -34,23 +34,7 @@ function Simulation() {
   const [valbarre3, setValBarre3] = useState(256);
   const [valbarre4, setValBarre4] = useState(256);
 
-  if (
-    valbarre1 === 0 ||
-    valbarre2 === 0 ||
-    valbarre3 === 0 ||
-    valbarre4 === 0
-  ) {
-    toast.success("Tu as perdu", {
-      position: "top-center",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  }
+
 
   const generateRandomValue = () => {
     const i = Math.floor(Math.random() * 30);
@@ -71,7 +55,7 @@ function Simulation() {
 
   return (
     <main className="flex items-center lg:flex-row flex-col h-screen overflow-hidden">
-      <div className="flex justify-center items-center bonhome">
+      <div className="flex justify-center items-center bonhome " style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }}>
         <img
           src={getImageUrl(valbarre1)}
           className="lg:h-[700px] lg:w-auto h-auto w-24 hidden lg:block"

@@ -30,6 +30,7 @@ body {
   font-weight: 600;
   background-image: url("../src/img/background.png");
   background-size: cover;
+  transition: 0.3s ease-in-out;
 }
 
 @keyframes popup {

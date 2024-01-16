@@ -16,6 +16,7 @@ import { PiConfettiLight, PiWine } from "react-icons/pi";
 import { IoIosBed } from "react-icons/io";
 import { FaGrinBeamSweat } from "react-icons/fa";
 import { Modal2 } from "./Modal2";
+import { Flip,Slide } from 'react-toastify';
 function MatchingCardSimulation({
   baisserVal1,
   baisserVal2,
@@ -60,7 +61,8 @@ function MatchingCardSimulation({
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
+          transition: Flip,
         }
       );
       setaffichagetoastb1((prevVal) => prevVal + 1);
@@ -79,7 +81,8 @@ function MatchingCardSimulation({
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
+          transition: Flip,
         }
       );
       setaffichagetoastb2((prevVal) => prevVal + 1);
@@ -98,7 +101,8 @@ function MatchingCardSimulation({
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
+          transition: Flip,
         }
       );
       setaffichagetoastb3((prevVal) => prevVal + 1);
@@ -117,7 +121,8 @@ function MatchingCardSimulation({
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
+          transition: Flip,
         }
       );
       setaffichagetoastb4((prevVal) => prevVal + 1);
@@ -126,7 +131,18 @@ function MatchingCardSimulation({
 
   const affichagetModal = () => {
     if (valbarre1 <= 15 && affichagetoastb1 < 2) {
-      toast.error("Il faut songer à désinstaller l'application");
+      toast.error('Il faut songer à désinstaller l\'application !', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Flip,
+        
+        });
       setaffichagetoastb1((prevVal) => prevVal + 1);
       openModal2();
     }
@@ -134,7 +150,18 @@ function MatchingCardSimulation({
 
   const affichagetModal2 = () => {
     if (valbarre2 <= 15 && affichagetoastb2 < 2) {
-      toast.error("Il faut songer à désinstaller l'application");
+      toast.error('Il faut songer à désinstaller l\'application !', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Flip,
+        
+        });
       setaffichagetoastb2((prevVal) => prevVal + 1);
       openModal2();
     }
@@ -142,7 +169,18 @@ function MatchingCardSimulation({
 
   const affichagetModal3 = () => {
     if (valbarre3 <= 15 && affichagetoastb3 < 2) {
-      toast.error("Il faut songer à désinstaller l'application");
+      toast.error('Il faut songer à désinstaller l\'application !', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Flip,
+        
+        });
       setaffichagetoastb3((prevVal) => prevVal + 1);
       openModal2();
     }
@@ -150,7 +188,18 @@ function MatchingCardSimulation({
 
   const affichagetModal4 = () => {
     if (valbarre4 <= 15 && affichagetoastb4 < 2) {
-      toast.error("Il faut songer à désinstaller l'application");
+      toast.error('Il faut songer à désinstaller l\'application !', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Flip,
+        
+        });
       setaffichagetoastb4((prevVal) => prevVal + 1);
       openModal2();
     }
@@ -220,24 +269,26 @@ function MatchingCardSimulation({
     if (direction === "right") {
       toast.success(`Ce profil a été liké`, {
         position: "top-right",
-        autoClose: 1500,
+        autoClose: 750,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
+        transition: Slide,
       });
     } else if (direction === "left") {
       toast.error(`Ce profil a été ignoré`, {
         position: "top-right",
-        autoClose: 1500,
+        autoClose: 750,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
+        transition: Slide,
       });
     }
 
