@@ -23,7 +23,7 @@ C'est un projet universitaire sous forme de webdocumentaire qui explore le thèm
 
 ### Liens
 
-- [URL du site en direct](https://webdoc-dating-app.netlify.app)
+- [URL du site en direct](https://webdoc.bonefons.com)
 
 
 ### Construit avec
